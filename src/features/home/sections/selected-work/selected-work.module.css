@@ -1,0 +1,133 @@
+.section { padding: 60px 0; overflow: hidden; }
+
+.header {
+  margin-top: 12px;
+  margin-bottom: 48px;
+  text-align: center;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.blue { color: #2FA8FA; }
+
+.sub { font-size: 15px; color: #747474; line-height: 1.7; }
+
+.trackWrap { overflow: hidden; padding: 8px 0; }
+
+.rail {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: railScroll 28s linear infinite;
+}
+
+@keyframes railScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.card {
+  flex-shrink: 0;
+  width: 320px;
+  border: 1.5px solid #E8E8E8;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover {
+  border-color: #2FA8FA;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+.cardPreview {
+  position: relative;
+  height: 200px;
+  background: #F5F7FA;
+  overflow: hidden;
+}
+
+.cardPreviewImg {
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card:hover .cardPreviewImg {
+  opacity: 0.15;
+  transform: scale(1.05);
+}
+
+.cardLogoOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.card:hover .cardLogoOverlay {
+  opacity: 1;
+}
+
+.cardLogoImg {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+}
+
+.cardInfo { 
+  padding: 20px;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.cardCat {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2FA8FA;
+  margin-bottom: 6px;
+}
+
+.cardTitle { font-size: 16px; font-weight: 700; color: #000; }
+
+@media (max-width: 640px) {
+  .card {
+    width: 280px;
+  }
+
+  .cardPreview {
+    height: 180px;
+  }
+
+  .cardInfo {
+    padding: 16px;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .cardCat {
+    font-size: 10px;
+  }
+}

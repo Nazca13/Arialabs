@@ -1,0 +1,203 @@
+.section { padding: 60px 0; }
+
+.header {
+  margin-top: 12px;
+  margin-bottom: 48px;
+  max-width: 440px;
+}
+
+.heading {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.blue { color: #2FA8FA; }
+
+.sub {
+  font-size: 15px;
+  color: #747474;
+  line-height: 1.7;
+}
+
+/* ── List wrapper (holds the background ticker) ── */
+.list {
+  position: relative;
+  border-top: 1.5px solid #E8E8E8;
+}
+
+.ticker {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+}
+
+.tickerTrack {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: tickerScroll 30s linear infinite;
+}
+
+.tickerTrack span {
+  font-size: 90px;
+  font-weight: 800;
+  color: #F5F7FA;
+  letter-spacing: 0.02em;
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Row ── */
+.row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 130px;
+  background: #fff;
+  border-bottom: 1.5px solid #E8E8E8;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rowOpen {
+  height: 420px;
+}
+
+/* corner triangle accents */
+.corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 2;
+}
+.cornerTL {
+  top: 10px;
+  left: 10px;
+  border-top: 9px solid #2FA8FA;
+  border-right: 9px solid transparent;
+}
+.cornerBR {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 9px solid #2FA8FA;
+  border-left: 9px solid transparent;
+}
+
+/* character image, bleeds from the left edge when collapsed */
+.rowImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rowOpen .rowImage {
+  left: 54%;
+  width: 46%;
+}
+
+.rowImg {
+  object-fit: cover;
+  object-position: 50% 12%;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rowOpen .rowImg {
+  object-position: 50% 4%;
+}
+
+/* middle: title + desc + view more */
+.rowMid {
+  position: absolute;
+  top: 0;
+  left: 174px;
+  right: 120px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rowOpen .rowMid {
+  left: 0;
+  right: calc(46% + 24px);
+}
+
+.rowBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rowTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: -0.01em;
+  transition: font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rowTitleOpen {
+  font-size: 44px;
+}
+
+.rowDesc {
+  font-size: 15px;
+  color: #747474;
+  line-height: 1.65;
+  max-width: 480px;
+}
+
+.viewMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2FA8FA;
+  width: fit-content;
+  transition: gap 0.18s ease;
+}
+.viewMore:hover { gap: 10px; }
+
+/* right: Open / Close trigger, always stays top-right regardless of state */
+.rowTrigger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2FA8FA;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .row { height: 100px; }
+  .rowOpen { height: 320px; }
+  .rowImage { width: 90px; }
+  .rowOpen .rowImage { left: 58%; width: 42%; }
+  .rowMid { left: 104px; right: 90px; }
+  .rowOpen .rowMid { left: 0; right: calc(42% + 14px); }
+  .rowTitle { font-size: 20px; }
+  .heading { font-size: 30px; }
+  .tickerTrack span { font-size: 50px; }
+  .rowTrigger { right: 15px; font-size: 14px; }
+}

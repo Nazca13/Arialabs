@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://arialabs.id/sitemap.xml

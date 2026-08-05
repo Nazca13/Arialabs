@@ -1,0 +1,104 @@
+.section { padding: 60px 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.heading {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 14px 0 14px;
+}
+.blue { color: #2FA8FA; }
+.sub { font-size: 14px; color: #747474; line-height: 1.7; }
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  border: 1.5px solid #E8E8E8;
+  border-radius: 20px;
+  background: #fff;
+  transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+.rowOpen {
+  border-color: #2FA8FA;
+  background: #F5F7FA;
+  box-shadow: 0 8px 28px rgba(47,168,250,0.1);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 16px;
+  text-align: left;
+  font-family: inherit;
+  border-radius: 20px;
+}
+
+.question {
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.icon {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid #D9D9D9;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+.rowOpen .icon { background: #2FA8FA; border-color: #2FA8FA; }
+
+.bar {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 11px; height: 1.5px;
+  background: #000;
+  transform: translate(-50%, -50%);
+  transition: background 0.22s ease;
+}
+.rowOpen .bar { background: #fff; }
+
+.barV {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: background 0.22s ease, transform 0.22s ease;
+}
+.rowOpen .barV { transform: translate(-50%, -50%) rotate(0deg); }
+
+.body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.38s ease;
+}
+.rowOpen .body { max-height: 200px; }
+
+.answer {
+  font-size: 14px;
+  color: #747474;
+  line-height: 1.7;
+  padding: 0 24px 20px;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+  .heading { font-size: 28px; }
+}

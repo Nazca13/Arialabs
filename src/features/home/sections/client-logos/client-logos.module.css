@@ -1,0 +1,78 @@
+.section { padding: 56px 0; }
+
+/* One horizontal band: tagline pinned left, logos scrolling to its right */
+.band {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  max-width: 340px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.55;
+}
+
+.spark {
+  flex-shrink: 0;
+  animation: sparkSpin 24s linear infinite;
+}
+
+@keyframes sparkSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.marquee {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before { left: 0;  background: linear-gradient(90deg,  #fff, transparent); }
+.marquee::after  { right: 0; background: linear-gradient(-90deg, #fff, transparent); }
+
+.rail {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: marqueeScroll 24s linear infinite;
+}
+
+.logoItem {
+  flex-shrink: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .band { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .tagline { max-width: 100%; }
+  .marquee { width: 100%; }
+}

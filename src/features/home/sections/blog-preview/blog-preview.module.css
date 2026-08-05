@@ -1,0 +1,118 @@
+.section { padding: 60px 0; }
+
+.heading {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 12px 0 14px;
+}
+
+.blue { color: #2FA8FA; }
+
+.sub {
+  font-size: 15px;
+  color: #747474;
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 46px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.card:hover { transform: translateY(-4px); }
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  border: 1.5px solid #E8E8E8;
+  position: relative;
+  margin-bottom: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbGrad0, .thumbGrad1, .thumbGrad2 { background: #F5F7FA; }
+
+.thumbIcon {
+  opacity: 1;
+}
+
+.cat {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  padding: 3px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #2FA8FA;
+}
+
+.body { padding: 0 2px; }
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.excerpt {
+  font-size: 13px;
+  color: #747474;
+  line-height: 1.65;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  transition: color 0.15s ease;
+}
+.card:hover .readMore { color: #2FA8FA; }
+.readMore svg { transition: transform 0.18s ease; }
+.card:hover .readMore svg { transform: translateX(4px) rotate(-45deg); }
+
+.viewAll {
+  text-align: center;
+  margin: 44px 0;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2FA8FA;
+  transition: gap 0.18s ease;
+}
+.viewAllLink:hover { gap: 14px; }
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .heading { font-size: 28px; }
+}

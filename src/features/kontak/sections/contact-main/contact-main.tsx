@@ -1,0 +1,125 @@
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button/button'
+import { useScrollReveal } from '@/hooks/use-scroll-reveal'
+import styles from './contact-main.module.css'
+
+const CONTACT_ITEMS = [
+  {
+    icon: '/assets/icons/contact/whatsapp.svg',
+    label: 'Phone Number',
+    value: '+62 812-3456-789',
+    href: 'https://wa.me/628123456789',
+  },
+  {
+    icon: '/assets/icons/contact/email.svg',
+    label: 'Email',
+    value: 'arialabs.aquanime@gmail.com',
+    href: 'mailto:arialabs.aquanime@gmail.com',
+  },
+  {
+    icon: '/assets/icons/contact/location.svg',
+    label: 'Address',
+    value: 'Jl. Pulo Besar 1 No. 11, RT.3/RW. 11, Sunter Jaya, Kec. Tanjung Priok, Jakarta Utara, DKI Jakarta 14350',
+    href: undefined as string | undefined,
+  },
+]
+
+export function ContactMain() {
+  const ref = useScrollReveal<HTMLElement>()
+  const [submitted, setSubmitted] = useState(false)
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    // Frontend only for now, backend/email wiring comes later.
+    setSubmitted(true)
+  }
+
+  return (
+    <section ref={ref} className={`reveal ${styles.section}`}>
+      <div className={`container ${styles.grid}`}>
+        <div className={styles.info}>
+          <h2 className={styles.heading}>
+            Need more information?
+            <br />
+            Get in touch with us
+          </h2>
+          <p className={styles.sub}>
+            We&apos;re here to help. Reach out through any of the channels below, or use the
+            form and our team will respond within 1x24 hours.
+          </p>
+
+          <div className={styles.items}>
+            {CONTACT_ITEMS.map(item => {
+              const inner = (
+                <>
+                  <span className={styles.iconBadge}>
+                    <Image src={item.icon} alt="" width={22} height={22} aria-hidden="true" />
+                  </span>
+                  <span className={styles.itemText}>
+                    <span className={styles.itemLabel}>{item.label}</span>
+                    <span className={styles.itemValue}>{item.value}</span>
+                  </span>
+                </>
+              )
+              return item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className={styles.item}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div key={item.label} className={styles.item}>{inner}</div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className={styles.formWrap}>
+          <h2 className={styles.heading}>Start Your Legacy</h2>
+          <p className={styles.sub}>
+            Fill in your details and tell us about your project. We&apos;ll get back to you
+            with a tailored plan.
+          </p>
+
+          {submitted ? (
+            <div className={styles.success}>
+              Thanks! Your message has been noted, we&apos;ll be in touch soon.
+            </div>
+          ) : (
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <div className={styles.row}>
+                <div className={styles.field}>
+                  <label htmlFor="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" required />
+                </div>
+                <div className={styles.field}>
+                  <label htmlFor="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" required />
+                </div>
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="service">Service</label>
+                <input id="service" name="service" type="text" placeholder="e.g. Web Development" required />
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="description">Project Description</label>
+                <textarea id="description" name="description" rows={5} required />
+              </div>
+
+              <Button type="submit" arrow>Send Message</Button>
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}

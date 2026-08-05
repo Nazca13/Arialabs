@@ -1,0 +1,112 @@
+.section { padding: 0 0 100px; }
+
+.tabs {
+  display: flex;
+  gap: 28px;
+  border-bottom: 1.5px solid #E8E8E8;
+  margin-bottom: 40px;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #747474;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tabActive {
+  color: #2FA8FA;
+  border-bottom-color: #2FA8FA;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.card:hover { transform: translateY(-4px); }
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  border: 1.5px solid #E8E8E8;
+  position: relative;
+  margin-bottom: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbGrad0, .thumbGrad1, .thumbGrad2 { background: #F5F7FA; }
+
+.thumbIcon {
+  opacity: 1;
+}
+
+.cat {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  padding: 3px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #2FA8FA;
+}
+
+.body { padding: 0 2px; }
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.excerpt {
+  font-size: 13px;
+  color: #747474;
+  line-height: 1.65;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  transition: color 0.15s ease;
+}
+.card:hover .readMore { color: #2FA8FA; }
+.readMore svg { transition: transform 0.18s ease; }
+.card:hover .readMore svg { transform: translateX(4px) rotate(-45deg); }
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .tabs { gap: 20px; }
+}

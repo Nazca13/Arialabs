@@ -1,0 +1,25 @@
+.section {
+  padding: 160px 0 40px;
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.blue { color: #2FA8FA; }
+
+.subtitle {
+  font-size: 15px;
+  color: #747474;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+@media (max-width: 640px) {
+  .section { padding: 130px 0 32px; }
+  .title { font-size: 34px; }
+}
