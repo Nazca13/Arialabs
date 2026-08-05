@@ -190,14 +190,59 @@
 }
 
 @media (max-width: 768px) {
-  .row { height: 100px; }
-  .rowOpen { height: 320px; }
-  .rowImage { width: 90px; }
-  .rowOpen .rowImage { left: 58%; width: 42%; }
-  .rowMid { left: 104px; right: 90px; }
-  .rowOpen .rowMid { left: 0; right: calc(42% + 14px); }
-  .rowTitle { font-size: 20px; }
   .heading { font-size: 30px; }
   .tickerTrack span { font-size: 50px; }
-  .rowTrigger { right: 15px; font-size: 14px; }
+
+  /* collapsed row */
+  .row { height: 90px; }
+
+  /* thumbnail stays small on left in collapsed */
+  .rowImage { width: 80px; }
+  .rowMid { left: 96px; right: 80px; }
+  .rowTitle { font-size: 18px; }
+  .rowTitleOpen { font-size: 22px; }
+  .rowTrigger { right: 12px; font-size: 13px; }
+
+  /* expanded: stack content vertically, image goes to bottom */
+  .rowOpen {
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 20px;
+  }
+
+  .rowOpen .rowImage {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 200px;
+    margin-top: 16px;
+    order: 2;
+  }
+
+  .rowOpen .rowMid {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    height: auto;
+    order: 1;
+    padding: 0;
+  }
+
+  .rowOpen .rowImg {
+    object-position: 50% 20%;
+  }
+
+  .rowDesc { font-size: 13px; max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .rowTitle { font-size: 16px; }
+  .rowTitleOpen { font-size: 20px; }
+  .rowImage { width: 70px; }
+  .rowMid { left: 84px; }
+  .rowOpen { padding: 20px 16px 16px; }
 }

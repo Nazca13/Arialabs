@@ -92,11 +92,14 @@
 }
 
 @media (max-width: 960px) {
-  .grid { grid-template-columns: 1fr 1fr; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .brand { grid-column: span 2; }
 }
 
 @media (max-width: 520px) {
-  .grid { grid-template-columns: 1fr; }
-  .brand { grid-column: unset; }
+  .footer { margin: 8px; border-radius: 20px; padding-top: 48px; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 24px; padding-bottom: 40px; }
+  .brand { grid-column: span 2; }
+  .logoImg { max-width: 130px; }
+  .watermark { font-size: clamp(52px, 13vw, 100px); }
 }
