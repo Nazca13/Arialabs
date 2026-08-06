@@ -61,7 +61,7 @@
 .cardImg {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 260px;
   background: #F5F7FA;
   overflow: hidden;
 }
@@ -127,6 +127,7 @@
 
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; }
+  .cardImg { height: 210px; }
   .filters { gap: 6px; }
   .filter { font-size: 13px; padding: 7px 14px; }
   .empty { grid-column: span 1; }
