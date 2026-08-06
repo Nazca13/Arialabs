@@ -3,15 +3,24 @@
   margin: 12px;
   border-radius: 26px;
   overflow: hidden;
+  /* CLS: explicit min-height prevents layout shift while hero loads */
   min-height: calc(100vh - 24px);
   display: flex;
   align-items: stretch;
+  /* INP: create stacking context so composited layers are isolated */
+  isolation: isolate;
 }
 
 .bg {
   position: absolute;
   inset: 0;
+  /* LCP: background-image on a positioned div — preloaded in layout.tsx <link rel=preload> */
   background: url('/assets/images/backgrounds/hero-bg.webp') center center / cover no-repeat;
+  /* FCP: fallback bg colour while image loads — prevents blank flash */
+  background-color: #0a0a18;
+  /* INP: GPU composite layer for smooth interactions */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @media (max-width: 700px) {

@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/*
+  ── FCP: font-display:swap → browser renders text with fallback font immediately,
+     then swaps when Plus Jakarta Sans arrives. Prevents blank text flash.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -10,6 +14,11 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*
+    CLS prevention: reserve scrollbar width so layout doesn't shift
+    when scrollbar appears/disappears on page load
+  */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -18,10 +27,16 @@ body {
   color: #000000;
   overflow-x: hidden;
   line-height: 1.6;
+  /*
+    FCP: size-adjust for fallback font to reduce CLS during font swap.
+    System sans-serif is very close in metrics to Plus Jakarta Sans.
+  */
+  font-synthesis: none;
 }
 
 a { text-decoration: none; color: inherit; }
-img { display: block; max-width: 100%; }
+/* CLS: always reserve image dimensions — set width/height on all images */
+img { display: block; max-width: 100%; height: auto; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 ul, ol { list-style: none; }
 
@@ -45,6 +60,8 @@ ul, ol { list-style: none; }
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
+  /* CLS: contain layout so children don't shift parent */
+  contain: layout style;
 }
 
 @media (min-width: 1600px) {
@@ -59,15 +76,36 @@ ul, ol { list-style: none; }
   .container { padding: 0 20px; }
 }
 
-/* ── Scroll reveal ── */
+/*
+  ── CLS: Scroll reveal — always reserve the translated space so
+     off-screen elements don't cause layout shifts during page load.
+*/
 .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth);
+  will-change: opacity, transform;     /* hint GPU layer — improves INP */
 }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;                   /* release GPU layer after animation */
+}
+
+/*
+  ── INP: reduce motion for users who prefer it (accessibility + perf)
+*/
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: opacity 0.2s ease;
+    transform: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ── Utility ── */

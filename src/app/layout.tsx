@@ -4,7 +4,7 @@ import '../styles/globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://arialabs.id'),
   title: {
-    default: 'Aria Labs | Complete Digital Strategies',
+    default: 'Aria Labs | Creative Digital Studio',
     template: '%s | Aria Labs',
   },
   description: 'Aria Labs adalah digital agency full-service yang membangun web development, UI/UX design, brand identity, dan graphic design untuk eskalasi bisnis Anda.',
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     locale: 'id_ID',
     url: 'https://arialabs.id',
     siteName: 'Aria Labs',
-    title: 'Aria Labs | Complete Digital Strategies',
+    title: 'Aria Labs | Creative Digital Studio',
     description: 'Full-service digital agency for web development, UI/UX design, brand identity, and graphic design.',
     images: [{ url: '/assets/images/backgrounds/hero-bg.webp', width: 1200, height: 630, alt: 'Aria Labs' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aria Labs | Complete Digital Strategies',
+    title: 'Aria Labs | Creative Digital Studio',
     description: 'Full-service digital agency for web development, UI/UX design, brand identity, and graphic design.',
     creator: '@arialabs',
     images: ['/assets/images/backgrounds/hero-bg.webp'],
@@ -59,13 +59,30 @@ const jsonLd = {
   url: 'https://arialabs.id',
   logo: 'https://arialabs.id/assets/logo/logo.svg',
   areaServed: 'ID',
-  sameAs: [],
+  sameAs: [
+    'https://www.instagram.com/arialabs.aquanime',
+    'https://wa.me/6283832886220',
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id">
       <head>
+        {/* ── LCP: preconnect to Google Fonts ── */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* ── FCP: preload hero background (LCP element on homepage) ── */}
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/images/backgrounds/hero-bg.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
+
+        {/* ── Structured Data ── */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
