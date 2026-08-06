@@ -26,8 +26,7 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   font-synthesis: none;
-  /* Page entrance animation — smooth ease-in-out on first load */
-  animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* NOTE: no body-level animation — prevents white flash when switching browser tabs */
 }
 
 /* ── Typography rules ── */
@@ -54,16 +53,6 @@ select {
   font-family: var(--font-outfit, 'Outfit', sans-serif);
 }
 
-@keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 a { text-decoration: none; color: inherit; }
 /* CLS: always reserve image dimensions */

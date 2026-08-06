@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     siteName: 'Aria Labs',
     title: 'Aria Labs | Creative Digital Studio',
     description: 'Full-service digital agency for web development, UI/UX design, brand identity, and graphic design.',
-    images: [{ url: '/assets/images/backgrounds/hero-bg.webp', width: 1200, height: 630, alt: 'Aria Labs' }],
+    images: [{ url: '/og-image.webp', width: 1200, height: 630, alt: 'Aria Labs — Creative Digital Studio' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aria Labs | Creative Digital Studio',
     description: 'Full-service digital agency for web development, UI/UX design, brand identity, and graphic design.',
     creator: '@arialabs',
-    images: ['/assets/images/backgrounds/hero-bg.webp'],
+    images: ['/og-image.webp'],
   },
   robots: {
     index: true,
