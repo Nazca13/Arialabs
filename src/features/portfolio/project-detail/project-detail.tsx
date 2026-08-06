@@ -86,13 +86,10 @@ export function ProjectDetail({ project, otherProjects = [] }: Props) {
               <span className={styles.browserUrl}>{project.title.toLowerCase().replace(/\s+/g, '')}.id</span>
             </div>
             <div className={styles.browserScroll}>
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={project.heroImage}
                 alt={`${project.title} — tampilan website`}
-                width={1200}
-                height={5000}
-                unoptimized
-                priority
                 className={styles.browserImg}
               />
             </div>

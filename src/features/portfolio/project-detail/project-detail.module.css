@@ -113,6 +113,7 @@
   width: 100% !important;
   height: auto !important;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* ── Text Sections (Challenges / Solutions / Results) ── */
