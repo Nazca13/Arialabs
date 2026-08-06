@@ -96,23 +96,23 @@
 
 /* scrollable screenshot inside fixed-height window */
 .browserScroll {
-  height: 480px;
+  height: 520px;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: #2FA8FA #F5F7FA;
   background: #fff;
+  position: relative;
 }
 
-.browserScroll::-webkit-scrollbar { width: 5px; }
+.browserScroll::-webkit-scrollbar { width: 6px; }
 .browserScroll::-webkit-scrollbar-thumb { background: #2FA8FA; border-radius: 4px; }
 .browserScroll::-webkit-scrollbar-track { background: #F5F7FA; }
 
 .browserImg {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: auto !important;
   display: block;
-  object-fit: cover;
 }
 
 /* ── Text Sections (Challenges / Solutions / Results) ── */

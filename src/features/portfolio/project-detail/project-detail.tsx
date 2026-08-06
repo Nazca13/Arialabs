@@ -90,10 +90,10 @@ export function ProjectDetail({ project, otherProjects = [] }: Props) {
                 src={project.heroImage}
                 alt={`${project.title} — tampilan website`}
                 width={1200}
-                height={800}
+                height={5000}
+                unoptimized
                 priority
                 className={styles.browserImg}
-                sizes="(max-width: 768px) 100vw, 1100px"
               />
             </div>
           </div>
