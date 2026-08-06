@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
-import { Button } from '@/components/ui/button/button'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import styles from './project-detail.module.css'
 
@@ -32,187 +31,169 @@ type ProjectData = {
 
 type Props = {
   project: ProjectData
+  otherProjects?: { title: string; slug: string; image: string; category: string }[]
 }
 
-export function ProjectDetail({ project }: Props) {
+export function ProjectDetail({ project, otherProjects = [] }: Props) {
   const ref = useScrollReveal<HTMLElement>()
 
   return (
     <article className={styles.article}>
-      {/* Hero Section */}
+
+      {/* ── Hero: meta left + logo right ── */}
       <section className={styles.hero}>
         <div className="container">
-          <div className={styles.heroMeta}>
-            <Badge>{project.category}</Badge>
-            <div className={styles.heroMetaInfo}>
-              <span>Year: {project.year}</span>
-              <span>Client: {project.client}</span>
-              <span>Services: {project.services.join(', ')}</span>
+          <Badge>Our Projects</Badge>
+          <div className={styles.heroTop}>
+            <div className={styles.heroLeft}>
+              <h1 className={styles.heroTitle}>{project.title}</h1>
+              <div className={styles.heroMeta}>
+                <span className={styles.metaItem}>
+                  <span className={styles.metaLabel}>Year</span>
+                  <span className={styles.metaDot}>/</span>
+                  {project.year}
+                </span>
+                <span className={styles.metaItem}>
+                  <span className={styles.metaLabel}>Timeline</span>
+                  <span className={styles.metaDot}>/</span>
+                  4–6 minggu
+                </span>
+                <span className={styles.metaItem}>
+                  <span className={styles.metaLabel}>Services</span>
+                  <span className={styles.metaDot}>/</span>
+                  {project.services.join(', ')}
+                </span>
+              </div>
             </div>
-          </div>
-          
-          <h1 className={styles.heroTitle}>{project.title}</h1>
-          
-          <div className={styles.heroImageWrap}>
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              width={1200}
-              height={700}
-              className={styles.heroImage}
-              priority
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Overview */}
-      <section ref={ref} className={`reveal ${styles.overview}`}>
-        <div className="container">
-          <div className={styles.overviewGrid}>
-            <div className={styles.overviewContent}>
-              <h2 className={styles.sectionHeading}>
-                <span className={styles.badge}>01</span>
-                Overview
-              </h2>
-              <p className={styles.text}>{project.description}</p>
-            </div>
-            <div className={styles.overviewLogo}>
+            <div className={styles.heroRight}>
               <Image
                 src={project.logo}
-                alt={project.title}
-                width={200}
+                alt={project.client}
+                width={220}
                 height={80}
+                priority
                 style={{ objectFit: 'contain' }}
+              />
+            </div>
+          </div>
+
+          {/* Browser-frame with scrollable screenshot */}
+          <div className={styles.browserFrame}>
+            <div className={styles.browserBar}>
+              <span className={`${styles.dot} ${styles.dotRed}`} />
+              <span className={`${styles.dot} ${styles.dotYellow}`} />
+              <span className={`${styles.dot} ${styles.dotGreen}`} />
+              <span className={styles.browserUrl}>{project.title.toLowerCase().replace(/\s+/g, '')}.id</span>
+            </div>
+            <div className={styles.browserScroll}>
+              <Image
+                src={project.heroImage}
+                alt={`${project.title} — tampilan website`}
+                width={1200}
+                height={800}
+                priority
+                className={styles.browserImg}
+                sizes="(max-width: 768px) 100vw, 1100px"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Challenge */}
-      <section className={styles.section}>
+      {/* ── Challenges ── */}
+      <section ref={ref} className={`reveal ${styles.textSection}`}>
         <div className="container">
-          <h2 className={styles.sectionHeading}>
-            <span className={styles.badge}>02</span>
-            Challenge
-          </h2>
-          <p className={styles.text}>{project.challenge}</p>
-        </div>
-      </section>
-
-      {/* Solution */}
-      <section className={styles.section}>
-        <div className="container">
-          <h2 className={styles.sectionHeading}>
-            <span className={styles.badge}>03</span>
-            Solution
-          </h2>
-          <p className={styles.text}>{project.solution}</p>
-        </div>
-      </section>
-
-      {/* Visuals - 3 window layout */}
-      <section className={styles.visuals}>
-        <div className="container">
-          <div className={styles.visualsGrid}>
-            {/* Main desktop view */}
-            <div className={styles.visualMain}>
-              <div className={styles.window}>
-                <div className={styles.windowBar}>
-                  <span className={styles.windowDot} />
-                  <span className={styles.windowDot} />
-                  <span className={styles.windowDot} />
-                </div>
-                <div className={styles.windowContent}>
-                  <Image
-                    src={project.images.desktop}
-                    alt={`${project.title} Desktop View`}
-                    fill
-                    className={styles.windowImage}
-                    sizes="(max-width: 768px) 100vw, 800px"
-                  />
-                </div>
-              </div>
+          <div className={styles.labelRow}>
+            <div className={styles.labelCol}>
+              <Badge>Challenges</Badge>
             </div>
-
-            {/* Mobile views - empty for now */}
-            <div className={styles.visualSide}>
-              <div className={`${styles.window} ${styles.windowSmall}`}>
-                <div className={styles.windowBar}>
-                  <span className={styles.windowDot} />
-                  <span className={styles.windowDot} />
-                  <span className={styles.windowDot} />
-                </div>
-                <div className={styles.windowContent}>
-                  {project.images.mobile1 && (
-                    <Image
-                      src={project.images.mobile1}
-                      alt={`${project.title} Mobile View 1`}
-                      fill
-                      className={styles.windowImage}
-                      sizes="300px"
-                    />
-                  )}
-                </div>
-              </div>
-
-              <div className={`${styles.window} ${styles.windowSmall}`}>
-                <div className={styles.windowBar}>
-                  <span className={styles.windowDot} />
-                  <span className={styles.windowDot} />
-                  <span className={styles.windowDot} />
-                </div>
-                <div className={styles.windowContent}>
-                  {project.images.mobile2 && (
-                    <Image
-                      src={project.images.mobile2}
-                      alt={`${project.title} Mobile View 2`}
-                      fill
-                      className={styles.windowImage}
-                      sizes="300px"
-                    />
-                  )}
-                </div>
-              </div>
+            <div className={styles.descCol}>
+              <p className={styles.desc}>{project.challenge}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Result */}
-      <section className={styles.section}>
+      <div className="container"><hr className={styles.divider} /></div>
+
+      {/* ── Solutions ── */}
+      <section className={styles.textSection}>
         <div className="container">
-          <h2 className={styles.sectionHeading}>
-            <span className={styles.badge}>04</span>
-            Result
-          </h2>
-          <p className={styles.text}>{project.result}</p>
+          <div className={styles.labelRow}>
+            <div className={styles.labelCol}>
+              <Badge>Solutions</Badge>
+            </div>
+            <div className={styles.descCol}>
+              <p className={styles.desc}>{project.solution}</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Testimonial */}
+      <div className="container"><hr className={styles.divider} /></div>
+
+      {/* ── Results ── */}
+      <section className={styles.textSection}>
+        <div className="container">
+          <div className={styles.labelRow}>
+            <div className={styles.labelCol}>
+              <Badge>Results</Badge>
+            </div>
+            <div className={styles.descCol}>
+              <p className={styles.desc}>{project.result}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonial ── */}
       <section className={styles.testimonial}>
         <div className="container">
-          <div className={styles.testimonialCard}>
-            <p className={styles.testimonialText}>&ldquo;{project.testimonial.text}&rdquo;</p>
-            <p className={styles.testimonialAuthor}>— {project.testimonial.author}</p>
+          <div className={styles.testimonialInner}>
+            <span className={styles.quoteMark}>&ldquo;</span>
+            <p className={styles.quoteText}>{project.testimonial.text}</p>
+            <div className={styles.testimonialAuthor}>
+              <div className={styles.testimonialAvatar}>
+                {project.testimonial.author[0]}
+              </div>
+              <div>
+                <p className={styles.authorName}>{project.testimonial.author}</p>
+                <p className={styles.authorRole}>{project.client}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Other Projects CTA */}
-      <section className={styles.cta}>
-        <div className="container">
-          <h2 className={styles.ctaHeading}>
-            <span className={styles.blue}>Explore</span> Other Projects
-          </h2>
-          <div className={styles.ctaButtons}>
-            <Button href="/portfolio">View All Projects</Button>
-            <Button href="/kontak" variant="outline">Start Your Project</Button>
+      {/* ── Other Projects ── */}
+      {otherProjects.length > 0 && (
+        <section className={styles.others}>
+          <div className="container">
+            <Badge>Projects</Badge>
+            <h2 className={styles.othersHeading}>Other Projects</h2>
+            <div className={styles.othersGrid}>
+              {otherProjects.map(p => (
+                <Link key={p.slug} href={`/portfolio/${p.slug}`} className={styles.otherCard}>
+                  <div className={styles.otherImg}>
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      loading="lazy"
+                      className={styles.otherImgEl}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className={styles.otherBody}>
+                    <span className={styles.otherCat}>{p.category}</span>
+                    <h3 className={styles.otherTitle}>{p.title}</h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </article>
   )
 }

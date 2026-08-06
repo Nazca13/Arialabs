@@ -92,6 +92,7 @@
 }
 
 .field input,
+.field select,
 .field textarea {
   border: 1.5px solid #E8E8E8;
   border-radius: 10px;

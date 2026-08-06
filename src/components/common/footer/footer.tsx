@@ -15,8 +15,7 @@ const LINKS = {
     { label: 'Brand Identity',  href: '/layanan#brand-identity' },
     { label: 'UI/UX Design',    href: '/layanan#uiux-design' },
     { label: 'Graphic Design',  href: '/layanan#graphic-design' },
-    { label: 'SEO',             href: '/layanan#seo' },
-    { label: 'Maintenance',     href: '/layanan#maintenance' },
+    { label: 'Social Media Management', href: '/layanan#social-media' },
   ],
   Resources: [
     { label: 'Case Studies',   href: '/portfolio' },
@@ -30,7 +29,7 @@ const LINKS = {
 const SOCIALS = [
   { name: 'Instagram', icon: '/assets/icons/social/instagram.svg', href: 'https://instagram.com' },
   { name: 'TikTok',    icon: '/assets/icons/social/tiktok.svg',    href: 'https://tiktok.com' },
-  { name: 'Facebook',  icon: '/assets/icons/social/facebook.svg',  href: 'https://facebook.com' },
+  { name: 'WhatsApp',  icon: '/assets/icons/contact/whatsapp.svg',  href: 'https://wa.me/628123456789' },
   { name: 'LinkedIn',  icon: '/assets/icons/social/linkedin.svg',  href: 'https://linkedin.com' },
 ]
 
