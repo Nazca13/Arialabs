@@ -18,6 +18,7 @@
 
 .badgeWrap {
   margin-bottom: 24px;
+  animation: heroFadeUp 0.7s var(--ease-smooth) 0.1s both;
 }
 
 .headline {
@@ -28,6 +29,7 @@
   color: #000;
   margin-bottom: 32px;
   max-width: 900px;
+  animation: heroFadeUp 0.8s var(--ease-smooth) 0.25s both;
 }
 
 .blue {
@@ -38,6 +40,18 @@
   display: flex;
   gap: 16px;
   justify-content: center;
+  animation: heroFadeUp 0.8s var(--ease-smooth) 0.4s both;
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 900px) {
