@@ -14,12 +14,16 @@
   background: url('/assets/images/backgrounds/hero-bg.png') center center / cover no-repeat;
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+/* On narrow/portrait screens, swap to a crop composed for that aspect ratio
+   instead of stretching/cropping the wide desktop image. */
+@media (max-width: 700px) {
   .bg {
-    background: url('/assets/images/backgrounds/hero-bg-potrait.png') center top / cover no-repeat;
+    background-image: url('/assets/images/backgrounds/hero-bg-portrait.png');
   }
 }
 
+/* Subtle scrim only, so white copy stays legible over the artwork.
+   No white fade at the bottom. */
 .bg::after {
   content: '';
   position: absolute;
@@ -58,7 +62,7 @@
 }
 
 .headline {
-  font-size: clamp(32px, 4.2vw, 56px);
+  font-size: clamp(40px, 4.2vw, 72px);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.025em;
@@ -107,68 +111,10 @@
   color: #fff;
 }
 
-/* ── Tablet ── */
-@media (max-width: 1024px) {
-  .content {
-    padding-top: 110px;
-    padding-bottom: 36px;
-  }
-  .tags {
-    gap: 40px;
-  }
-}
-
-/* ── Mobile landscape / small tablet ── */
 @media (max-width: 900px) {
-  .hero {
-    min-height: unset;
-    border-radius: 20px;
-    margin: 8px;
-  }
-  .content {
-    padding-top: 100px;
-    padding-bottom: 32px;
-    gap: 34px;
-  }
-  .right {
-    align-self: flex-start;
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-  .tags {
-    gap: 24px;
-  }
-}
-
-/* ── Small phone ── */
-@media (max-width: 480px) {
-  .hero {
-    margin: 6px;
-    border-radius: 16px;
-  }
-  .content {
-    padding-top: 88px;
-    padding-bottom: 24px;
-    gap: 24px;
-  }
-  .headline {
-    font-size: 28px;
-    line-height: 1.15;
-  }
-  .sub {
-    font-size: 13px;
-  }
-  .body {
-    font-size: 16px;
-  }
-  .pillBadge {
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-  .tags {
-    gap: 16px;
-  }
-  .tags span {
-    font-size: 13px;
-  }
+  .hero { min-height: unset; border-radius: 20px; }
+  .content { padding-top: 120px; padding-bottom: 32px; gap: 34px; }
+  .right { align-self: flex-start; max-width: 100%; margin-bottom: 0; }
+  .headline { font-size: 34px; }
+  .tags { gap: 24px; }
 }
