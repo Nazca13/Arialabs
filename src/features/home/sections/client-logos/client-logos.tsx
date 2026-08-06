@@ -1,27 +1,21 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
+import { useDragMarquee } from '@/hooks/use-drag-marquee'
 import styles from './client-logos.module.css'
 
 const CLIENTS = [
-  { name: 'Aquanime',      src: '/assets/images/brands/aquanime.png' },
-  { name: 'PHASE',         src: '/assets/images/brands/phase.png' },
-  { name: 'Bumi Eka',      src: '/assets/images/brands/bumi-eka.png' },
-  { name: 'Elmax',         src: '/assets/images/brands/elmax.png' },
+  { name: 'Aquanime',  src: '/assets/images/brands/aquanime.png' },
+  { name: 'PHASE',     src: '/assets/images/brands/phase.png' },
+  { name: 'Bumi Eka',  src: '/assets/images/brands/bumi-eka.png' },
+  { name: 'Elmax',     src: '/assets/images/brands/elmax.png' },
 ]
 
 export function ClientLogos() {
   const doubled = [...CLIENTS, ...CLIENTS]
-
-  function pauseTrack(e: React.MouseEvent<HTMLDivElement>) {
-    const el = e.currentTarget.querySelector<HTMLElement>('[data-marquee-rail]')
-    if (el) el.style.animationPlayState = 'paused'
-  }
-
-  function resumeTrack(e: React.MouseEvent<HTMLDivElement>) {
-    const el = e.currentTarget.querySelector<HTMLElement>('[data-marquee-rail]')
-    if (el) el.style.animationPlayState = 'running'
-  }
+  const { trackRef, handlers } = useDragMarquee('[data-marquee-rail]')
+  const [grabbing, setGrabbing] = useState(false)
 
   return (
     <section className={styles.section}>
@@ -44,7 +38,15 @@ export function ClientLogos() {
           </span>
         </div>
 
-        <div className={styles.marquee} onMouseEnter={pauseTrack} onMouseLeave={resumeTrack}>
+        <div
+          ref={trackRef}
+          className={styles.marquee}
+          style={{ cursor: grabbing ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
+          onPointerDown={(e) => { setGrabbing(true); handlers.onPointerDown(e) }}
+          onPointerMove={handlers.onPointerMove}
+          onPointerUp={(e) => { setGrabbing(false); handlers.onPointerUp(e) }}
+          onPointerLeave={(e) => { setGrabbing(false); handlers.onPointerLeave(e) }}
+        >
           <div className={styles.rail} data-marquee-rail>
             {doubled.map((c, i) => (
               <div key={i} className={styles.logoItem}>
@@ -53,6 +55,7 @@ export function ClientLogos() {
                   alt={c.name}
                   width={136}
                   height={50}
+                  loading="lazy"
                   style={{ objectFit: 'contain' }}
                 />
               </div>
