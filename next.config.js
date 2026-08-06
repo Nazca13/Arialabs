@@ -51,13 +51,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-
-  experimental: {
-    // Optimise CSS delivery (inline critical CSS)
-    optimizeCss: true,
-    // Scroll restoration for better INP
-    scrollRestoration: true,
-  },
 }
 
 module.exports = nextConfig

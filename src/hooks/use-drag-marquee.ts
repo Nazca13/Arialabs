@@ -15,12 +15,6 @@ function getAnimDuration(el: HTMLElement): number {
 /**
  * Returns pointer-event handlers that make a CSS-keyframe marquee draggable
  * (mouse + touch), resuming auto-scroll at the correct offset after release.
- *
- * Usage:
- *   const { trackRef, handlers, dragDistance } = useDragMarquee()
- *   <div ref={trackRef} {...handlers} style={{ cursor: … }}>
- *     <div data-rail>…</div>
- *   </div>
  */
 export function useDragMarquee(railSelector = '[data-rail]') {
   const trackRef = useRef<HTMLDivElement>(null)
@@ -29,9 +23,9 @@ export function useDragMarquee(railSelector = '[data-rail]') {
   const startOffset = useRef(0)
   const dragDist = useRef(0)
 
-  function getRail() {
+  const getRail = useCallback(() => {
     return trackRef.current?.querySelector<HTMLElement>(railSelector) ?? null
-  }
+  }, [railSelector])
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
     const rail = getRail()
@@ -46,7 +40,7 @@ export function useDragMarquee(railSelector = '[data-rail]') {
     startOffset.current = matrix.m41
     rail.style.animationPlayState = 'paused'
     rail.style.transform = `translateX(${matrix.m41}px)`
-  }, [])
+  }, [getRail])
 
   const onPointerMove = useCallback((e: React.PointerEvent) => {
     if (!dragging.current) return
@@ -61,7 +55,7 @@ export function useDragMarquee(railSelector = '[data-rail]') {
       while (newX > 0) newX -= halfWidth
     }
     rail.style.transform = `translateX(${newX}px)`
-  }, [])
+  }, [getRail])
 
   const onPointerUp = useCallback((e: React.PointerEvent) => {
     if (!dragging.current) return
@@ -82,7 +76,7 @@ export function useDragMarquee(railSelector = '[data-rail]') {
     rail.style.transform = ''
     rail.style.animationDelay = `${delay}s`
     rail.style.animationPlayState = 'running'
-  }, [])
+  }, [getRail])
 
   return {
     trackRef,

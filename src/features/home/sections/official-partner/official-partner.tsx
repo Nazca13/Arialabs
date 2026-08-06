@@ -8,17 +8,17 @@ import styles from './official-partner.module.css'
 const PARTNERS = [
   {
     name: 'Animae',
-    src: '/assets/images/brands/animae.png',
+    src: '/assets/images/brands/official-partners/animae.png',
     alt: 'Animae — Official Partner',
   },
   {
     name: 'Nexoria',
-    src: '/assets/images/brands/nexoria.png',
+    src: '/assets/images/brands/official-partners/nexoria.png',
     alt: 'Nexoria — Official Partner',
   },
   {
     name: 'Aquanime',
-    src: '/assets/images/brands/aquanime.png',
+    src: '/assets/images/brands/official-partners/aquanime.png',
     alt: 'Aquanime — Official Partner',
   },
 ]

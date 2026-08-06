@@ -6,7 +6,7 @@ import { useDragMarquee } from '@/hooks/use-drag-marquee'
 import styles from './client-logos.module.css'
 
 const CLIENTS = [
-  { name: 'Aquanime',  src: '/assets/images/brands/aquanime.png' },
+  { name: 'Aquanime',  src: '/assets/images/brands/official-partners/aquanime.png' },
   { name: 'PHASE',     src: '/assets/images/brands/phase.png' },
   { name: 'Bumi Eka',  src: '/assets/images/brands/bumi-eka.png' },
   { name: 'Elmax',     src: '/assets/images/brands/elmax.png' },

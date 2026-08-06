@@ -20,7 +20,7 @@ const PROJECTS = [
     title: 'Aquanime Official Website', 
     category: 'Web Development', 
     slug: 'aquanime-studio', 
-    logo: '/assets/images/brands/aquanime.png',
+    logo: '/assets/images/brands/official-partners/aquanime.png',
     image: '/assets/projects-image/web-development/aquanime.id.webp'
   },
   { 
@@ -34,7 +34,7 @@ const PROJECTS = [
     title: 'Mae News', 
     category: 'Web Development', 
     slug: 'mae-news', 
-    logo: '/assets/images/brands/animae.png',
+    logo: '/assets/images/brands/official-partners/animae.png',
     image: '/assets/projects-image/web-development/maenews.id.webp'
   },
 ]
