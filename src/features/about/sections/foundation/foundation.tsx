@@ -7,16 +7,19 @@ import styles from './foundation.module.css'
 
 const FOUNDATIONS = [
   {
-    title: 'Define',
-    description: 'Menemukan kejelasan arah melalui riset target pasar dan perumusan strategi bisnis yang kuat.',
+    icon: '/assets/icons/utility/our-mission.svg',
+    title: 'Our Mission',
+    description: 'Membantu bisnis berkembang melalui solusi digital yang strategis, terukur, dan berdampak nyata bagi pertumbuhan jangka panjang.',
   },
   {
+    icon: '/assets/icons/utility/development.svg',
     title: 'Development',
-    description: 'Mentransformasi strategi dan desain menjadi website/aplikasi modern yang fungsional dan scalable.',
+    description: 'Membangun produk digital berkualitas tinggi dengan standar kode yang bersih, performa optimal, dan pengalaman pengguna yang luar biasa.',
   },
   {
-    title: 'Deliver',
-    description: 'Meluncurkan produk digital dengan performa optimal untuk mendukung pertumbuhan bisnis Anda.',
+    icon: '/assets/icons/utility/culture.svg',
+    title: 'Culture',
+    description: 'Membangun tim yang kolaboratif, kreatif, dan saling mendukung untuk menghasilkan karya terbaik bagi setiap klien kami.',
   },
 ]
 
@@ -44,15 +47,14 @@ export function AboutFoundation() {
           <h2 className={styles.heading}>
             Designed with Intent,<br />Engineered for Results.
           </h2>
-          
+
           <div className={styles.list}>
             {FOUNDATIONS.map((item, i) => (
               <div key={i} className={styles.item}>
-                <div className={styles.itemHeader}>
-                  <span className={styles.icon}>+</span>
+                <div className={styles.itemRow}>
+                  <Image src={item.icon} alt="" width={22} height={22} aria-hidden="true" />
                   <span className={styles.title}>{item.title}</span>
                 </div>
-                <p className={styles.desc}>{item.description}</p>
               </div>
             ))}
           </div>

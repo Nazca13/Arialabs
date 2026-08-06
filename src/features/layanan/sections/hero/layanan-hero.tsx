@@ -12,7 +12,7 @@ export function LayananHero() {
           <Badge>Our Services</Badge>
         </div>
         <h1 className={styles.headline}>
-          Solusi Digital untuk <span className={styles.blue}>Setiap</span> Kebutuhan <span className={styles.blue}>Bisnis.</span>
+          Empowering Your <span className={styles.blue}>Business</span> with Digital <span className={styles.blue}>Solutions.</span>
         </h1>
         <div className={styles.actions}>
           <Button href="/portfolio" size="md" arrow>View Work</Button>

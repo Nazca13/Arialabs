@@ -14,11 +14,9 @@
   background: url('/assets/images/backgrounds/hero-bg.png') center center / cover no-repeat;
 }
 
-/* On narrow/portrait screens, swap to a crop composed for that aspect ratio
-   instead of stretching/cropping the wide desktop image. */
 @media (max-width: 700px) {
   .bg {
-    background-image: url('/assets/images/backgrounds/hero-bg-portrait.png');
+    background-position: 65% center;
   }
 }
 
