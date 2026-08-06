@@ -1,6 +1,7 @@
 /*
-  Font is now served via next/font/google (self-hosted at build time).
-  No @import needed — eliminates the 480ms render-blocking Google Fonts request.
+  Fonts are served via next/font/google (self-hosted at build time):
+  - Plus Jakarta Sans: Headlines & Navigation (--font-jakarta)
+  - Outfit: Subtext, Paragraphs & Descriptions (--font-outfit)
 */
 
 *, *::before, *::after {
@@ -18,8 +19,8 @@ html {
 }
 
 body {
-  /* --font-jakarta injected by next/font via <html className={jakarta.variable}> */
-  font-family: var(--font-jakarta, 'Plus Jakarta Sans', sans-serif);
+  /* Default body text: Outfit */
+  font-family: var(--font-outfit, 'Outfit', sans-serif);
   background: #ffffff;
   color: #000000;
   overflow-x: hidden;
@@ -27,6 +28,30 @@ body {
   font-synthesis: none;
   /* Page entrance animation — smooth ease-in-out on first load */
   animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Typography rules ── */
+h1, h2, h3, h4, h5, h6,
+.heading,
+[class*="headline"],
+[class*="Headline"],
+[class*="heading"],
+[class*="Heading"],
+[class*="title"],
+[class*="Title"] {
+  font-family: var(--font-jakarta, 'Plus Jakarta Sans', sans-serif);
+}
+
+p,
+.sub,
+.desc,
+[class*="sub"],
+[class*="desc"],
+[class*="body"],
+input,
+textarea,
+select {
+  font-family: var(--font-outfit, 'Outfit', sans-serif);
 }
 
 @keyframes pageEnter {
@@ -49,12 +74,14 @@ ul, ol { list-style: none; }
 /* ── SVGs: immediate render, no invisible flash ── */
 svg { display: block; overflow: visible; }
 img[src$=".svg"] {
-  /* SVG images always fully visible — no lazy load on SVGs */
   content-visibility: visible;
 }
 
 /* ── Design Tokens ── */
 :root {
+  --font-heading:       var(--font-jakarta, 'Plus Jakarta Sans', sans-serif);
+  --font-body:          var(--font-outfit, 'Outfit', sans-serif);
+
   --color-blue:         #2FA8FA;
   --color-blue-dark:    #293681;
   --color-gray:         #747474;
@@ -73,7 +100,6 @@ img[src$=".svg"] {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
-  /* CLS: contain layout so children don't shift parent */
   contain: layout style;
 }
 
@@ -90,8 +116,7 @@ img[src$=".svg"] {
 }
 
 /*
-  ── Scroll reveal — GPU-composited opacity + transform only.
-     No layout-triggering properties (no width/height/top changes).
+  ── Scroll reveal ──
 */
 .reveal {
   opacity: 0;

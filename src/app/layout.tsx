@@ -1,17 +1,26 @@
 import type { Metadata, Viewport } from 'next'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans, Outfit } from 'next/font/google'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import '../styles/globals.css'
 
-/* ── Self-hosted via next/font: zero render-blocking, auto-subset ── */
+/* ── Headlines & Navigation: Plus Jakarta Sans ── */
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
   display: 'swap',
   variable: '--font-jakarta',
+  preload: true,
+})
+
+/* ── Subtext & Descriptions: Outfit ── */
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-outfit',
   preload: true,
 })
 
@@ -81,9 +90,9 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={jakarta.variable}>
+    <html lang="id" className={`${jakarta.variable} ${outfit.variable}`}>
       <head>
-        {/* ── FCP: preload hero background (LCP element on homepage) ── */}
+        {/* ── FCP: preload hero background ── */}
         <link
           rel="preload"
           as="image"
@@ -107,7 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ── Vercel Speed Insights ── */}
         <SpeedInsights />
 
-        {/* ── Microsoft Clarity (afterInteractive → non-blocking) ── */}
+        {/* ── Microsoft Clarity ── */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
