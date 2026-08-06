@@ -1,6 +1,19 @@
 import type { Metadata, Viewport } from 'next'
+import { Plus_Jakarta_Sans } from 'next/font/google'
+import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import '../styles/globals.css'
+
+/* ── Self-hosted via next/font: zero render-blocking, auto-subset ── */
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-jakarta',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://arialabs.id'),
@@ -68,12 +81,8 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id">
+    <html lang="id" className={jakarta.variable}>
       <head>
-        {/* ── LCP: preconnect to Google Fonts ── */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
         {/* ── FCP: preload hero background (LCP element on homepage) ── */}
         <link
           rel="preload"
@@ -91,7 +100,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+
+        {/* ── Vercel Analytics ── */}
+        <Analytics />
+
+        {/* ── Vercel Speed Insights ── */}
         <SpeedInsights />
+
+        {/* ── Microsoft Clarity (afterInteractive → non-blocking) ── */}
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "s2j9o72p58");
+          `}
+        </Script>
       </body>
     </html>
   )

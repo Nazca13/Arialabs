@@ -2,37 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://arialabs.id/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://arialabs.id/tentang</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://arialabs.id/layanan</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://arialabs.id/portfolio</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arialabs.id/portfolio/phase-fragrance</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arialabs.id/portfolio/aquanime-studio</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arialabs.id/portfolio/jejak-lokal</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arialabs.id/portfolio/mae-news</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://arialabs.id/blog</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://arialabs.id/kontak</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
