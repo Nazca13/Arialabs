@@ -1691,7 +1691,7 @@ export function AboutWhoWeAre() {
         {/* Center illustration & statement */}
         <div className={styles.centerBlock}>
           <h2 className={styles.statement}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            Mewujudkan Solusi Kreatif dan Inovatif bagi Brand Anda
           </h2>
           <div className={styles.cardIllustration}>
             <Image
