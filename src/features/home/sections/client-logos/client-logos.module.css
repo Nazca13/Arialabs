@@ -1,4 +1,9 @@
-.section { padding: 56px 0; }
+.section {
+  padding: 56px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
 
 /* One horizontal band: tagline pinned left, logos scrolling to its right */
 .band {
@@ -66,13 +71,37 @@
   align-items: center;
 }
 
+.logoItem img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  object-fit: contain;
+}
+
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {
-  .band { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .tagline { max-width: 100%; }
+  .section { padding: 36px 0; }
+  .band {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .tagline { max-width: 100%; font-size: 13px; }
   .marquee { width: 100%; }
+  .marquee::before { width: 30px; }
+  .marquee::after  { width: 30px; }
+  .rail { gap: 36px; }
+  .logoItem { height: 36px; }
+  .logoItem img {
+    height: 30px !important;
+    width: auto !important;
+    max-width: 110px !important;
+    object-fit: contain;
+  }
 }
