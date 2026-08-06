@@ -195,54 +195,55 @@
 
   /* collapsed row */
   .row { height: 90px; }
+  .rowOpen { height: 260px; }
 
-  /* thumbnail stays small on left in collapsed */
+  /* thumbnail stays small on left in collapsed, slides right when open */
   .rowImage { width: 80px; }
-  .rowMid { left: 96px; right: 80px; }
-  .rowTitle { font-size: 18px; }
-  .rowTitleOpen { font-size: 22px; }
-  .rowTrigger { right: 12px; font-size: 13px; }
-
-  /* expanded: stack content vertically, image goes to bottom */
-  .rowOpen {
-    height: auto;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    padding: 24px 20px 20px;
+  
+  .rowOpen .rowImage {
+    left: 54%;
+    width: 46%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    order: unset;
   }
 
-  .rowOpen .rowImage {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: 100%;
-    height: 200px;
-    margin-top: 16px;
-    order: 2;
+  .rowMid {
+    left: 96px;
+    right: 80px;
   }
 
   .rowOpen .rowMid {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    height: auto;
-    order: 1;
+    left: 0;
+    right: calc(46% + 12px);
+    position: absolute;
+    top: 0;
+    height: 100%;
     padding: 0;
+    order: unset;
   }
 
   .rowOpen .rowImg {
     object-position: center bottom;
   }
 
-  .rowDesc { font-size: 13px; max-width: 100%; }
+  .rowTitle { font-size: 18px; }
+  .rowTitleOpen { font-size: 20px; }
+  .rowTrigger { right: 12px; font-size: 13px; }
+  .rowDesc { font-size: 12px; line-height: 1.45; max-width: 100%; }
 }
 
 @media (max-width: 480px) {
-  .rowTitle { font-size: 16px; }
-  .rowTitleOpen { font-size: 20px; }
-  .rowImage { width: 70px; }
-  .rowMid { left: 84px; }
-  .rowOpen { padding: 20px 16px 16px; }
+  .row { height: 80px; }
+  .rowOpen { height: 230px; }
+  .rowImage { width: 66px; }
+  .rowOpen .rowImage { left: 56%; width: 44%; }
+  .rowMid { left: 78px; right: 70px; }
+  .rowOpen .rowMid { left: 0; right: calc(44% + 8px); }
+  .rowTitle { font-size: 15px; }
+  .rowTitleOpen { font-size: 17px; }
+  .rowDesc { font-size: 11px; line-height: 1.4; }
+  .rowTrigger { right: 10px; font-size: 12px; }
 }
