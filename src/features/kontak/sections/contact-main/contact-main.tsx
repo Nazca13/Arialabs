@@ -2,16 +2,18 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button/button'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import styles from './contact-main.module.css'
+
+const WA_NUMBER = '6283832886220'
+const WA_DIRECT = `https://wa.me/${WA_NUMBER}`
 
 const CONTACT_ITEMS = [
   {
     icon: '/assets/icons/contact/whatsapp.svg',
-    label: 'Phone / WhatsApp',
-    value: '+62 812-3456-789',
-    href: 'https://wa.me/628123456789',
+    label: 'WhatsApp',
+    value: '+62 838-3288-6220',
+    href: WA_DIRECT,
   },
   {
     icon: '/assets/icons/contact/email.svg',
@@ -33,7 +35,7 @@ const SERVICES_OPTIONS = [
   'UI/UX Design',
   'Graphic Design',
   'Social Media Management',
-  'Lainnya / Consulation',
+  'Consultation / Lainnya',
 ]
 
 export function ContactMain() {
@@ -41,32 +43,38 @@ export function ContactMain() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    service: 'Web Development',
     description: '',
   })
+  const [selectedServices, setSelectedServices] = useState<string[]>([])
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
+  function toggleService(service: string) {
+    setSelectedServices(prev =>
+      prev.includes(service) ? prev.filter(s => s !== service) : [...prev, service]
+    )
+  }
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    const { firstName, lastName, service, description } = formData
+    const { firstName, lastName, description } = formData
     const fullName = `${firstName.trim()} ${lastName.trim()}`.trim()
+    const services = selectedServices.length > 0 ? selectedServices.join(', ') : 'Belum dipilih'
 
     const textMessage = `Halo AriaLabs! 👋
 Saya ingin mendiskusikan kebutuhan digital bisnis saya.
 
-📦 Paket / Layanan: ${service}
+📦 Paket / Layanan: ${services}
 🏢 Nama / Perusahaan: ${fullName}
 📝 Detail Kebutuhan: ${description}
 
 Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
 
     const encodedText = encodeURIComponent(textMessage)
-    const waUrl = `https://wa.me/628123456789?text=${encodedText}`
-
+    const waUrl = `${WA_DIRECT}?text=${encodedText}`
     window.open(waUrl, '_blank')
   }
 
@@ -81,7 +89,7 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
           </h2>
           <p className={styles.sub}>
             We&apos;re here to help. Reach out through any of the channels below, or fill out the
-            form and it will directly open a WhatsApp chat with our team.
+            form — kami langsung reply via WhatsApp.
           </p>
 
           <div className={styles.items}>
@@ -117,7 +125,7 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
         <div className={styles.formWrap}>
           <h2 className={styles.heading}>Start Your Legacy</h2>
           <p className={styles.sub}>
-            Fill in your details and tell us about your project.
+            Isi detail kamu dan pilih layanan yang dibutuhkan. Kami akan langsung hubungi via WhatsApp.
           </p>
 
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -130,6 +138,7 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
                   type="text"
                   value={formData.firstName}
                   onChange={handleChange}
+                  placeholder="John"
                   required
                 />
               </div>
@@ -141,25 +150,35 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
                   type="text"
                   value={formData.lastName}
                   onChange={handleChange}
+                  placeholder="Doe / Brand Anda"
                   required
                 />
               </div>
             </div>
 
+            {/* Multi-select service pills */}
             <div className={styles.field}>
-              <label htmlFor="service">Paket / Layanan</label>
-              <select
-                id="service"
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                className={styles.select}
-                required
-              >
-                {SERVICES_OPTIONS.map(opt => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
+              <label>Paket / Layanan <span className={styles.labelHint}>(pilih satu atau lebih)</span></label>
+              <div className={styles.servicePills}>
+                {SERVICES_OPTIONS.map(opt => {
+                  const active = selectedServices.includes(opt)
+                  return (
+                    <button
+                      key={opt}
+                      type="button"
+                      onClick={() => toggleService(opt)}
+                      className={`${styles.pill} ${active ? styles.pillActive : ''}`}
+                    >
+                      {active && (
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                          <path d="M2 6L5 9L10 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {opt}
+                    </button>
+                  )
+                })}
+              </div>
             </div>
 
             <div className={styles.field}>
@@ -170,12 +189,19 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
                 rows={5}
                 value={formData.description}
                 onChange={handleChange}
-                placeholder="Jelaskan kebutuhan website, desain, atau bisnis Anda..."
+                placeholder="Ceritakan kebutuhan website, desain, atau bisnis kamu..."
                 required
               />
             </div>
 
-            <Button type="submit" arrow>Send Message</Button>
+            <div className={styles.submitWrap}>
+              <button type="submit" className={styles.submitBtn}>
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2 7.5H13M13 7.5L8.5 3M13 7.5L8.5 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
           </form>
         </div>
       </div>

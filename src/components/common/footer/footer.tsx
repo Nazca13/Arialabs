@@ -27,9 +27,9 @@ const LINKS = {
 }
 
 const SOCIALS = [
-  { name: 'Instagram', icon: '/assets/icons/social/instagram.svg', href: 'https://instagram.com' },
+  { name: 'Instagram', icon: '/assets/icons/social/instagram.svg', href: 'https://www.instagram.com/arialabs.aquanime?igsh=MWFuNHhxdGRjMWlnbg==' },
   { name: 'TikTok',    icon: '/assets/icons/social/tiktok.svg',    href: 'https://tiktok.com' },
-  { name: 'WhatsApp',  icon: '/assets/icons/contact/whatsapp.svg',  href: 'https://wa.me/628123456789' },
+  { name: 'WhatsApp',  icon: '/assets/icons/contact/whatsapp.svg', href: 'https://wa.me/6283832886220' },
   { name: 'LinkedIn',  icon: '/assets/icons/social/linkedin.svg',  href: 'https://linkedin.com' },
 ]
 
