@@ -11,7 +11,7 @@ export function HeroSection() {
           <h1 className={styles.headline}>
             Build Better Brands
             <br />
-            Create Better Experiences
+            <span className={styles.blue}>Create</span> Better <span className={styles.blue}>Experiences</span>
           </h1>
           <p className={styles.sub}>
             Kami membantu bisnis, startup, UMKM, dan organisasi membangun identitas visual,
@@ -22,11 +22,13 @@ export function HeroSection() {
 
         <div className={styles.right}>
           <p className={styles.body}>
-            Every Great Brand Starts with Clarity
+            Every Great Brand
+            <br />
+            Starts with Clarity
           </p>
           <div className={styles.actions}>
-            <Button href="/portfolio" size="sm" arrow>View Work</Button>
-            <Button href="/kontak" size="sm" variant="outline">Reach Out</Button>
+            <Button href="/portfolio" size="md" arrow>View Work</Button>
+            <Button href="/kontak" size="md" variant="outline">Reach Out</Button>
           </div>
         </div>
 

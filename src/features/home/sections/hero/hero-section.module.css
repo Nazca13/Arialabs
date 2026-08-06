@@ -80,6 +80,11 @@
   animation: heroFadeUp 0.8s var(--ease-smooth) 0.3s both;
 }
 
+/* Blue accent words in headline */
+.blue {
+  color: #2FA8FA;
+}
+
 .sub {
   font-size: 14px;
   color: rgba(255,255,255,0.9);
@@ -99,11 +104,11 @@
 }
 
 .body {
-  font-size: 19px;
+  font-size: 24px;
   color: #fff;
-  line-height: 1.4;
+  line-height: 1.25;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .actions {
