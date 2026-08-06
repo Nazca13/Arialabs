@@ -42,8 +42,8 @@ export function AboutSection() {
           <span className={styles.dot1} />
           <span className={styles.dot2} />
           <Image
-            src="/assets/images/characters/aria-face.png"
-            alt=""
+            src="/assets/images/characters/aria-face.webp"
+            alt="Aria character"
             width={280}
             height={280}
             className={styles.bgLogo}

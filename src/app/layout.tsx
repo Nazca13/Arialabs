@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     siteName: 'Aria Labs',
     title: 'Aria Labs | Complete Digital Strategies',
     description: 'Full-service digital agency for web development, UI/UX design, brand identity, and graphic design.',
-    images: [{ url: '/assets/images/backgrounds/hero-bg.png', width: 1200, height: 630, alt: 'Aria Labs' }],
+    images: [{ url: '/assets/images/backgrounds/hero-bg.webp', width: 1200, height: 630, alt: 'Aria Labs' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aria Labs | Complete Digital Strategies',
     description: 'Full-service digital agency for web development, UI/UX design, brand identity, and graphic design.',
     creator: '@arialabs',
-    images: ['/assets/images/backgrounds/hero-bg.png'],
+    images: ['/assets/images/backgrounds/hero-bg.webp'],
   },
   robots: {
     index: true,

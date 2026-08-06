@@ -11,7 +11,7 @@
 .bg {
   position: absolute;
   inset: 0;
-  background: url('/assets/images/backgrounds/hero-bg.png') center center / cover no-repeat;
+  background: url('/assets/images/backgrounds/hero-bg.webp') center center / cover no-repeat;
 }
 
 @media (max-width: 700px) {

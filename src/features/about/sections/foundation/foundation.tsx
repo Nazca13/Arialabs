@@ -32,7 +32,7 @@ export function AboutFoundation() {
         <div className={styles.left}>
           <div className={styles.imageWrap}>
             <Image
-              src="/assets/images/backgrounds/about-bg.png"
+              src="/assets/images/backgrounds/about-bg.webp"
               alt="Our Foundation Illustration"
               width={540}
               height={540}

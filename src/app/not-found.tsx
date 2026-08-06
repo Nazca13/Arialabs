@@ -14,8 +14,8 @@ export default function NotFound() {
           <div className={styles.content}>
             <div className={styles.character}>
               <Image
-                src="/assets/images/characters/aria-cry.png"
-                alt="Aria Sad Character"
+                src="/assets/images/characters/aria-cry.webp"
+                alt="404 - Page Not Found"
                 width={400}
                 height={400}
                 priority

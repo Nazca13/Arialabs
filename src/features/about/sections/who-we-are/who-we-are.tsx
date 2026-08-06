@@ -36,7 +36,7 @@ export function AboutWhoWeAre() {
           </h2>
           <div className={styles.cardIllustration}>
             <Image
-              src="/assets/images/characters/aria-card.png"
+              src="/assets/images/characters/aria-card.webp"
               alt="Aria Cards - UI/UX, Brand Identity, Dev, Graphic Design"
               width={1000}
               height={500}
