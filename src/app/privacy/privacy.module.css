@@ -1,0 +1,118 @@
+.page {
+  padding-top: 120px;
+  padding-bottom: 90px;
+  background: #090e1a;
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #38bdf8;
+  opacity: 0.9;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.leftCol {
+  padding-top: 4px;
+}
+
+.sectionHeading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+.rightCol {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #94a3b8;
+}
+
+.rightCol p {
+  margin-bottom: 16px;
+}
+
+.rightCol p:last-child {
+  margin-bottom: 0;
+}
+
+.rightCol ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.rightCol li {
+  margin-bottom: 8px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 32px;
+  transition: opacity 0.2s ease;
+}
+
+.backLink:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .header {
+    margin-bottom: 40px;
+  }
+  .list {
+    gap: 36px;
+  }
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+}

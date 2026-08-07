@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  margin: 12px;
+  border-radius: 26px;
+  background: #F2F6FD;
+  padding: 140px 0 80px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.left {
+  flex: 1;
+  max-width: 580px;
+}
+
+.title {
+  font-size: clamp(34px, 4.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #000;
+  margin: 18px 0 12px;
+}
+
+.tagline {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2FA8FA;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4A4A4A;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascotCard {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 32px;
+  background: #ffffff;
+  border: 1.5px solid #E8E8E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16px 40px rgba(47, 168, 250, 0.12);
+  overflow: hidden;
+}
+
+.glowBg {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at center, rgba(47, 168, 250, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mascotImg {
+  position: relative;
+  z-index: 1;
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
+}
+
+@media (max-width: 900px) {
+  .hero {
+    margin: 8px;
+    border-radius: 20px;
+    padding: 110px 0 50px;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 36px;
+  }
+
+  .left {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .mascotCard {
+    width: 260px;
+    height: 260px;
+    border-radius: 24px;
+  }
+
+  .mascotImg {
+    width: 210px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .actions a, .actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}

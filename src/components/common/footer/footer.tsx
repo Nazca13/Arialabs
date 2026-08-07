@@ -11,11 +11,11 @@ const LINKS = {
     { label: 'Kontak',    href: '/kontak' },
   ],
   Services: [
-    { label: 'Web Development', href: '/layanan#web-development' },
-    { label: 'Brand Identity',  href: '/layanan#brand-identity' },
-    { label: 'UI/UX Design',    href: '/layanan#uiux-design' },
-    { label: 'Graphic Design',  href: '/layanan#graphic-design' },
-    { label: 'Social Media Management', href: '/layanan#social-media' },
+    { label: 'Web Development', href: '/layanan/web-development' },
+    { label: 'Brand Identity',  href: '/layanan/brand-identity' },
+    { label: 'UI/UX Design',    href: '/layanan/uiux-design' },
+    { label: 'Graphic Design',  href: '/layanan/graphic-design' },
+    { label: 'Social Media Management', href: '/layanan/social-media-management' },
   ],
   Resources: [
     { label: 'Case Studies',   href: '/portfolio' },
