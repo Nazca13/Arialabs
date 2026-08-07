@@ -27,9 +27,11 @@
 
 .right { flex-shrink: 0; }
 
+/* ── 3 partner cards in a row ── */
 .grid {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -43,7 +45,8 @@
   background: #fff;
   box-shadow: 0 8px 32px rgba(47,168,250,0.07);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
-  min-width: 200px;
+  min-width: 180px;
+  flex: 1;
 }
 
 .card:hover {
@@ -72,14 +75,45 @@
 @media (max-width: 900px) {
   .inner {
     flex-direction: column;
-    gap: 40px;
+    gap: 36px;
     text-align: center;
   }
   .heading { font-size: 28px; }
   .left { max-width: 100%; }
+  /* Partner cards side by side on tablet */
+  .grid {
+    justify-content: center;
+    gap: 14px;
+  }
+  .card {
+    min-width: 140px;
+    padding: 24px 20px;
+    flex: 1 1 calc(33% - 14px);
+    max-width: 180px;
+  }
 }
 
 @media (max-width: 540px) {
-  .grid { flex-direction: column; width: 100%; }
-  .card { width: 100%; padding: 28px; }
+  .section { padding: 40px 0; }
+  .inner { gap: 28px; }
+  .heading { font-size: 24px; }
+  /* 3 small cards still in a row, equal width */
+  .grid {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+  .card {
+    flex: 1 1 calc(33% - 10px);
+    min-width: 0;
+    padding: 20px 12px;
+    gap: 12px;
+    border-radius: 14px;
+  }
+  .imgWrap { height: 44px; }
+  .badgePill {
+    font-size: 9px;
+    padding: 3px 8px;
+    letter-spacing: 0.05em;
+  }
 }

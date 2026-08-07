@@ -1,8 +1,4 @@
-'use client'
-
-import { useState } from 'react'
 import Image from 'next/image'
-import { useDragMarquee } from '@/hooks/use-drag-marquee'
 import styles from './client-logos.module.css'
 
 const CLIENTS = [
@@ -13,9 +9,7 @@ const CLIENTS = [
 ]
 
 export function ClientLogos() {
-  const doubled = [...CLIENTS, ...CLIENTS]
-  const { trackRef, handlers } = useDragMarquee('[data-marquee-rail]')
-  const [grabbing, setGrabbing] = useState(false)
+  const quadrupled = [...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS]
 
   return (
     <section className={styles.section}>
@@ -38,17 +32,9 @@ export function ClientLogos() {
           </span>
         </div>
 
-        <div
-          ref={trackRef}
-          className={styles.marquee}
-          style={{ cursor: grabbing ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
-          onPointerDown={(e) => { setGrabbing(true); handlers.onPointerDown(e) }}
-          onPointerMove={handlers.onPointerMove}
-          onPointerUp={(e) => { setGrabbing(false); handlers.onPointerUp(e) }}
-          onPointerLeave={(e) => { setGrabbing(false); handlers.onPointerLeave(e) }}
-        >
-          <div className={styles.rail} data-marquee-rail>
-            {doubled.map((c, i) => (
+        <div className={styles.marquee}>
+          <div className={styles.rail}>
+            {quadrupled.map((c, i) => (
               <div key={i} className={styles.logoItem}>
                 <Image
                   src={c.src}

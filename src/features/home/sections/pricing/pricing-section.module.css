@@ -47,6 +47,7 @@
   color: #fff;
 }
 
+/* ── Desktop: 3 equal columns ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -115,9 +116,36 @@
 }
 .featureItem svg { flex-shrink: 0; }
 
+/* ── Tablet: 2 then stacks to 1 ── */
 @media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr; max-width: 400px; }
   .top { flex-direction: column; align-items: flex-start; }
   .heading { font-size: 28px; }
-  .filter { overflow-x: auto; max-width: 100%; }
+  .filter {
+    overflow-x: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    padding: 6px;
+  }
+  /* Horizontal swipeable cards on tablet — all 3 visible */
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ── Mobile: full-width stacked cards ── */
+@media (max-width: 640px) {
+  .section { padding: 40px 0; }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card {
+    padding: 28px 22px;
+  }
+  .price { font-size: 30px; }
+  /* Featured card stands out */
+  .featured {
+    order: -1;
+  }
 }
