@@ -14,6 +14,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   /* CLS: reserve scrollbar width to prevent layout shift */
   scrollbar-gutter: stable;
 }
@@ -26,7 +27,8 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   font-synthesis: none;
-  /* NOTE: no body-level animation — prevents white flash when switching browser tabs */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ── Typography rules ── */
@@ -52,7 +54,6 @@ textarea,
 select {
   font-family: var(--font-outfit, 'Outfit', sans-serif);
 }
-
 
 a { text-decoration: none; color: inherit; }
 /* CLS: always reserve image dimensions */
@@ -83,40 +84,50 @@ img[src$=".svg"] {
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ── Layout ── */
+/* ── Layout (Optimal 1280px container max-width for 32-inch & 4K displays) ── */
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
-  contain: layout style;
 }
 
 @media (min-width: 1600px) {
-  .container { max-width: 1440px; padding: 0 48px; }
-}
-
-@media (min-width: 1920px) {
-  .container { max-width: 1600px; }
+  .container {
+    max-width: 1360px;
+    padding: 0 48px;
+  }
 }
 
 @media (max-width: 768px) {
-  .container { padding: 0 20px; }
+  .container {
+    padding: 0 20px;
+  }
 }
 
 /*
-  ── Scroll reveal ──
+  ── Scroll reveal (Supports both .is-visible and .visible) ──
 */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth);
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
   will-change: opacity, transform;
 }
-.reveal.is-visible {
+
+.reveal.is-visible,
+.reveal.visible {
   opacity: 1;
   transform: translateY(0);
   will-change: auto;
+}
+
+/* ── Hardware Acceleration for Marquee Tracks on Windows ── */
+[class*="rail"],
+[class*="tickerTrack"] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* ── Accessibility: respect reduced-motion preference ── */
@@ -125,6 +136,7 @@ img[src$=".svg"] {
   .reveal {
     transition: opacity 0.2s ease;
     transform: none;
+    opacity: 1 !important;
   }
   * {
     animation-duration: 0.01ms !important;
@@ -145,6 +157,6 @@ img[src$=".svg"] {
   color: #fff;
 }
 
-::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--color-gray-light); }
 ::-webkit-scrollbar-thumb { background: var(--color-blue); border-radius: 99px; }

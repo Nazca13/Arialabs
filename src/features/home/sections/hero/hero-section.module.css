@@ -3,24 +3,18 @@
   margin: 12px;
   border-radius: 26px;
   overflow: hidden;
-  /* CLS: explicit min-height prevents layout shift while hero loads */
   min-height: calc(100vh - 24px);
+  max-height: 900px;
   display: flex;
   align-items: stretch;
-  /* INP: create stacking context so composited layers are isolated */
   isolation: isolate;
 }
 
 .bg {
   position: absolute;
   inset: 0;
-  /* LCP: background-image on a positioned div — preloaded in layout.tsx <link rel=preload> */
   background: url('/assets/images/backgrounds/hero-bg.webp') center center / cover no-repeat;
-  /* FCP: fallback bg colour while image loads — prevents blank flash */
   background-color: #0a0a18;
-  /* INP: GPU composite layer for smooth interactions */
-  will-change: transform;
-  transform: translateZ(0);
 }
 
 @media (max-width: 700px) {
@@ -29,7 +23,6 @@
   }
 }
 
-/* Subtle scrim only, so white copy stays legible over the artwork. */
 .bg::after {
   content: '';
   position: absolute;
@@ -53,7 +46,6 @@
   width: 100%;
 }
 
-/* ── top block ── */
 .top { max-width: 660px; }
 
 .pillBadge {
@@ -65,7 +57,6 @@
   padding: 8px 20px;
   border-radius: 999px;
   margin-bottom: 20px;
-  /* Staggered entrance animation */
   animation: heroFadeUp 0.7s var(--ease-smooth) 0.15s both;
 }
 
@@ -76,11 +67,9 @@
   letter-spacing: -0.025em;
   color: #fff;
   margin-bottom: 14px;
-  /* Staggered entrance animation */
   animation: heroFadeUp 0.8s var(--ease-smooth) 0.3s both;
 }
 
-/* Blue accent words in headline */
 .blue {
   color: #2FA8FA;
 }
@@ -90,16 +79,13 @@
   color: rgba(255,255,255,0.9);
   line-height: 1.65;
   max-width: 480px;
-  /* Staggered entrance animation */
   animation: heroFadeUp 0.8s var(--ease-smooth) 0.45s both;
 }
 
-/* ── right block ── */
 .right {
   align-self: flex-end;
   max-width: 330px;
   margin-bottom: 28px;
-  /* Staggered entrance animation */
   animation: heroFadeUp 0.8s var(--ease-smooth) 0.6s both;
 }
 
@@ -117,12 +103,10 @@
   flex-wrap: wrap;
 }
 
-/* ── bottom tags ── */
 .tags {
   display: flex;
   gap: 90px;
   flex-wrap: wrap;
-  /* Staggered entrance animation */
   animation: heroFadeUp 0.8s var(--ease-smooth) 0.75s both;
 }
 
@@ -132,7 +116,6 @@
   color: #fff;
 }
 
-/* Entrance Keyframes */
 @keyframes heroFadeUp {
   0% {
     opacity: 0;
