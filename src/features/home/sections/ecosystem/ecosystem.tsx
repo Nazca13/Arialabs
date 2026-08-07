@@ -33,15 +33,14 @@ export function EcosystemSection() {
         </div>
 
         <div className={styles.logoWrap}>
-          <div className={styles.logoCard}>
-            <Image
-              src="/assets/images/brands/official-partners/aquanime.png"
-              alt="AquaNime Ecosystem"
-              width={200}
-              height={80}
-              style={{ objectFit: 'contain', maxHeight: '60px' }}
-            />
-          </div>
+          <Image
+            src="/assets/images/brands/official-partners/aquanime.png"
+            alt="AquaNime Ecosystem"
+            width={260}
+            height={100}
+            className={styles.logoImg}
+            style={{ objectFit: 'contain' }}
+          />
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@
   margin: 12px;
   border-radius: 26px;
   background: #F2F6FD;
-  padding: 140px 0 80px;
+  padding: 130px 0 70px;
   overflow: hidden;
 }
 
@@ -54,36 +54,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.mascotCard {
   position: relative;
-  width: 340px;
-  height: 340px;
-  border-radius: 32px;
-  background: #ffffff;
-  border: 1.5px solid #E8E8E8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 16px 40px rgba(47, 168, 250, 0.12);
-  overflow: hidden;
-}
-
-.glowBg {
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle at center, rgba(47, 168, 250, 0.18) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .mascotImg {
-  position: relative;
-  z-index: 1;
-  width: 280px;
-  height: 280px;
+  width: 360px;
+  height: 360px;
   object-fit: contain;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(0 12px 28px rgba(47, 168, 250, 0.18));
+  transition: transform 0.3s ease;
+}
+
+.mascotImg:hover {
+  transform: translateY(-4px) scale(1.02);
 }
 
 @media (max-width: 900px) {
@@ -96,7 +79,7 @@
   .container {
     flex-direction: column-reverse;
     text-align: center;
-    gap: 36px;
+    gap: 32px;
   }
 
   .left {
@@ -111,15 +94,9 @@
     justify-content: center;
   }
 
-  .mascotCard {
-    width: 260px;
-    height: 260px;
-    border-radius: 24px;
-  }
-
   .mascotImg {
-    width: 210px;
-    height: 210px;
+    width: 280px;
+    height: 280px;
   }
 }
 
@@ -131,5 +108,9 @@
   .actions a, .actions button {
     width: 100%;
     justify-content: center;
+  }
+  .mascotImg {
+    width: 230px;
+    height: 230px;
   }
 }

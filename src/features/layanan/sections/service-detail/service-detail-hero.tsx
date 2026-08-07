@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
 import { Button } from '@/components/ui/button/button'
 import styles from './service-detail-hero.module.css'
@@ -34,17 +33,14 @@ export function ServiceDetailHero({ title, badge, tagline, description, mascot }
         </div>
 
         <div className={styles.right}>
-          <div className={styles.mascotCard}>
-            <div className={styles.glowBg} aria-hidden="true" />
-            <Image
-              src={mascot}
-              alt={title}
-              width={340}
-              height={340}
-              priority
-              className={styles.mascotImg}
-            />
-          </div>
+          <Image
+            src={mascot}
+            alt={title}
+            width={380}
+            height={380}
+            priority
+            className={styles.mascotImg}
+          />
         </div>
       </div>
     </section>

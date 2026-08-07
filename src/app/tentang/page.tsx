@@ -4,6 +4,7 @@ import { Footer } from '@/components/common/footer/footer'
 import { AboutHero } from '@/features/about/sections/hero/about-hero'
 import { AboutWhoWeAre } from '@/features/about/sections/who-we-are/who-we-are'
 import { HowWeWork } from '@/features/home/sections/how-we-work/how-we-work'
+import { EcosystemSection } from '@/features/home/sections/ecosystem/ecosystem'
 import { AboutClientWall } from '@/features/about/sections/client-wall/client-wall'
 import { AboutFoundation } from '@/features/about/sections/foundation/foundation'
 import { CtaSection } from '@/features/home/sections/cta/cta-section'
@@ -21,6 +22,7 @@ export default function AboutPage() {
         <AboutHero />
         <AboutWhoWeAre />
         <HowWeWork />
+        <EcosystemSection />
         <AboutClientWall />
         <AboutFoundation />
         <CtaSection />
