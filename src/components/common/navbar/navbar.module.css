@@ -8,10 +8,17 @@
 
 .scrolled {
   padding: 12px 0;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.98);
   box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+/* Only apply blur on browsers that properly support it */
+@supports (backdrop-filter: blur(8px)) {
+  .scrolled {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 .inner {
@@ -34,12 +41,20 @@
   border-radius: 999px;
   overflow: hidden;
   isolation: isolate;
-  background: rgba(255,255,255,0.22);
-  backdrop-filter: blur(28px) saturate(1.8);
-  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  /* Solid fallback for Windows Chrome/Edge that bugs on backdrop-filter */
+  background: rgba(255,255,255,0.9);
   box-shadow:
     0 8px 26px rgba(0,0,0,0.10),
     inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Apply glassmorphism only on properly supporting browsers */
+@supports (backdrop-filter: blur(16px)) {
+  .pill {
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(28px) saturate(1.8);
+    -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  }
 }
 
 .pillSolid {

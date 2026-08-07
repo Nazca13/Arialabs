@@ -84,14 +84,14 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.4s ease;
-  background: rgba(0, 0, 0, 0.52);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(10, 10, 30, 0.72);
 }
 
 .card:hover .cardOverlay {
   opacity: 1;
 }
+
+/* No backdrop-filter: causes black box on Windows inside overflow:hidden */
 
 .cardLogo {
   filter: brightness(0) invert(1);

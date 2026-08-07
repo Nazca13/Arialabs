@@ -63,9 +63,8 @@
 .cardOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background: rgba(10, 10, 30, 0.65);
+  /* No backdrop-filter: causes black box on Windows Chrome/Edge inside overflow:hidden */
   display: flex;
   align-items: center;
   justify-content: center;

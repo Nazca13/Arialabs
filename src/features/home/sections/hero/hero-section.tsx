@@ -1,10 +1,23 @@
+import Image from 'next/image'
 import { Button } from '@/components/ui/button/button'
 import styles from './hero-section.module.css'
 
 export function HeroSection() {
   return (
     <section className={styles.hero}>
-      <div className={styles.bg} aria-hidden="true" />
+      <div className={styles.bgWrap} aria-hidden="true">
+        <Image
+          src="/assets/images/backgrounds/hero-bg.webp"
+          alt=""
+          fill
+          priority
+          quality={90}
+          className={styles.bgImg}
+          sizes="100vw"
+        />
+        <div className={styles.scrim} />
+      </div>
+
       <div className={`container ${styles.content}`}>
         <div className={styles.top}>
           <span className={styles.pillBadge}>Creative Digital Studio</span>

@@ -20,13 +20,21 @@
 
 .sub { font-size: 15px; color: #747474; line-height: 1.7; }
 
-.trackWrap { overflow: hidden; padding: 8px 0; }
+.trackWrap {
+  overflow: hidden;
+  padding: 8px 0;
+}
 
 .rail {
   display: flex;
   gap: 20px;
   width: max-content;
   animation: railScroll 28s linear infinite;
+  /* GPU compositing — prevents animation freeze on Windows */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 @keyframes railScroll {
@@ -79,9 +87,8 @@
   transition: opacity 0.4s ease;
   z-index: 2;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  /* No backdrop-filter: causes black box on Windows inside overflow:hidden */
+  background: rgba(15, 15, 35, 0.72);
 }
 
 .card:hover .cardLogoOverlay {

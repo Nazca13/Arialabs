@@ -1,7 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
-import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import styles from './selected-work.module.css'
 
 const PROJECTS = [
