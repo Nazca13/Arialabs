@@ -58,85 +58,64 @@ export function ProjectDetail({ project, otherProjects = [] }: Props) {
                   <span className={styles.metaDot}>/</span>
                   4–6 minggu
                 </span>
-                <span className={styles.metaItem}>
-                  <span className={styles.metaLabel}>Services</span>
-                  <span className={styles.metaDot}>/</span>
-                  {project.services.join(', ')}
-                </span>
               </div>
             </div>
             <div className={styles.heroRight}>
               <Image
                 src={project.logo}
-                alt={project.client}
-                width={220}
-                height={80}
+                alt={project.title}
+                width={160}
+                height={50}
                 priority
                 style={{ objectFit: 'contain' }}
               />
             </div>
           </div>
 
-          {/* Browser-frame with scrollable screenshot */}
-          <div className={styles.browserFrame}>
-            <div className={styles.browserBar}>
-              <span className={`${styles.dot} ${styles.dotRed}`} />
-              <span className={`${styles.dot} ${styles.dotYellow}`} />
-              <span className={`${styles.dot} ${styles.dotGreen}`} />
-              <span className={styles.browserUrl}>{project.title.toLowerCase().replace(/\s+/g, '')}.id</span>
-            </div>
-            <div className={styles.browserScroll}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={project.heroImage}
-                alt={`${project.title} — tampilan website`}
-                className={styles.browserImg}
-              />
-            </div>
+          <div className={styles.heroBanner}>
+            <Image
+              src={project.heroImage}
+              alt={project.title}
+              fill
+              priority
+              className={styles.heroBannerImg}
+              sizes="100vw"
+            />
           </div>
         </div>
       </section>
 
-      {/* ── Challenges ── */}
-      <section ref={ref} className={`reveal ${styles.textSection}`}>
+      {/* ── Details Grid ── */}
+      <section ref={ref} className={`reveal ${styles.details}`}>
         <div className="container">
-          <div className={styles.labelRow}>
-            <div className={styles.labelCol}>
-              <Badge>Challenges</Badge>
+          <div className={styles.detailsGrid}>
+            <div className={styles.detailBlock}>
+              <h2 className={styles.sectionLabel}>Client &amp; Scope</h2>
+              <p className={styles.clientName}>{project.client}</p>
+              <div className={styles.servicesList}>
+                {project.services.map(s => (
+                  <span key={s} className={styles.servicePill}>{s}</span>
+                ))}
+              </div>
             </div>
-            <div className={styles.descCol}>
+
+            <div className={styles.detailBlock}>
+              <h2 className={styles.sectionLabel}>Overview</h2>
+              <p className={styles.desc}>{project.description}</p>
+            </div>
+
+            <div className={styles.detailBlock}>
+              <h2 className={styles.sectionLabel}>The Challenge</h2>
               <p className={styles.desc}>{project.challenge}</p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <div className="container"><hr className={styles.divider} /></div>
-
-      {/* ── Solutions ── */}
-      <section className={styles.textSection}>
-        <div className="container">
-          <div className={styles.labelRow}>
-            <div className={styles.labelCol}>
-              <Badge>Solutions</Badge>
-            </div>
-            <div className={styles.descCol}>
+            <div className={styles.detailBlock}>
+              <h2 className={styles.sectionLabel}>Our Solution</h2>
               <p className={styles.desc}>{project.solution}</p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <div className="container"><hr className={styles.divider} /></div>
-
-      {/* ── Results ── */}
-      <section className={styles.textSection}>
-        <div className="container">
-          <div className={styles.labelRow}>
-            <div className={styles.labelCol}>
-              <Badge>Results</Badge>
-            </div>
-            <div className={styles.descCol}>
+            <div className={styles.detailBlock}>
+              <h2 className={styles.sectionLabel}>The Result</h2>
               <p className={styles.desc}>{project.result}</p>
             </div>
           </div>
