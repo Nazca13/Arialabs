@@ -64,7 +64,7 @@ export function ServiceBenefits({ benefits }: Props) {
         <div className={styles.header}>
           <Badge>Features & Benefits</Badge>
           <h2 className={styles.heading}>
-            Apa yang <span className={styles.blue}>Anda Dapatkan?</span>
+            What You <span className={styles.blue}>Get</span>
           </h2>
           <p className={styles.sub}>
             Setiap proyek kami dilengkapi dengan standar kualitas tertinggi untuk memaksimalkan hasil dan pertumbuhan bisnis Anda.

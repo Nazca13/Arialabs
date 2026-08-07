@@ -23,10 +23,10 @@ export function ServicePortfolio({ serviceTitle, projects }: Props) {
         <div className={styles.header}>
           <Badge>Selected Work</Badge>
           <h2 className={styles.heading}>
-            Hasil Karya <span className={styles.blue}>{serviceTitle}</span>
+            Featured <span className={styles.blue}>{serviceTitle}</span>
           </h2>
           <p className={styles.sub}>
-            Lihat bagaimana kami membantu klien mencapai hasil terbaik melalui solusi digital terukur.
+            Lihat bagaimana kami membantu bisnis mencapai hasil terbaik melalui solusi digital terukur.
           </p>
         </div>
 
