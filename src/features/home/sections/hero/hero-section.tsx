@@ -11,7 +11,7 @@ export function HeroSection() {
           <h1 className={styles.headline}>
             Build Better Brands
             <br />
-            <span className={styles.blue}>Create</span> Better <span className={styles.blue}>Experiences</span>
+            Create Better Experiences
           </h1>
           <p className={styles.sub}>
             Kami membantu bisnis, startup, UMKM, dan organisasi membangun identitas visual,
