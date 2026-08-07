@@ -1,11 +1,7 @@
-'use client'
-
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
-import { useDragMarquee } from '@/hooks/use-drag-marquee'
 import styles from './selected-work.module.css'
 
 const PROJECTS = [
@@ -40,13 +36,10 @@ const PROJECTS = [
 ]
 
 export function SelectedWork() {
-  const ref = useScrollReveal<HTMLElement>()
-  const { trackRef, handlers, dragDistance } = useDragMarquee('[data-rail]')
-  const [grabbing, setGrabbing] = useState(false)
-  const doubled = [...PROJECTS, ...PROJECTS]
+  const quadrupled = [...PROJECTS, ...PROJECTS, ...PROJECTS, ...PROJECTS]
 
   return (
-    <section ref={ref} className={`reveal ${styles.section}`}>
+    <section className={styles.section}>
       <div className="container">
         <Badge>Selected Work</Badge>
         <div className={styles.header}>
@@ -58,22 +51,13 @@ export function SelectedWork() {
         </div>
       </div>
 
-      <div
-        ref={trackRef}
-        className={styles.trackWrap}
-        style={{ cursor: grabbing ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
-        onPointerDown={(e) => { setGrabbing(true); handlers.onPointerDown(e) }}
-        onPointerMove={handlers.onPointerMove}
-        onPointerUp={(e) => { setGrabbing(false); handlers.onPointerUp(e) }}
-        onPointerLeave={(e) => { setGrabbing(false); handlers.onPointerLeave(e) }}
-      >
-        <div className={styles.rail} data-rail>
-          {doubled.map((p, i) => (
+      <div className={styles.trackWrap}>
+        <div className={styles.rail}>
+          {quadrupled.map((p, i) => (
             <Link
               key={i}
               href={`/portfolio/${p.slug}`}
               className={styles.card}
-              onClick={(e) => { if (dragDistance > 6) e.preventDefault() }}
             >
               <div className={styles.cardPreview}>
                 <Image

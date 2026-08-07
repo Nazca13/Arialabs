@@ -9,17 +9,12 @@ const PARTNERS = [
   {
     name: 'Animae',
     src: '/assets/images/brands/official-partners/animae.png',
-    alt: 'Animae — Official Partner',
+    alt: 'Animae — Strategic Collaboration',
   },
   {
     name: 'Nexoria',
     src: '/assets/images/brands/official-partners/nexoria.png',
-    alt: 'Nexoria — Official Partner',
-  },
-  {
-    name: 'Aquanime',
-    src: '/assets/images/brands/official-partners/aquanime.png',
-    alt: 'Aquanime — Official Partner',
+    alt: 'Nexoria — Strategic Collaboration',
   },
 ]
 
@@ -29,13 +24,13 @@ export function OfficialPartner() {
     <section ref={ref} className={`reveal ${styles.section}`}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.left}>
-          <Badge>Official Partner</Badge>
+          <Badge>Strategic Collaboration</Badge>
           <h2 className={styles.heading}>
-            Didukung oleh <span className={styles.blue}>Mitra Terpercaya</span>
+            Kolaborasi <span className={styles.blue}>Strategis</span>
           </h2>
           <p className={styles.sub}>
-            Aria Labs bangga bermitra secara resmi dengan Animae, Nexoria, dan Aquanime — 
-            ekosistem kreatif yang mendukung solusi digital terbaik bagi setiap klien.
+            Kami bekerja sama secara strategis dengan Animae dan Nexoria guna memperluas 
+            kapabilitas kreatif serta memberikan solusi digital yang komprehensif.
           </p>
         </div>
 
@@ -43,7 +38,7 @@ export function OfficialPartner() {
           <div className={styles.grid}>
             {PARTNERS.map(partner => (
               <div key={partner.name} className={styles.card}>
-                <div className={styles.badgePill}>Official Partner</div>
+                <div className={styles.badgePill}>Strategic Partner</div>
                 <div className={styles.imgWrap}>
                   <Image
                     src={partner.src}

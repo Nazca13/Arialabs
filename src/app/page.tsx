@@ -9,6 +9,7 @@ import { SelectedWork }     from '@/features/home/sections/selected-work/selecte
 import { PricingSection }   from '@/features/home/sections/pricing/pricing-section'
 import { FaqSection }       from '@/features/home/sections/faq/faq-section'
 import { Testimonials }     from '@/features/home/sections/testimonials/testimonials'
+import { EcosystemSection } from '@/features/home/sections/ecosystem/ecosystem'
 import { OfficialPartner } from '@/features/home/sections/official-partner/official-partner'
 import { CtaSection }       from '@/features/home/sections/cta/cta-section'
 
@@ -26,6 +27,7 @@ export default function HomePage() {
         <PricingSection />
         <FaqSection />
         <Testimonials />
+        <EcosystemSection />
         <OfficialPartner />
         <CtaSection />
       </main>

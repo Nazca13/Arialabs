@@ -1,0 +1,91 @@
+.section {
+  padding: 80px 0;
+  background: #F2F6FD;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.content {
+  flex: 1;
+  max-width: 560px;
+}
+
+.heading {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+  margin: 14px 0 18px;
+}
+
+.blue { color: #2FA8FA; }
+
+.sub {
+  font-size: 15px;
+  color: #4A4A4A;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.logoWrap {
+  flex-shrink: 0;
+}
+
+.logoCard {
+  width: 240px;
+  height: 160px;
+  background: #ffffff;
+  border: 1.5px solid #E8E8E8;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  box-shadow: 0 12px 36px rgba(47, 168, 250, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(47, 168, 250, 0.18);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 36px;
+  }
+  .content {
+    max-width: 100%;
+  }
+  .heading {
+    font-size: 30px;
+  }
+  .actions {
+    justify-content: center;
+  }
+  .logoCard {
+    width: 200px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 0;
+  }
+  .heading {
+    font-size: 26px;
+  }
+}
