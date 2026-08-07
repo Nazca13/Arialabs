@@ -23,6 +23,14 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.logoCard img {
+  max-height: 48px !important;
+  max-width: 140px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
 .logoCard:hover {
   transform: translateY(-2px);
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
@@ -40,5 +48,9 @@
   }
   .logoCard {
     height: 100px;
+  }
+  .logoCard img {
+    max-height: 40px !important;
+    max-width: 120px !important;
   }
 }
