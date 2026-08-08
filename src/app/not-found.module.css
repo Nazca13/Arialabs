@@ -34,13 +34,13 @@
   filter: drop-shadow(0px 20px 40px rgba(47, 168, 250, 0.15));
 }
 
+@-webkit-keyframes float {
+  0%, 100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+  50% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+}
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+  50% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
 }
 
 .text {

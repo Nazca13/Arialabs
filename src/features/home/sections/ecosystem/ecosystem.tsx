@@ -36,8 +36,8 @@ export function EcosystemSection() {
           <Image
             src="/assets/images/brands/official-partners/aquanime.png"
             alt="AquaNime Ecosystem"
-            width={260}
-            height={100}
+            width={380}
+            height={146}
             className={styles.logoImg}
             style={{ objectFit: 'contain' }}
           />

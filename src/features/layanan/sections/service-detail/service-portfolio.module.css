@@ -62,9 +62,11 @@
 
 .cardOverlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(10, 10, 30, 0.65);
-  /* No backdrop-filter: causes black box on Windows Chrome/Edge inside overflow:hidden */
   display: flex;
   align-items: center;
   justify-content: center;

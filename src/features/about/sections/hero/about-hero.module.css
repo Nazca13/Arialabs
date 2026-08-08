@@ -18,6 +18,7 @@
 
 .badgeWrap {
   margin-bottom: 24px;
+  -webkit-animation: heroFadeUp 0.7s var(--ease-smooth) 0.1s both;
   animation: heroFadeUp 0.7s var(--ease-smooth) 0.1s both;
 }
 
@@ -29,6 +30,7 @@
   color: #000;
   margin-bottom: 32px;
   max-width: 900px;
+  -webkit-animation: heroFadeUp 0.8s var(--ease-smooth) 0.25s both;
   animation: heroFadeUp 0.8s var(--ease-smooth) 0.25s both;
 }
 
@@ -40,18 +42,17 @@
   display: flex;
   gap: 16px;
   justify-content: center;
+  -webkit-animation: heroFadeUp 0.8s var(--ease-smooth) 0.4s both;
   animation: heroFadeUp 0.8s var(--ease-smooth) 0.4s both;
 }
 
+@-webkit-keyframes heroFadeUp {
+  0% { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
+  100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
 @keyframes heroFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
+  100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
 }
 
 @media (max-width: 900px) {

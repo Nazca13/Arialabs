@@ -20,6 +20,44 @@
 
 .sub { font-size: 15px; color: #747474; line-height: 1.7; }
 
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #E8E8E8;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  border-color: #2FA8FA;
+  color: #2FA8FA;
+  background: rgba(47, 168, 250, 0.05);
+}
+
+.navBtn:active {
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.navBtn svg {
+  display: block;
+  flex-shrink: 0;
+}
+
 .trackWrap {
   overflow: hidden;
   padding: 8px 0;
@@ -29,17 +67,22 @@
   display: flex;
   gap: 20px;
   width: max-content;
+  -webkit-animation: railScroll 28s linear infinite;
   animation: railScroll 28s linear infinite;
-  /* GPU compositing — prevents animation freeze on Windows */
+  -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   will-change: transform;
 }
 
+@-webkit-keyframes railScroll {
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
 @keyframes railScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 
 .card {
@@ -79,7 +122,10 @@
 
 .cardLogoOverlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +133,6 @@
   transition: opacity 0.4s ease;
   z-index: 2;
   padding: 30px;
-  /* No backdrop-filter: causes black box on Windows inside overflow:hidden */
   background: rgba(15, 15, 35, 0.72);
 }
 
@@ -117,24 +162,16 @@
 
 .cardTitle { font-size: 16px; font-weight: 700; color: #000; }
 
+@media (max-width: 900px) {
+  .heading { font-size: 30px; }
+  .navBtn { width: 40px; height: 40px; }
+}
+
 @media (max-width: 640px) {
-  .card {
-    width: 280px;
-  }
-
-  .cardPreview {
-    height: 180px;
-  }
-
-  .cardInfo {
-    padding: 16px;
-  }
-
-  .cardTitle {
-    font-size: 15px;
-  }
-
-  .cardCat {
-    font-size: 10px;
-  }
+  .card { width: 280px; }
+  .cardPreview { height: 180px; }
+  .cardInfo { padding: 16px; }
+  .cardTitle { font-size: 15px; }
+  .cardCat { font-size: 10px; }
+  .navBtn { width: 38px; height: 38px; }
 }

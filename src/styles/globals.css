@@ -11,23 +11,26 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  /* CLS: reserve scrollbar width to prevent layout shift */
-  scrollbar-gutter: stable;
+}
+
+/* scroll-behavior & scrollbar-gutter: not supported on old browsers, gate with @supports */
+@supports (scroll-behavior: smooth) {
+  html { scroll-behavior: smooth; }
+}
+@supports (scrollbar-gutter: stable) {
+  html { scrollbar-gutter: stable; }
 }
 
 body {
-  /* Default body text: Outfit */
   font-family: var(--font-outfit, 'Outfit', sans-serif);
   background: #ffffff;
   color: #000000;
   overflow-x: hidden;
   line-height: 1.6;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -56,16 +59,11 @@ select {
 }
 
 a { text-decoration: none; color: inherit; }
-/* CLS: always reserve image dimensions */
 img { display: block; max-width: 100%; height: auto; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 ul, ol { list-style: none; }
 
-/* ── SVGs: immediate render, no invisible flash ── */
 svg { display: block; overflow: visible; }
-img[src$=".svg"] {
-  content-visibility: visible;
-}
 
 /* ── Design Tokens ── */
 :root {
@@ -84,7 +82,7 @@ img[src$=".svg"] {
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ── Layout (Optimal 1280px container max-width for 32-inch & 4K displays) ── */
+/* ── Layout ── */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -106,43 +104,52 @@ img[src$=".svg"] {
 }
 
 /*
-  ── Scroll reveal (Supports both .is-visible and .visible) ──
+  ── Scroll reveal ──
+  CRITICAL: Default must be VISIBLE so old browsers / warnet PCs
+  never get stuck with invisible content.
+  We only add opacity:0 if CSS transitions are supported (modern browsers).
 */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
-  will-change: opacity, transform;
-}
-
-.reveal.is-visible,
-.reveal.visible {
   opacity: 1;
-  transform: translateY(0);
-  will-change: auto;
+  transform: none;
 }
 
-/* ── Hardware Acceleration for Marquee Tracks on Windows ── */
-[class*="rail"],
-[class*="tickerTrack"] {
-  backface-visibility: hidden;
+@supports (transition: opacity 0.1s) {
+  .reveal {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+    -webkit-transition: opacity 0.6s var(--ease-smooth), -webkit-transform 0.6s var(--ease-smooth);
+    transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+  }
+  .reveal.is-visible,
+  .reveal.visible {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* ── GPU compositing for animated marquee rails ── */
+[class*="rail"] {
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 
-/* ── Accessibility: respect reduced-motion preference ── */
+/* ── Reduced motion: override ALL animations & transitions ── */
 @media (prefers-reduced-motion: reduce) {
-  body { animation: none; }
-  .reveal {
-    transition: opacity 0.2s ease;
-    transform: none;
-    opacity: 1 !important;
-  }
-  * {
-    animation-duration: 0.01ms !important;
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 

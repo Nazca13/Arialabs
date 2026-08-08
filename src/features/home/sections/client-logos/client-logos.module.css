@@ -28,12 +28,17 @@
 
 .spark {
   flex-shrink: 0;
+  -webkit-animation: sparkSpin 24s linear infinite;
   animation: sparkSpin 24s linear infinite;
 }
 
+@-webkit-keyframes sparkSpin {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
 @keyframes sparkSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 .marquee {
@@ -61,12 +66,12 @@
   align-items: center;
   gap: 64px;
   width: max-content;
+  -webkit-animation: marqueeScroll 24s linear infinite;
   animation: marqueeScroll 24s linear infinite;
-  /* GPU compositing — prevents animation freeze on Windows Chrome/Edge */
-  transform: translateZ(0);
-  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .logoItem {
@@ -83,9 +88,13 @@
   object-fit: contain;
 }
 
+@-webkit-keyframes marqueeScroll {
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
 @keyframes marqueeScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {

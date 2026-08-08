@@ -38,14 +38,6 @@ export interface Testimonial {
   quote: string
 }
 
-export interface BlogPost {
-  title: string
-  excerpt: string
-  category: string
-  slug: string
-  image?: string
-}
-
 export interface ClientLogo {
   name: string
   src: string

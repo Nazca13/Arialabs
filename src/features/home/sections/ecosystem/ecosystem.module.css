@@ -46,15 +46,17 @@
 }
 
 .logoImg {
-  width: 240px;
+  width: 360px;
   height: auto;
-  max-height: 90px;
+  max-height: 140px;
   object-fit: contain;
+  -webkit-transition: transform 0.3s ease, filter 0.3s ease;
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 4px 16px rgba(47, 168, 250, 0.12));
 }
 
 .logoImg:hover {
+  -webkit-transform: scale(1.05);
   transform: scale(1.05);
   filter: drop-shadow(0 8px 24px rgba(47, 168, 250, 0.25));
 }
@@ -75,8 +77,8 @@
     justify-content: center;
   }
   .logoImg {
-    width: 200px;
-    max-height: 75px;
+    width: 280px;
+    max-height: 110px;
   }
 }
 
@@ -88,7 +90,7 @@
     font-size: 26px;
   }
   .logoImg {
-    width: 170px;
-    max-height: 65px;
+    width: 240px;
+    max-height: 95px;
   }
 }

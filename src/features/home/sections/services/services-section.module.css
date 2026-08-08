@@ -29,7 +29,10 @@
 
 .ticker {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
@@ -41,7 +44,12 @@
   display: flex;
   gap: 60px;
   white-space: nowrap;
+  -webkit-animation: tickerScroll 30s linear infinite;
   animation: tickerScroll 30s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .tickerTrack span {
@@ -51,9 +59,13 @@
   letter-spacing: 0.02em;
 }
 
+@-webkit-keyframes tickerScroll {
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
 @keyframes tickerScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 
 /* ── Row ── */

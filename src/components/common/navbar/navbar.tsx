@@ -20,6 +20,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === '/'
+  const isKontak = pathname === '/kontak'
   const onHeroBg = isHome && !scrolled
 
   useEffect(() => {
@@ -72,9 +73,11 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className={styles.cta}>
-          <Button href="/kontak" size="sm" arrow>Book to Call</Button>
-        </div>
+        {!isKontak && (
+          <div className={styles.cta}>
+            <Button href="/kontak" size="sm" arrow>Book to Call</Button>
+          </div>
+        )}
 
         <button
           className={`${styles.burger} ${mobileOpen ? styles.burgerOpen : ''} ${onHeroBg && !mobileOpen ? styles.burgerLight : ''}`}
@@ -102,11 +105,13 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
-            <div className={styles.drawerCta}>
-              <Button href="/kontak" arrow onClick={() => setMobileOpen(false)}>
-                Book to Call
-              </Button>
-            </div>
+            {!isKontak && (
+              <div className={styles.drawerCta}>
+                <Button href="/kontak" arrow onClick={() => setMobileOpen(false)}>
+                  Book to Call
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       )}
