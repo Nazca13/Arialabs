@@ -94,10 +94,11 @@
   flex-direction: column;
   gap: 5px;
   padding: 6px;
-  z-index: 110;
+  z-index: 10000;
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
 .burger span {
@@ -106,14 +107,23 @@
   height: 2px;
   background: #000;
   border-radius: 2px;
+  -webkit-transition: transform 0.22s ease, opacity 0.22s ease, background 0.2s ease;
   transition: transform 0.22s ease, opacity 0.22s ease, background 0.2s ease;
 }
 
 .burgerLight span { background: #fff; }
 
-.burgerOpen span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.burgerOpen span:nth-child(2) { opacity: 0; }
-.burgerOpen span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.burgerOpen span:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen span:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 
 .drawer {
   position: fixed;
