@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import styles from './testimonials.module.css'
@@ -27,25 +27,46 @@ const DATA = [
 ]
 
 export function Testimonials() {
-  const [paused, setPaused] = useState(false)
+  const [offset, setOffset] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const sectionRef = useScrollReveal<HTMLElement>()
   const doubled = [...DATA, ...DATA]
-  const railRef = useRef<HTMLDivElement>(null)
+  const animationRef = useRef<number>()
+
+  useEffect(() => {
+    if (!isAutoPlaying) return
+
+    const animate = () => {
+      setOffset((prev) => {
+        const newOffset = prev - 0.4
+        // Reset saat sudah scroll setengah
+        if (Math.abs(newOffset) >= (402 * DATA.length)) {
+          return 0
+        }
+        return newOffset
+      })
+      animationRef.current = requestAnimationFrame(animate)
+    }
+
+    animationRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [isAutoPlaying])
 
   const handlePrev = () => {
-    if (railRef.current) {
-      setPaused(true)
-      railRef.current.scrollBy({ left: -400, behavior: 'smooth' })
-      setTimeout(() => setPaused(false), 3000)
-    }
+    setIsAutoPlaying(false)
+    setOffset((prev) => prev + 402)
+    setTimeout(() => setIsAutoPlaying(true), 2000)
   }
 
   const handleNext = () => {
-    if (railRef.current) {
-      setPaused(true)
-      railRef.current.scrollBy({ left: 400, behavior: 'smooth' })
-      setTimeout(() => setPaused(false), 3000)
-    }
+    setIsAutoPlaying(false)
+    setOffset((prev) => prev - 402)
+    setTimeout(() => setIsAutoPlaying(true), 2000)
   }
 
   return (
@@ -60,7 +81,13 @@ export function Testimonials() {
       </div>
 
       <div className={styles.trackWrap}>
-        <div className={`${styles.rail} ${paused ? styles.paused : ''}`} ref={railRef}>
+        <div
+          className={styles.rail}
+          style={{
+            transform: `translateX(${offset}px)`,
+            transition: isAutoPlaying ? 'none' : 'transform 0.5s ease-out'
+          }}
+        >
           {doubled.map((t, i) => (
             <div key={i} className={styles.card}>
               <p className={styles.quote}>&ldquo;{t.quote}&rdquo;</p>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
@@ -38,24 +38,45 @@ const PROJECTS = [
 ]
 
 export function SelectedWork() {
-  const [paused, setPaused] = useState(false)
+  const [offset, setOffset] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const doubled = [...PROJECTS, ...PROJECTS]
-  const railRef = useRef<HTMLDivElement>(null)
+  const animationRef = useRef<number>()
+
+  useEffect(() => {
+    if (!isAutoPlaying) return
+
+    const animate = () => {
+      setOffset((prev) => {
+        const newOffset = prev - 0.5
+        // Reset saat sudah scroll setengah (karena doubled)
+        if (Math.abs(newOffset) >= (340 * PROJECTS.length + 20 * PROJECTS.length)) {
+          return 0
+        }
+        return newOffset
+      })
+      animationRef.current = requestAnimationFrame(animate)
+    }
+
+    animationRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [isAutoPlaying])
 
   const handlePrev = () => {
-    if (railRef.current) {
-      setPaused(true)
-      railRef.current.scrollBy({ left: -340, behavior: 'smooth' })
-      setTimeout(() => setPaused(false), 3000)
-    }
+    setIsAutoPlaying(false)
+    setOffset((prev) => prev + 340)
+    setTimeout(() => setIsAutoPlaying(true), 2000)
   }
 
   const handleNext = () => {
-    if (railRef.current) {
-      setPaused(true)
-      railRef.current.scrollBy({ left: 340, behavior: 'smooth' })
-      setTimeout(() => setPaused(false), 3000)
-    }
+    setIsAutoPlaying(false)
+    setOffset((prev) => prev - 340)
+    setTimeout(() => setIsAutoPlaying(true), 2000)
   }
 
   return (
@@ -72,7 +93,13 @@ export function SelectedWork() {
       </div>
 
       <div className={styles.trackWrap}>
-        <div className={`${styles.rail} ${paused ? styles.paused : ''}`} ref={railRef}>
+        <div
+          className={styles.rail}
+          style={{
+            transform: `translateX(${offset}px)`,
+            transition: isAutoPlaying ? 'none' : 'transform 0.5s ease-out'
+          }}
+        >
           {doubled.map((p, i) => (
             <Link
               key={i}

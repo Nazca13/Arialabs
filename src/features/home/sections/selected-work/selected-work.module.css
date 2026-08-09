@@ -32,22 +32,7 @@
   gap: 20px;
   width: -webkit-max-content;
   width: max-content;
-  -webkit-animation: railScroll 28s linear infinite;
-  animation: railScroll 28s linear infinite;
-}
-
-.rail.paused {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-@-webkit-keyframes railScroll {
-  0% { -webkit-transform: translateX(0); transform: translateX(0); }
-  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
-}
-@keyframes railScroll {
-  0% { -webkit-transform: translateX(0); transform: translateX(0); }
-  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+  will-change: transform;
 }
 
 .card {
