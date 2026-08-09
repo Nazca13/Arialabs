@@ -105,6 +105,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="id" className={`${jakarta.variable} ${outfit.variable}`}>
       <head>
+        {/* ── Preconnect to external resources ── */}
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+
         {/* ── FCP: preload hero background ── */}
         <link
           rel="preload"

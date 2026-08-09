@@ -111,6 +111,7 @@ export function ServicesSection() {
                     src={s.image}
                     alt={s.title}
                     fill
+                    loading="lazy"
                     className={styles.rowImg}
                     sizes="220px"
                   />
