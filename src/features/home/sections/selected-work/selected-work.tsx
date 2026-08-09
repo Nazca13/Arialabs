@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
@@ -38,18 +38,23 @@ const PROJECTS = [
 ]
 
 export function SelectedWork() {
+  const [paused, setPaused] = useState(false)
   const doubled = [...PROJECTS, ...PROJECTS]
   const railRef = useRef<HTMLDivElement>(null)
 
   const handlePrev = () => {
     if (railRef.current) {
+      setPaused(true)
       railRef.current.scrollBy({ left: -340, behavior: 'smooth' })
+      setTimeout(() => setPaused(false), 3000)
     }
   }
 
   const handleNext = () => {
     if (railRef.current) {
+      setPaused(true)
       railRef.current.scrollBy({ left: 340, behavior: 'smooth' })
+      setTimeout(() => setPaused(false), 3000)
     }
   }
 
@@ -67,7 +72,7 @@ export function SelectedWork() {
       </div>
 
       <div className={styles.trackWrap}>
-        <div className={styles.rail} ref={railRef}>
+        <div className={`${styles.rail} ${paused ? styles.paused : ''}`} ref={railRef}>
           {doubled.map((p, i) => (
             <Link
               key={i}

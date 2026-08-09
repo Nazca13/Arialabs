@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import styles from './testimonials.module.css'
@@ -27,19 +27,24 @@ const DATA = [
 ]
 
 export function Testimonials() {
+  const [paused, setPaused] = useState(false)
   const sectionRef = useScrollReveal<HTMLElement>()
   const doubled = [...DATA, ...DATA]
   const railRef = useRef<HTMLDivElement>(null)
 
   const handlePrev = () => {
     if (railRef.current) {
-      railRef.current.scrollBy({ left: -360, behavior: 'smooth' })
+      setPaused(true)
+      railRef.current.scrollBy({ left: -400, behavior: 'smooth' })
+      setTimeout(() => setPaused(false), 3000)
     }
   }
 
   const handleNext = () => {
     if (railRef.current) {
-      railRef.current.scrollBy({ left: 360, behavior: 'smooth' })
+      setPaused(true)
+      railRef.current.scrollBy({ left: 400, behavior: 'smooth' })
+      setTimeout(() => setPaused(false), 3000)
     }
   }
 
@@ -55,7 +60,7 @@ export function Testimonials() {
       </div>
 
       <div className={styles.trackWrap}>
-        <div className={styles.rail} ref={railRef}>
+        <div className={`${styles.rail} ${paused ? styles.paused : ''}`} ref={railRef}>
           {doubled.map((t, i) => (
             <div key={i} className={styles.card}>
               <p className={styles.quote}>&ldquo;{t.quote}&rdquo;</p>

@@ -21,14 +21,8 @@
 .sub { font-size: 15px; color: #666666; line-height: 1.7; }
 
 .trackWrap {
-  overflow-x: auto;
+  overflow: hidden;
   padding: 8px 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.trackWrap::-webkit-scrollbar {
-  display: none;
 }
 
 .rail {
@@ -38,15 +32,22 @@
   gap: 20px;
   width: -webkit-max-content;
   width: max-content;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 0 20px;
+  -webkit-animation: railScroll 28s linear infinite;
+  animation: railScroll 28s linear infinite;
 }
 
-.rail::-webkit-scrollbar {
-  display: none;
+.rail.paused {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@-webkit-keyframes railScroll {
+  0% { -webkit-transform: translateX(0); transform: translateX(0); }
+  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
+@keyframes railScroll {
+  0% { -webkit-transform: translateX(0); transform: translateX(0); }
+  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 
 .card {
@@ -138,8 +139,14 @@
 .cardTitle { font-size: 16px; font-weight: 700; color: #000; }
 
 .navControls {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   gap: 16px;
   margin-top: 28px;
@@ -152,10 +159,17 @@
   background: #EAF5FE;
   color: #2FA8FA;
   border: 1.5px solid #2FA8FA;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(47, 168, 250, 0.15);
 }
@@ -163,11 +177,13 @@
 .navBtn:hover {
   background: #2FA8FA;
   color: #ffffff;
+  -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(47, 168, 250, 0.3);
 }
 
 .navBtn:active {
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
