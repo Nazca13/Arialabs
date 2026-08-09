@@ -77,6 +77,12 @@
   color: #2FA8FA;
 }
 
+/* Active page: link stays blue */
+.navLinkActive {
+  color: #2FA8FA !important;
+  font-weight: 600;
+}
+
 .navLinkLight {
   color: #fff;
 }

@@ -65,7 +65,11 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`${styles.navLink} ${onHeroBg ? styles.navLinkLight : ''}`}
+              className={[
+                styles.navLink,
+                onHeroBg ? styles.navLinkLight : '',
+                isActive(item.href) && !onHeroBg ? styles.navLinkActive : '',
+              ].filter(Boolean).join(' ')}
               aria-current={isActive(item.href) ? 'page' : undefined}
             >
               {item.label}
