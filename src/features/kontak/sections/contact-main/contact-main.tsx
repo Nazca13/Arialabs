@@ -43,6 +43,7 @@ export function ContactMain() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
+    email: '',
     description: '',
   })
   const [selectedServices, setSelectedServices] = useState<string[]>([])
@@ -69,6 +70,7 @@ Saya ingin mendiskusikan kebutuhan digital bisnis saya.
 
 📦 Paket / Layanan: ${services}
 🏢 Nama / Perusahaan: ${fullName}
+📧 Email: ${formData.email}
 📝 Detail Kebutuhan: ${description}
 
 Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
@@ -138,7 +140,7 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
                   type="text"
                   value={formData.firstName}
                   onChange={handleChange}
-                  placeholder="John"
+                  placeholder="Jack"
                   required
                 />
               </div>
@@ -150,10 +152,23 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
                   type="text"
                   value={formData.lastName}
                   onChange={handleChange}
-                  placeholder="Doe / Brand Anda"
+                  placeholder="Hudson / Brand Anda"
                   required
                 />
               </div>
+            </div>
+
+            <div className={styles.field}>
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="email@kamu.com"
+                required
+              />
             </div>
 
             {/* Multi-select service pills */}
