@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import styles from './client-logos.module.css'
 
@@ -22,6 +24,7 @@ export function ClientLogos() {
             alt=""
             width={30}
             height={30}
+            priority
             aria-hidden="true"
             className={styles.spark}
           />
@@ -41,7 +44,7 @@ export function ClientLogos() {
                   alt={c.name}
                   width={136}
                   height={50}
-                  loading="lazy"
+                  priority={i < 8}
                   style={{ objectFit: 'contain' }}
                 />
               </div>

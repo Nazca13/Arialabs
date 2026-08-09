@@ -7,7 +7,11 @@
 
 /* One horizontal band: tagline pinned left, logos scrolling to its right */
 .band {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: 40px;
   padding-top: 24px;
@@ -15,9 +19,14 @@
 }
 
 .tagline {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: 14px;
+  -webkit-flex-shrink: 0;
   flex-shrink: 0;
   max-width: 340px;
   font-size: 14px;
@@ -33,12 +42,12 @@
 }
 
 @-webkit-keyframes sparkSpin {
-  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to   { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 @keyframes sparkSpin {
-  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to   { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 .marquee {
@@ -62,24 +71,32 @@
 .marquee::after  { right: 0; background: linear-gradient(-90deg, #fff, transparent); }
 
 .rail {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: 64px;
   width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   -webkit-animation: marqueeScroll 24s linear infinite;
   animation: marqueeScroll 24s linear infinite;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
 
 .logoItem {
+  -webkit-flex-shrink: 0;
   flex-shrink: 0;
   height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
 }
 
@@ -91,12 +108,12 @@
 }
 
 @-webkit-keyframes marqueeScroll {
-  0% { -webkit-transform: translate3d(0, 0, 0); }
-  100% { -webkit-transform: translate3d(-50%, 0, 0); }
+  0% { -webkit-transform: translateX(0); transform: translateX(0); }
+  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 @keyframes marqueeScroll {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
+  0% { -webkit-transform: translateX(0); transform: translateX(0); }
+  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {
