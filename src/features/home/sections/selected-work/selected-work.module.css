@@ -21,8 +21,14 @@
 .sub { font-size: 15px; color: #666666; line-height: 1.7; }
 
 .trackWrap {
-  overflow: hidden;
+  overflow-x: auto;
   padding: 8px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.trackWrap::-webkit-scrollbar {
+  display: none;
 }
 
 .rail {
@@ -32,17 +38,15 @@
   gap: 20px;
   width: -webkit-max-content;
   width: max-content;
-  -webkit-animation: railScroll 28s linear infinite;
-  animation: railScroll 28s linear infinite;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 20px;
 }
 
-@-webkit-keyframes railScroll {
-  0% { -webkit-transform: translateX(0); transform: translateX(0); }
-  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
-}
-@keyframes railScroll {
-  0% { -webkit-transform: translateX(0); transform: translateX(0); }
-  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+.rail::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
@@ -132,6 +136,40 @@
 }
 
 .cardTitle { font-size: 16px; font-weight: 700; color: #000; }
+
+.navControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #EAF5FE;
+  color: #2FA8FA;
+  border: 1.5px solid #2FA8FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(47, 168, 250, 0.15);
+}
+
+.navBtn:hover {
+  background: #2FA8FA;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 168, 250, 0.3);
+}
+
+.navBtn:active {
+  transform: translateY(0);
+}
 
 @media (max-width: 900px) {
   .heading { font-size: 30px; }

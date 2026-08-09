@@ -116,24 +116,34 @@
 }
 .featureItem svg { flex-shrink: 0; }
 
-/* ── Tablet: 2 then stacks to 1 ── */
+/* ── Tablet & Mobile Filter & Grid ── */
 @media (max-width: 900px) {
   .top { flex-direction: column; align-items: flex-start; }
   .heading { font-size: 28px; }
   .filter {
+    display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    width: 100%;
     max-width: 100%;
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  /* Horizontal swipeable cards on tablet — all 3 visible */
+  .filter::-webkit-scrollbar {
+    display: none;
+  }
+  .filterBtn {
+    flex-shrink: 0;
+  }
   .grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 }
 
-/* ── Mobile: full-width stacked cards ── */
 @media (max-width: 640px) {
   .section { padding: 40px 0; }
   .grid {
@@ -144,7 +154,6 @@
     padding: 28px 22px;
   }
   .price { font-size: 30px; }
-  /* Featured card stands out */
   .featured {
     order: -1;
   }

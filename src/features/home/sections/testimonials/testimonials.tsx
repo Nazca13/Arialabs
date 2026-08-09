@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef } from 'react'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import styles from './testimonials.module.css'
@@ -28,6 +29,19 @@ const DATA = [
 export function Testimonials() {
   const sectionRef = useScrollReveal<HTMLElement>()
   const doubled = [...DATA, ...DATA]
+  const railRef = useRef<HTMLDivElement>(null)
+
+  const handlePrev = () => {
+    if (railRef.current) {
+      railRef.current.scrollBy({ left: -360, behavior: 'smooth' })
+    }
+  }
+
+  const handleNext = () => {
+    if (railRef.current) {
+      railRef.current.scrollBy({ left: 360, behavior: 'smooth' })
+    }
+  }
 
   return (
     <section ref={sectionRef} className={`reveal ${styles.section}`}>
@@ -41,7 +55,7 @@ export function Testimonials() {
       </div>
 
       <div className={styles.trackWrap}>
-        <div className={styles.rail}>
+        <div className={styles.rail} ref={railRef}>
           {doubled.map((t, i) => (
             <div key={i} className={styles.card}>
               <p className={styles.quote}>&ldquo;{t.quote}&rdquo;</p>
@@ -57,6 +71,19 @@ export function Testimonials() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className={styles.navControls}>
+        <button className={styles.navBtn} onClick={handlePrev} aria-label="Previous testimonial">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button className={styles.navBtn} onClick={handleNext} aria-label="Next testimonial">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
       </div>
     </section>
   )
