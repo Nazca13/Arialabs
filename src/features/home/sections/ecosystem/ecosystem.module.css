@@ -46,9 +46,9 @@
 }
 
 .logoImg {
-  width: 360px;
+  width: 504px;
   height: auto;
-  max-height: 140px;
+  max-height: 196px;
   object-fit: contain;
   -webkit-transition: transform 0.3s ease, filter 0.3s ease;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -77,8 +77,8 @@
     justify-content: center;
   }
   .logoImg {
-    width: 280px;
-    max-height: 110px;
+    width: 392px;
+    max-height: 154px;
   }
 }
 
@@ -90,7 +90,7 @@
     font-size: 26px;
   }
   .logoImg {
-    width: 240px;
-    max-height: 95px;
+    width: 336px;
+    max-height: 133px;
   }
 }
