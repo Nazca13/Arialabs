@@ -16,7 +16,7 @@
 
 .sub {
   font-size: 14px;
-  color: #747474;
+  color: #666666;
   line-height: 1.7;
   margin-bottom: 36px;
 }
@@ -62,7 +62,7 @@
 
 .itemValue {
   font-size: 13px;
-  color: #747474;
+  color: #666666;
   max-width: 340px;
   line-height: 1.5;
 }
@@ -94,7 +94,7 @@
 
 .labelHint {
   font-weight: 400;
-  color: #747474;
+  color: #666666;
   font-size: 12px;
 }
 
@@ -140,7 +140,7 @@
   font-size: 13px;
   font-weight: 500;
   font-family: inherit;
-  color: #747474;
+  color: #666666;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;

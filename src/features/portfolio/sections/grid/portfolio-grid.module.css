@@ -17,7 +17,7 @@
   background: #fff;
   font-size: 14px;
   font-weight: 500;
-  color: #747474;
+  color: #666666;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -124,7 +124,7 @@
   grid-column: span 2;
   padding: 80px 0;
   text-align: center;
-  color: #747474;
+  color: #666666;
   font-size: 15px;
 }
 

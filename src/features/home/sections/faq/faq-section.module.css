@@ -14,7 +14,7 @@
   margin: 14px 0 14px;
 }
 .blue { color: #2FA8FA; }
-.sub { font-size: 14px; color: #747474; line-height: 1.7; }
+.sub { font-size: 14px; color: #666666; line-height: 1.7; }
 
 .right {
   display: flex;
@@ -93,7 +93,7 @@
 
 .answer {
   font-size: 14px;
-  color: #747474;
+  color: #666666;
   line-height: 1.7;
   padding: 0 24px 20px;
 }

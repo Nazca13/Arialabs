@@ -41,7 +41,7 @@ export function Footer() {
         <div className={styles.brand}>
           <Link href="/" aria-label="Aria Labs, kembali ke beranda" className={styles.logoLink}>
             <Image
-              src="/assets/logo/logo-footer.png"
+              src="/assets/logo/logo-footer.webp"
               alt="Aria Labs"
               width={170}
               height={60}
