@@ -22,9 +22,6 @@ export default function PrivacyPage() {
 
           <div className={styles.header}>
             <h1 className={styles.title}>PRIVACY POLICY</h1>
-            <p className={styles.subtitle}>
-              Aria Labs - Creative Digital Studio &bull; Last Updated: August 9, 2026
-            </p>
           </div>
 
           <div className={styles.introText}>
