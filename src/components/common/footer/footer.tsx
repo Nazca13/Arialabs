@@ -18,7 +18,6 @@ const LINKS = {
     { label: 'Social Media Management', href: '/layanan/social-media-management' },
   ],
   Resources: [
-    { label: 'Case Studies',   href: '/portfolio' },
     { label: 'FAQ',            href: '/#faq' },
     { label: 'Pricing',        href: '/#pricing' },
     { label: 'Privacy Policy', href: '/privacy' },
