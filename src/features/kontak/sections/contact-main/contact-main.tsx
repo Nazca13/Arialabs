@@ -91,7 +91,7 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
           </h2>
           <p className={styles.sub}>
             We&apos;re here to help. Reach out through any of the channels below, or fill out the
-            form — kami langsung reply via WhatsApp.
+            form, kami langsung reply via WhatsApp.
           </p>
 
           <div className={styles.items}>

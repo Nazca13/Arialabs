@@ -8,7 +8,7 @@ import { CtaSection } from '@/features/home/sections/cta/cta-section'
 
 export const metadata: Metadata = {
   title: 'Portfolio | Aria Labs',
-  description: 'Karya terbaik Aria Labs — web development, UI/UX design, brand identity, graphic design, dan social media management untuk bisnis di seluruh Indonesia.',
+  description: 'Karya terbaik Aria Labs, web development, UI/UX design, brand identity, graphic design, dan social media management untuk bisnis di seluruh Indonesia.',
 }
 
 export default function PortfolioPage() {

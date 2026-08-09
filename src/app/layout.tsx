@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Aria Labs — Creative Digital Studio',
+        alt: 'Aria Labs, Creative Digital Studio',
       },
     ],
   },

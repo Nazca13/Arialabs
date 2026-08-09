@@ -11,7 +11,7 @@ import { CtaSection } from '@/features/home/sections/cta/cta-section'
 
 export const metadata: Metadata = {
   title: 'Tentang Kami | Aria Labs',
-  description: 'Kenali Aria Labs lebih dekat — Creative Digital Studio yang membantu bisnis membangun identitas visual, pengalaman digital, dan website modern.',
+  description: 'Kenali Aria Labs lebih dekat, Creative Digital Studio yang membantu bisnis membangun identitas visual, pengalaman digital, dan website modern.',
 }
 
 export default function AboutPage() {

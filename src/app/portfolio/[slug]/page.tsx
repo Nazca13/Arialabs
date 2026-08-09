@@ -11,9 +11,9 @@ const PROJECTS_DATA = {
     category: 'Web Development',
     year: '2024',
     client: 'PHASE',
-    description: 'PHASE Fragrance adalah brand parfum premium asal Indonesia yang membutuhkan kehadiran digital yang elegan, sesuai dengan nilai brand mereka — eksklusif, minimalis, dan berkarakter.',
+    description: 'PHASE Fragrance adalah brand parfum premium asal Indonesia yang membutuhkan kehadiran digital yang elegan, sesuai dengan nilai brand mereka, eksklusif, minimalis, dan berkarakter.',
     challenge: 'PHASE hadir dengan produk parfum berkualitas tinggi, namun belum memiliki platform digital yang merepresentasikan identitas brand mereka secara tepat. Website lama terasa generik dan tidak mampu menyampaikan nilai premium yang ingin ditonjolkan kepada calon pelanggan.',
-    solution: 'Kami merancang website dari nol menggunakan pendekatan design-first — dimulai dari riset brand, mood board, hingga wireframe yang kemudian dikembangkan menjadi website dengan animasi halus, tipografi tegas, dan layout yang bersih. Setiap detail dipilih untuk memperkuat identitas PHASE.',
+    solution: 'Kami merancang website dari nol menggunakan pendekatan design-first, dimulai dari riset brand, mood board, hingga wireframe yang kemudian dikembangkan menjadi website dengan animasi halus, tipografi tegas, dan layout yang bersih. Setiap detail dipilih untuk memperkuat identitas PHASE.',
     result: 'Website PHASE Fragrance berhasil meningkatkan kepercayaan konsumen secara signifikan. Bounce rate menurun dan rata-rata waktu kunjungan meningkat. Tim PHASE melaporkan peningkatan inquiry produk dan pertumbuhan penjualan online dalam 30 hari pertama setelah launch.',
     logo: '/assets/images/brands/phase.png',
     heroImage: '/assets/projects-image/web-development/phase.webp',
@@ -97,10 +97,10 @@ const PROJECTS_DATA = {
 }
 
 const PROJECT_LIST = [
-  { slug: 'phase-fragrance',   title: 'PHASE Fragrance',          category: 'Web Development', image: '/assets/projects-image/web-development/phase.webp' },
-  { slug: 'aquanime-studio',   title: 'Aquanime Official Website', category: 'Web Development', image: '/assets/projects-image/web-development/aquanime.id.webp' },
-  { slug: 'jejak-lokal',       title: 'Jejak Lokal',               category: 'Web Development', image: '/assets/projects-image/web-development/jejaklokal.id.webp' },
-  { slug: 'mae-news',          title: 'Mae News',                  category: 'Web Development', image: '/assets/projects-image/web-development/maenews.id.webp' },
+  { slug: 'phase-fragrance',  title: 'PHASE Fragrance',         category: 'Web Development', image: '/assets/projects-image/web-development/phase.webp' },
+  { slug: 'aquanime-studio',  title: 'Aquanime Official Website', category: 'Web Development', image: '/assets/projects-image/web-development/aquanime.id.webp' },
+  { slug: 'jejak-lokal',      title: 'Jejak Lokal',              category: 'Web Development', image: '/assets/projects-image/web-development/jejaklokal.id.webp' },
+  { slug: 'mae-news',         title: 'Mae News',                 category: 'Web Development', image: '/assets/projects-image/web-development/maenews.id.webp' },
 ]
 
 type Props = {
@@ -111,7 +111,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = PROJECTS_DATA[params.slug as keyof typeof PROJECTS_DATA]
   if (!project) return { title: 'Project Not Found | Aria Labs' }
   return {
-    title: `${project.title} — ${project.category} | Aria Labs`,
+    title: `${project.title}, ${project.category} | Aria Labs`,
     description: project.description.slice(0, 160),
   }
 }

@@ -126,7 +126,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     title: 'Graphic Design',
     badge: 'Creative Visuals',
     tagline: 'Desain Visual Memukau untuk Memperkuat Kampanye Promosi Anda',
-    description: 'Solusi visual kreatif untuk seluruh media pemasaran Anda — mulai dari materi promosi cetak, baliho, brosur, banner digital, hingga materi presentasi bisnis yang estetik dan komunikatif.',
+    description: 'Solusi visual kreatif untuk seluruh media pemasaran Anda, mulai dari materi promosi cetak, baliho, brosur, banner digital, hingga materi presentasi bisnis yang estetik dan komunikatif.',
     mascot: '/assets/images/characters/aria-service/aria-graphic.svg',
     categoryName: 'Graphic Design',
     benefits: [
@@ -160,7 +160,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     title: 'Social Media Management',
     badge: 'Audience Growth',
     tagline: 'Strategi & Pengelolaan Media Sosial Profesional untuk Pertumbuhan Merek',
-    description: 'Kami mengelola akun media sosial bisnis Anda secara konsisten — mulai dari riset konten, pembuatan visual feed/reels, penulisan caption persuasif, hingga analisis performa bulanan.',
+    description: 'Kami mengelola akun media sosial bisnis Anda secara konsisten, mulai dari riset konten, pembuatan visual feed/reels, penulisan caption persuasif, hingga analisis performa bulanan.',
     mascot: '/assets/images/characters/aria-service/aria-sosmed.svg',
     categoryName: 'Social Media Management',
     benefits: [

@@ -9,12 +9,12 @@ const PARTNERS = [
   {
     name: 'Animae',
     src: '/assets/images/brands/official-partners/animae.png',
-    alt: 'Animae — Strategic Collaboration',
+    alt: 'Animae,  Strategic Collaboration',
   },
   {
     name: 'Nexoria',
     src: '/assets/images/brands/official-partners/nexoria.png',
-    alt: 'Nexoria — Strategic Collaboration',
+    alt: 'Nexoria,  Strategic Collaboration',
   },
 ]
 
