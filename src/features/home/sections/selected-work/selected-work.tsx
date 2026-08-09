@@ -39,22 +39,38 @@ const PROJECTS = [
 
 export function SelectedWork() {
   const [offset, setOffset] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [isPaused, setIsPaused] = useState(false)
   const doubled = [...PROJECTS, ...PROJECTS]
   const animationRef = useRef<number>()
+  const lastTimeRef = useRef<number>(0)
+
+  // Card width + gap
+  const CARD_WIDTH = 340
 
   useEffect(() => {
-    if (!isAutoPlaying) return
+    const animate = (currentTime: number) => {
+      if (!lastTimeRef.current) {
+        lastTimeRef.current = currentTime
+      }
 
-    const animate = () => {
-      setOffset((prev) => {
-        const newOffset = prev - 0.5
-        // Reset saat sudah scroll setengah (karena doubled)
-        if (Math.abs(newOffset) >= (340 * PROJECTS.length + 20 * PROJECTS.length)) {
-          return 0
-        }
-        return newOffset
-      })
+      const deltaTime = currentTime - lastTimeRef.current
+      lastTimeRef.current = currentTime
+
+      if (!isPaused) {
+        setOffset((prev) => {
+          const speed = 0.03 // pixels per ms
+          let newOffset = prev - (speed * deltaTime)
+
+          // Smooth infinite loop - reset when halfway through
+          const halfwayPoint = -(CARD_WIDTH * PROJECTS.length + 20 * PROJECTS.length)
+          if (newOffset <= halfwayPoint) {
+            newOffset = 0
+          }
+
+          return newOffset
+        })
+      }
+
       animationRef.current = requestAnimationFrame(animate)
     }
 
@@ -65,18 +81,18 @@ export function SelectedWork() {
         cancelAnimationFrame(animationRef.current)
       }
     }
-  }, [isAutoPlaying])
+  }, [isPaused])
 
   const handlePrev = () => {
-    setIsAutoPlaying(false)
-    setOffset((prev) => prev + 340)
-    setTimeout(() => setIsAutoPlaying(true), 2000)
+    setIsPaused(true)
+    setOffset((prev) => prev + CARD_WIDTH)
+    setTimeout(() => setIsPaused(false), 2500)
   }
 
   const handleNext = () => {
-    setIsAutoPlaying(false)
-    setOffset((prev) => prev - 340)
-    setTimeout(() => setIsAutoPlaying(true), 2000)
+    setIsPaused(true)
+    setOffset((prev) => prev - CARD_WIDTH)
+    setTimeout(() => setIsPaused(false), 2500)
   }
 
   return (
@@ -97,7 +113,7 @@ export function SelectedWork() {
           className={styles.rail}
           style={{
             transform: `translateX(${offset}px)`,
-            transition: isAutoPlaying ? 'none' : 'transform 0.5s ease-out'
+            transition: isPaused ? 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none'
           }}
         >
           {doubled.map((p, i) => (
