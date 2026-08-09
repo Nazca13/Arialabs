@@ -38,8 +38,8 @@ export function AboutWhoWeAre() {
             <Image
               src="/assets/images/characters/aria-card.webp"
               alt="Aria Cards - UI/UX, Brand Identity, Dev, Graphic Design"
-              width={4560}
-              height={1748}
+              width={1355}
+              height={499}
               style={{ width: '100%', height: 'auto' }}
               priority
             />
