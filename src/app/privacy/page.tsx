@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
           <div className={styles.introText}>
             <p>
-              Aria Labs (&quot;Kami&quot;) sangat menghargai privasi dan keamanan data Anda. Kebijakan Privasi (Privacy Policy) ini menjelaskan secara transparan bagaimana kami mengumpulkan, menggunakan, memproses, dan melindungi informasi pribadi yang Anda berikan ketika Anda mengakses situs web kami (arialabs.id atau subdomain terkait) dan menggunakan layanan kami.
+              Aria Labs (&quot;Kami&quot;) berkomitmen secara penuh untuk melindungi privasi data pribadi Anda. Kebijakan Privasi ini disusun sebagai bentuk transparansi dan kepatuhan terhadap standar perlindungan data terkait cara kami mengumpulkan, menyimpan, dan memproses data Anda saat mengunjungi situs arialabs.id atau menggunakan layanan kami.
             </p>
           </div>
 
@@ -38,13 +38,12 @@ export default function PrivacyPage() {
               </div>
               <div className={styles.rightCol}>
                 <p>
-                  Kami mengumpulkan data pribadi Anda secara sadar dan aktif ketika Anda berinteraksi dengan kami, terutama saat Anda mengisi formulir kontak, menekan tombol &quot;Book to Call&quot;, atau &quot;Reach Out&quot; di situs web kami. Data yang kami kumpulkan meliputi:
+                  Kami hanya mengumpulkan informasi yang esensial untuk keperluan bisnis secara legal. Data ini diberikan secara sukarela saat Anda berinteraksi dengan situs kami (melalui form kontak):
                 </p>
                 <ul>
-                  <li>Nama lengkap (individu atau perwakilan perusahaan).</li>
-                  <li>Alamat email profesional atau pribadi.</li>
-                  <li>Nomor telepon atau WhatsApp yang dapat dihubungi.</li>
-                  <li>Detail informasi terkait perusahaan dan rincian kebutuhan proyek (brief).</li>
+                  <li>Informasi Identitas: Nama lengkap perusahaan atau individu.</li>
+                  <li>Informasi Kontak: Alamat email bisnis/pribadi dan nomor WhatsApp aktif.</li>
+                  <li>Informasi Proyek: Rincian spesifikasi, brief desain, dan anggaran proyek.</li>
                 </ul>
               </div>
             </div>
@@ -52,18 +51,18 @@ export default function PrivacyPage() {
             {/* 2 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>2. Third-Party Analytics &amp; Technical Data (Perekaman Data Analitik Pihak Ketiga)</h2>
+                <h2 className={styles.sectionHeading}>2. Third-Party Analytics &amp; Infrastructure (Data Analitik &amp; Infrastruktur)</h2>
               </div>
               <div className={styles.rightCol}>
                 <p>
-                  Selain data yang Anda berikan secara langsung, sistem kami secara otomatis mengumpulkan metrik teknis saat Anda menjelajahi situs web kami guna memastikan fungsionalitas dan meningkatkan pengalaman pengguna (UI/UX). Situs kami menggunakan teknologi berikut:
+                  Untuk memastikan performa, keamanan, dan fungsionalitas antarmuka situs, kami menggunakan alat pelacakan anonim standar industri:
                 </p>
                 <ul>
                   <li>
-                    <strong>Microsoft Clarity:</strong> Kami menggunakan layanan analitik ini untuk memahami bagaimana pengunjung berinteraksi dengan antarmuka web kami (melalui perekaman anonim seperti metrik klik, guliran/scroll layar, dan pemetaan panas/heatmap). Data ini bersifat agregat dan tidak menautkan perilaku penelusuran dengan identitas asli Anda.
+                    <strong>Analitik Perilaku:</strong> Kami menggunakan Microsoft Clarity untuk menganalisis interaksi pengguna (seperti heatmap dan klik). Data ini bersifat agregat, dianonimkan, dan tidak menautkan perilaku penelusuran dengan identitas pribadi Anda.
                   </li>
                   <li>
-                    <strong>Vercel Infrastructure:</strong> Situs kami di-host pada infrastruktur Vercel yang dapat mencatat secara otomatis data server teknis dasar (seperti alamat IP sementara, tipe browser, dan waktu akses) murni untuk keperluan menjaga kelancaran operasional (uptime), keamanan jaringan dari peretasan, dan kecepatan akses halaman.
+                    <strong>Infrastruktur Cloud:</strong> Situs web kami di-host menggunakan infrastruktur <em>cloud server</em> berstandar keamanan tinggi yang secara otomatis mencatat log teknis dasar (IP Address dinamis, tipe <em>browser</em>, dan lokasi regional) untuk pencegahan serangan DDoS dan <em>uptime monitoring</em>.
                   </li>
                 </ul>
               </div>
@@ -72,60 +71,86 @@ export default function PrivacyPage() {
             {/* 3 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>3. Use of Information (Penggunaan Informasi)</h2>
+                <h2 className={styles.sectionHeading}>3. Cookie Policy (Kebijakan Cookie)</h2>
               </div>
               <div className={styles.rightCol}>
                 <p>
-                  Segala bentuk data yang telah kami kumpulkan akan kami gunakan secara eksklusif untuk tujuan operasional dan profesional berikut:
+                  Situs web kami menggunakan Cookies (file teks kecil yang disimpan di peramban Anda) dan Local Storage murni untuk mengaktifkan fungsi inti situs, mengingat preferensi sistem, dan mendukung kelancaran navigasi. Klien memiliki kebebasan untuk menonaktifkan Cookies melalui pengaturan peramban masing-masing.
                 </p>
-                <ul>
-                  <li>Merespons pertanyaan, menjadwalkan panggilan konsultasi, dan mengirimkan dokumen proposal layanan (pitching) atau penawaran harga.</li>
-                  <li>Memfasilitasi komunikasi administratif dan teknis selama berlangsungnya siklus pengerjaan proyek.</li>
-                  <li>Meningkatkan kualitas navigasi, desain antarmuka, dan relevansi konten situs web kami berdasarkan hasil analisis anonim dari penyedia layanan pihak ketiga (Microsoft Clarity).</li>
-                </ul>
               </div>
             </div>
 
             {/* 4 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>4. Data Protection &amp; Anti-Selling Clause (Perlindungan &amp; Klausa Anti-Jual Data)</h2>
+                <h2 className={styles.sectionHeading}>4. Purpose of Data Usage (Tujuan Penggunaan Data)</h2>
               </div>
               <div className={styles.rightCol}>
                 <p>
-                  Aria Labs memegang teguh kerahasiaan informasi Anda. Kami menjamin dan menegaskan bahwa kami tidak akan pernah menjual, menyewakan, atau mendistribusikan data pribadi dan informasi kontak Anda kepada pihak ketiga mana pun untuk tujuan pemasaran (marketing) atau periklanan di luar ekosistem layanan Aria Labs. Data Anda hanya dapat diakses oleh anggota internal studio yang berkepentingan langsung dengan proyek Anda.
+                  Data pribadi yang telah dihimpun tidak akan pernah disalahgunakan dan secara eksklusif digunakan untuk:
                 </p>
+                <ul>
+                  <li>Menyusun dokumen penawaran (proposal/pitch deck), <em>invoice</em>, dan keperluan administratif.</li>
+                  <li>Memfasilitasi komunikasi resmi terkait update pengerjaan proyek desain dan pengembangan.</li>
+                  <li>Memenuhi kewajiban perpajakan dan hukum yang berlaku di Republik Indonesia.</li>
+                </ul>
               </div>
             </div>
 
             {/* 5 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>5. Data Subject Rights (Hak Anda Sebagai Pemilik Data)</h2>
+                <h2 className={styles.sectionHeading}>5. Strict Anti-Selling Clause (Klausa Anti-Jual Data)</h2>
               </div>
               <div className={styles.rightCol}>
                 <p>
-                  Sesuai dengan regulasi perlindungan data yang berlaku, Anda memiliki hak kendali penuh atas informasi pribadi yang telah Anda serahkan kepada kami. Anda berhak setiap saat untuk:
+                  <span className={styles.redAlert}>Pernyataan Tegas:</span> Aria Labs tidak akan pernah menjual, menyewakan, memperdagangkan, atau membagikan basis data Klien maupun prospek Klien kepada pihak ketiga (seperti agen pemasaran atau pengiklan eksternal) dengan alasan apa pun. Akses data dibatasi hanya untuk internal tim Studio yang terikat perjanjian kerahasiaan.
                 </p>
-                <ul>
-                  <li>Meminta salinan data pribadi Anda yang tersimpan di basis data kami.</li>
-                  <li>Meminta koreksi atau pembaruan apabila terdapat data yang tidak akurat.</li>
-                  <li>Meminta penghapusan permanen (right to be forgotten) data kontak Anda dari sistem administratif kami (dengan pengecualian untuk dokumen penagihan/faktur yang harus kami simpan sesuai kewajiban hukum perpajakan).</li>
-                </ul>
               </div>
             </div>
 
             {/* 6 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>6. Contact Us (Hubungi Kami)</h2>
+                <h2 className={styles.sectionHeading}>6. Security Disclaimer (Penyangkalan Keamanan)</h2>
               </div>
               <div className={styles.rightCol}>
                 <p>
-                  Apabila Anda memiliki pertanyaan lebih lanjut, kekhawatiran terkait privasi data Anda, atau ingin melaksanakan hak Anda sebagaimana tercantum di atas, silakan hubungi tim kami melalui:
+                  Kami menerapkan protokol keamanan yang wajar (seperti sertifikat SSL/Enkripsi) untuk melindungi data saat transit. Namun, Klien mengakui bahwa tidak ada metode transmisi di internet atau penyimpanan elektronik yang 100% aman dan tahan retas. Aria Labs tidak bertanggung jawab atas kebocoran data yang diakibatkan oleh kerentanan infrastruktur global atau kelalaian Klien sendiri.
+                </p>
+              </div>
+            </div>
+
+            {/* 7 */}
+            <div className={styles.row}>
+              <div className={styles.leftCol}>
+                <h2 className={styles.sectionHeading}>7. Data Subject Rights (Hak Pemilik Data)</h2>
+              </div>
+              <div className={styles.rightCol}>
+                <p>
+                  Anda memegang kendali atas informasi pribadi Anda. Anda berhak untuk:
+                </p>
+                <ul>
+                  <li>Meminta perbaikan (revisi) atas data yang salah.</li>
+                  <li>Mengajukan permintaan penghapusan (Right to Erasure) informasi kontak Anda dari basis data prospek pemasaran kami.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 8 */}
+            <div className={styles.row}>
+              <div className={styles.leftCol}>
+                <h2 className={styles.sectionHeading}>8. Changes &amp; Contact (Pembaruan &amp; Kontak)</h2>
+              </div>
+              <div className={styles.rightCol}>
+                <p>
+                  Aria Labs berhak memodifikasi Kebijakan Privasi dan Terms of Service ini sewaktu-waktu tanpa pemberitahuan personal sebelumnya. Pembaruan akan berlaku efektif secara langsung begitu diterbitkan pada halaman ini.
                 </p>
                 <p>
-                  <strong>Email:</strong> <a href="mailto:hello@arialabs.id" style={{ color: '#2FA8FA', textDecoration: 'underline' }}>hello@arialabs.id</a>
+                  Apabila ada pertanyaan terkait aspek legal atau perlakuan data Anda, silakan hubungi tim kami secara resmi melalui:
+                </p>
+                <p>
+                  Email Inquiries: <a href="mailto:hello@arialabs.id" style={{ color: '#2FA8FA', fontWeight: 'bold' }}>hello@arialabs.id</a>
                 </p>
               </div>
             </div>

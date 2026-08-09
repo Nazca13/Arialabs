@@ -89,6 +89,11 @@
   color: #000000;
 }
 
+.redAlert {
+  color: #DC2626;
+  font-weight: 700;
+}
+
 .backLink {
   display: inline-flex;
   align-items: center;

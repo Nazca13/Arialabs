@@ -26,7 +26,7 @@ export default function TermsPage() {
 
           <div className={styles.introText}>
             <p>
-              Selamat datang di Aria Labs. Syarat dan Ketentuan (Terms of Service) ini mengatur hubungan antara Anda (&quot;Klien&quot; atau &quot;Pengguna&quot;) dengan Aria Labs (&quot;Kami&quot; atau &quot;Studio&quot;) terkait penggunaan layanan desain, pengembangan web, dan identitas visual kami. Dengan mengakses situs web kami atau menyetujui penawaran proyek kami, Anda dianggap telah membaca, memahami, dan menyetujui seluruh ketentuan di bawah ini.
+              Selamat datang di Aria Labs. Syarat dan Ketentuan (Terms of Service) ini adalah perjanjian mengikat secara hukum yang mengatur hubungan antara Anda (&quot;Klien&quot; atau &quot;Pengguna&quot;) dengan Aria Labs (&quot;Kami&quot; atau &quot;Studio&quot;). Dengan menggunakan layanan kami, Anda dianggap telah membaca, memahami, dan menyetujui seluruh ketentuan ini tanpa pengecualian.
             </p>
           </div>
 
@@ -39,10 +39,10 @@ export default function TermsPage() {
               <div className={styles.rightCol}>
                 <ul>
                   <li>
-                    Seluruh layanan yang diberikan oleh Aria Labs (termasuk namun tidak terbatas pada Web Development, Brand Identity, dan UI/UX Design) akan dikerjakan secara eksklusif berdasarkan dokumen penawaran atau brief proyek yang telah disepakati secara tertulis oleh kedua belah pihak sebelum proyek dimulai.
+                    Layanan yang diberikan (Web Development, Brand Identity, UI/UX Design) dieksekusi secara eksklusif berdasarkan dokumen brief proyek atau Surat Perjanjian Kerjasama (SPK) yang disepakati secara tertulis.
                   </li>
                   <li>
-                    Setiap permintaan perubahan konsep dasar, arah desain secara menyeluruh, atau penambahan fitur sistem yang menyimpang atau tidak tercantum dalam brief awal akan dikategorikan sebagai pekerjaan tambahan (Add-ons/Out of Scope) dan akan dikenakan biaya tambahan sesuai estimasi waktu dan sumber daya yang dibutuhkan.
+                    Setiap permintaan fitur, halaman, atau konsep tambahan di luar ruang lingkup awal (Scope Creep) wajib didokumentasikan sebagai pekerjaan tambahan (Add-ons) dan tunduk pada penagihan biaya terpisah sesuai estimasi waktu pengerjaan.
                   </li>
                 </ul>
               </div>
@@ -56,13 +56,10 @@ export default function TermsPage() {
               <div className={styles.rightCol}>
                 <ul>
                   <li>
-                    Aria Labs memberikan batasan standar maksimal 3 (tiga) kali revisi minor pada setiap fase proyek (kecuali diatur berbeda secara spesifik dalam kontrak perjanjian terpisah).
+                    Aria Labs mengalokasikan maksimal 3 (tiga) putaran revisi minor pada setiap fase proyek. Revisi minor meliputi penyesuaian tata letak (layout), warna, tipografi, dan perbaikan salinan (copywriting).
                   </li>
                   <li>
-                    Revisi minor mencakup penyesuaian warna, penggantian tipografi, perbaikan jarak/layout (spacing), atau penyesuaian teks (copywriting) yang tidak merombak struktur utama atau algoritma.
-                  </li>
-                  <li>
-                    Revisi di luar batas yang ditentukan atau revisi mayor yang mengharuskan pembuatan ulang dari awal akan dikenakan biaya tambahan (hourly rate atau flat fee).
+                    Revisi mayor (perubahan arah desain secara fundamental atau perombakan struktur sistem) tidak termasuk dalam revisi standar dan akan dikenakan biaya tambahan per jam (hourly rate) atau sesuai kesepakatan baru.
                   </li>
                 </ul>
               </div>
@@ -71,18 +68,15 @@ export default function TermsPage() {
             {/* 3 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>3. Intellectual Property Rights (Hak Kekayaan Intelektual)</h2>
+                <h2 className={styles.sectionHeading}>3. Client Responsibilities &amp; Delays (Tanggung Jawab Klien &amp; Keterlambatan)</h2>
               </div>
               <div className={styles.rightCol}>
                 <ul>
                   <li>
-                    Seluruh hasil karya, konsep awal, draf, aset desain, source file (seperti file Figma, Adobe, logo), serta baris kode (source code) sepenuhnya berstatus sebagai Hak Milik Aria Labs selama proses pengerjaan berlangsung dan belum dilakukan pelunasan kewajiban finansial.
+                    Klien wajib menyediakan seluruh materi yang dibutuhkan (seperti teks, profil perusahaan, pedoman merek, dan gambar spesifik) tepat waktu sesuai jadwal proyek.
                   </li>
                   <li>
-                    Hak kepemilikan dan hak guna komersial atas hasil akhir proyek (final deliverables) baru akan dipindahtangankan sepenuhnya kepada Klien hanya setelah pelunasan 100% diterima oleh Aria Labs.
-                  </li>
-                  <li>
-                    Konsep, draf, atau desain alternatif yang tidak dipilih oleh Klien tetap menjadi hak milik intelektual eksklusif Aria Labs.
+                    <strong>Dormant Project Clause:</strong> Apabila Klien menghentikan komunikasi, menunda pemberian umpan balik (feedback), atau tidak memberikan materi yang dibutuhkan selama lebih dari <strong>30 hari kalender</strong> berturut-turut, proyek akan dianggap dorman (dihentikan sementara). Untuk mengaktifkan kembali proyek tersebut, Klien akan dikenakan biaya restart sebesar 10% dari total nilai proyek.
                   </li>
                 </ul>
               </div>
@@ -91,12 +85,15 @@ export default function TermsPage() {
             {/* 4 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>4. Portfolio Usage (Penggunaan Portofolio)</h2>
+                <h2 className={styles.sectionHeading}>4. Third-Party Assets &amp; Licenses (Aset &amp; Lisensi Pihak Ketiga)</h2>
               </div>
               <div className={styles.rightCol}>
                 <ul>
                   <li>
-                    Aria Labs mempertahankan hak moral (moral rights) atas seluruh karya yang kami hasilkan. Kami berhak secara penuh menampilkan hasil akhir karya tersebut (termasuk tangkapan layar web, elemen <em>branding</em>, dan studi kasus) di dalam situs web resmi, media sosial, materi promosi, dan presentasi internal kami sebagai bagian dari portofolio (showcase) studio, kecuali apabila terikat oleh Perjanjian Kerahasiaan (Non-Disclosure Agreement / NDA) tersendiri.
+                    Apabila proyek membutuhkan aset pihak ketiga berbayar (seperti lisensi <em>font</em> premium, <em>stock photos</em>, <em>plugins</em>, atau API), biaya dan lisensi atas nama komersial sepenuhnya menjadi tanggung jawab Klien, kecuali dinyatakan lain secara eksplisit dalam brief awal.
+                  </li>
+                  <li>
+                    Aria Labs tidak bertanggung jawab atas pelanggaran hak cipta yang timbul akibat aset, teks, atau gambar yang secara langsung disediakan atau diinstruksikan oleh Klien.
                   </li>
                 </ul>
               </div>
@@ -105,18 +102,18 @@ export default function TermsPage() {
             {/* 5 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>5. Payment Terms &amp; Termination (Ketentuan Pembayaran &amp; Pembatalan)</h2>
+                <h2 className={styles.sectionHeading}>5. Intellectual Property Rights (Hak Kekayaan Intelektual)</h2>
               </div>
               <div className={styles.rightCol}>
                 <ul>
                   <li>
-                    Sebagai bentuk komitmen, Aria Labs mewajibkan pembayaran Uang Muka (Down Payment / DP) minimal sebesar 50% dari total nilai proyek (atau sesuai termin pembayaran yang disepakati secara tertulis) sebelum pekerjaan pengembangan atau desain dimulai.
+                    Seluruh konsep awal, source file (Figma, AI, PSD), dan source code adalah <strong>Hak Milik Eksklusif Aria Labs</strong> hingga Klien menyelesaikan pelunasan faktur secara utuh (100%).
                   </li>
                   <li>
-                    Sisa pembayaran (pelunasan) wajib diselesaikan maksimal 7 (tujuh) hari kerja setelah Klien menyetujui hasil akhir (final approval) dan sebelum file master diserahkan atau situs web diluncurkan (go live) ke server Klien.
+                    Setelah kewajiban finansial diselesaikan, hak guna komersial (commercial use rights) atas hasil akhir (final deliverables) dipindahtangankan kepada Klien.
                   </li>
                   <li>
-                    <strong>Kebijakan Pembatalan:</strong> Apabila Klien membatalkan proyek secara sepihak di tengah proses pengerjaan dengan alasan apa pun, maka pembayaran DP yang telah dibayarkan bersifat nonrefundable (tidak dapat dikembalikan). Hal ini merupakan kompensasi atas waktu, riset, dan sumber daya tim yang telah dialokasikan oleh studio untuk proyek tersebut.
+                    Konsep desain alternatif yang dipresentasikan namun tidak dipilih oleh Klien akan tetap menjadi hak milik Aria Labs dan tidak boleh digunakan oleh Klien.
                   </li>
                 </ul>
               </div>
@@ -125,15 +122,63 @@ export default function TermsPage() {
             {/* 6 */}
             <div className={styles.row}>
               <div className={styles.leftCol}>
-                <h2 className={styles.sectionHeading}>6. Governing Law &amp; Jurisdiction (Hukum &amp; Yurisdiksi)</h2>
+                <h2 className={styles.sectionHeading}>6. Portfolio Usage (Penggunaan Portofolio)</h2>
               </div>
               <div className={styles.rightCol}>
                 <ul>
                   <li>
-                    Syarat dan Ketentuan ini tunduk pada, diatur oleh, dan ditafsirkan berdasarkan Hukum dan Peraturan Perundang-undangan Republik Indonesia.
+                    Aria Labs berhak secara penuh menggunakan karya hasil akhir (termasuk logo, identitas visual, dan tangkapan layar website) sebagai bagian dari portofolio (showcase), materi pemasaran, dan studi kasus di platform digital Studio, kecuali jika proyek tersebut dilindungi oleh Perjanjian Kerahasiaan (NDA) yang sah.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 7 */}
+            <div className={styles.row}>
+              <div className={styles.leftCol}>
+                <h2 className={styles.sectionHeading}>7. Payment Terms &amp; Termination (Pembayaran &amp; Pembatalan)</h2>
+              </div>
+              <div className={styles.rightCol}>
+                <ul>
+                  <li>
+                    Uang Muka (Down Payment / DP) sebesar minimal 50% wajib dilunasi sebelum pekerjaan dimulai. Pelunasan wajib diselesaikan sebelum serah terima aset final atau sebelum situs web diluncurkan (go-live).
                   </li>
                   <li>
-                    Segala perselisihan atau sengketa yang timbul di kemudian hari terkait pelaksanaan perjanjian ini akan diselesaikan secara musyawarah untuk mufakat. Apabila kesepakatan tidak tercapai, kedua belah pihak sepakat untuk menyelesaikannya melalui yurisdiksi dan kompetensi eksklusif Pengadilan Negeri Jakarta Utara, sesuai dengan wilayah domisili operasional Aria Labs.
+                    <span className={styles.redAlert}>Kebijakan Non-Refundable:</span> Jika Klien membatalkan proyek secara sepihak setelah pembayaran diterima dan/atau proses desain telah dimulai, maka DP yang telah dibayarkan <strong>tidak dapat dikembalikan</strong> sebagai kompensasi definitif atas reservasi slot waktu dan sumber daya Aria Labs.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 8 */}
+            <div className={styles.row}>
+              <div className={styles.leftCol}>
+                <h2 className={styles.sectionHeading}>8. Limitation of Liability (Batasan Tanggung Jawab)</h2>
+              </div>
+              <div className={styles.rightCol}>
+                <ul>
+                  <li>
+                    Aria Labs menjamin penyerahan proyek sesuai spesifikasi yang disepakati. Namun, setelah proyek diserahkan, kami tidak bertanggung jawab atas insiden di luar kendali kami, termasuk namun tidak terbatas pada: peretasan server, serangan malware pada hosting Klien, penurunan peringkat SEO, atau kerugian finansial bisnis Klien.
+                  </li>
+                  <li>
+                    Tanggung jawab maksimal Aria Labs secara hukum tidak akan melebihi jumlah total yang dibayarkan oleh Klien untuk proyek yang bersangkutan.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 9 */}
+            <div className={styles.row}>
+              <div className={styles.leftCol}>
+                <h2 className={styles.sectionHeading}>9. Force Majeure &amp; Jurisdiction (Keadaan Memaksa &amp; Yurisdiksi)</h2>
+              </div>
+              <div className={styles.rightCol}>
+                <ul>
+                  <li>
+                    Kedua belah pihak dibebaskan dari kewajiban perjanjian ini apabila terjadi keadaan memaksa (Force Majeure) seperti bencana alam, pandemi berskala nasional, gangguan infrastruktur internet masif, atau kebijakan pemerintah yang menghalangi penyelesaian proyek.
+                  </li>
+                  <li>
+                    Perjanjian ini ditafsirkan berdasarkan Hukum Republik Indonesia. Segala sengketa akan diselesaikan secara musyawarah. Jika mufakat tidak tercapai, sengketa akan diselesaikan melalui yurisdiksi kompetensi eksklusif di <strong>Pengadilan Negeri Jakarta Utara</strong>.
                   </li>
                 </ul>
               </div>
