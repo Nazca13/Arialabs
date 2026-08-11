@@ -117,10 +117,10 @@ svg { display: block; overflow: visible; }
 @supports (transition: opacity 0.1s) {
   .reveal {
     opacity: 0;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-    -webkit-transition: opacity 0.6s var(--ease-smooth), -webkit-transform 0.6s var(--ease-smooth);
-    transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+    -webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   }
   .reveal.is-visible,
   .reveal.visible {
