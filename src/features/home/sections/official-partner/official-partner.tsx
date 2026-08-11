@@ -3,35 +3,38 @@
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './official-partner.module.css'
 
 const PARTNERS = [
   {
     name: 'Animae',
     src: '/assets/images/brands/official-partners/animae.png',
-    alt: 'Animae,  Strategic Collaboration',
+    alt: 'Animae, Strategic Collaboration',
   },
   {
     name: 'Nexoria',
     src: '/assets/images/brands/official-partners/nexoria.png',
-    alt: 'Nexoria,  Strategic Collaboration',
+    alt: 'Nexoria, Strategic Collaboration',
   },
 ]
 
 export function OfficialPartner() {
   const ref = useScrollReveal<HTMLElement>()
+  const { lang, t } = useLanguage()
+
   return (
     <section ref={ref} className={`reveal ${styles.section}`}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.left}>
           <Badge>Strategic Collaboration</Badge>
           <h2 className={styles.heading}>
-            Kolaborasi <span className={styles.blue}>Strategis</span>
+            {lang === 'en' ? 'Strategic ' : 'Kolaborasi '}
+            <span className={styles.blue}>
+              {lang === 'en' ? 'Partnership' : 'Strategis'}
+            </span>
           </h2>
-          <p className={styles.sub}>
-            Kami bekerja sama secara strategis dengan Animae dan Nexoria guna memperluas 
-            kapabilitas kreatif serta memberikan solusi digital yang komprehensif.
-          </p>
+          <p className={styles.sub}>{t.ecosystem.partnersDesc}</p>
         </div>
 
         <div className={styles.right}>
