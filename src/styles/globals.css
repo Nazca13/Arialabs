@@ -105,29 +105,12 @@ svg { display: block; overflow: visible; }
 
 /*
   ── Scroll reveal ──
-  CRITICAL: Default must be VISIBLE so old browsers / warnet PCs
-  never get stuck with invisible content.
-  We only add opacity:0 if CSS transitions are supported (modern browsers).
+  Default is ALWAYS visible so content is rendered instantly on load without white screens.
 */
 .reveal {
   opacity: 1;
   transform: none;
-}
-
-@supports (transition: opacity 0.1s) {
-  .reveal {
-    opacity: 0;
-    -webkit-transform: translateY(12px);
-    transform: translateY(12px);
-    -webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-  }
-  .reveal.is-visible,
-  .reveal.visible {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 /* ── GPU compositing for animated marquee rails ── */
