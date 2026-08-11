@@ -92,20 +92,24 @@
     "headingBlue": "Sering Diajukan",
     "sub": "Temukan jawaban atas pertanyaan yang paling sering diajukan mengenai layanan, proses kerja, dan kolaborasi bersama Aria Labs. Jika masih ada pertanyaan lainnya, tim kami siap membantu.",
     "questions": {
+      "services": {
+        "q": "Layanan apa saja yang ditawarkan Aria Labs?",
+        "a": "Kami menyediakan solusi digital menyeluruh mulai dari web development, brand identity, UI/UX design, hingga graphic design. Setiap proyek disesuaikan dengan tujuan bisnis dan target audiens Anda."
+      },
       "timeline": {
-        "q": "Berapa lama pengerjaan proyek biasanya?",
+        "q": "Berapa lama waktu pengerjaan sebuah proyek?",
         "a": "Tergantung skop pekerjaan. Website standar biasanya memakan waktu 2 sampai 4 minggu; proyek brand identity yang lebih lengkap bisa 4 sampai 8 minggu. Timeline detail akan diberikan saat konsultasi awal."
       },
       "modular": {
-        "q": "Apakah saya bisa memilih layanan tertentu saja?",
+        "q": "Bisa gak kalau cuma minta desain atau development-nya aja?",
         "a": "Bisa. Layanan kami modular, jadi Anda bisa pilih desain saja, development saja, atau proses lengkap dari awal sampai akhir, sesuai kebutuhan."
       },
       "scale": {
-        "q": "Apakah Aria Labs melayani bisnis skala kecil?",
+        "q": "Apakah Aria Labs melayani startup dan bisnis kecil?",
         "a": "Tentu. Kami bekerja sama dengan bisnis dari berbagai skala, mulai dari startup dan UMKM hingga perusahaan yang sudah mapan, dengan pendekatan dan harga yang disesuaikan."
       },
       "start": {
-        "q": "Bagaimana cara memulai proyek bersama Aria Labs?",
+        "q": "Bagaimana cara memulai kerja sama dengan Aria Labs?",
         "a": "Hubungi kami lewat form kontak atau jadwalkan panggilan. Kami akan diskusikan kebutuhan Anda, tentukan skop proyek bersama, dan susun langkah berikutnya sebelum ada komitmen apa pun."
       }
     }

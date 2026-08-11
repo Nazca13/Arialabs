@@ -92,20 +92,24 @@
     "headingBlue": "Questions",
     "sub": "Find answers to the most frequently asked questions about our services, workflow, and collaborating with Aria Labs. If you still have questions, our team is ready to help.",
     "questions": {
+      "services": {
+        "q": "What services does Aria Labs offer?",
+        "a": "We provide comprehensive digital solutions including web development, brand identity, UI/UX design, and graphic design. Every project is tailored to your business goals and target audience."
+      },
       "timeline": {
         "q": "How long does a project usually take?",
         "a": "It depends on the project scope. A standard website usually takes 2 to 4 weeks, while a full brand identity project can take 4 to 8 weeks. We'll give you a detailed timeline during the initial consultation."
       },
       "modular": {
-        "q": "Can I choose only specific services?",
+        "q": "Can I just request design or development only?",
         "a": "Absolutely. Our services are modular, so you can just pick design, development, or the full end-to-end process depending on what you need."
       },
       "scale": {
-        "q": "Does Aria Labs work with small businesses?",
+        "q": "Does Aria Labs work with startups and small businesses?",
         "a": "Sure thing. We work with businesses of all sizes, from startups and SMBs to established companies, with tailored approaches and pricing."
       },
       "start": {
-        "q": "How do I start a project with Aria Labs?",
+        "q": "How do I start working with Aria Labs?",
         "a": "Just reach out via our contact form or schedule a call. We'll discuss your needs, define the project scope together, and figure out the next steps before any commitment."
       }
     }

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './contact-main.module.css'
 
 const WA_NUMBER = '6283832886220'
@@ -35,11 +36,12 @@ const SERVICES_OPTIONS = [
   'UI/UX Design',
   'Graphic Design',
   'Social Media Management',
-  'Consultation / Lainnya',
+  'Consultation / Other',
 ]
 
 export function ContactMain() {
   const ref = useScrollReveal<HTMLElement>()
+  const { lang, t } = useLanguage()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -63,17 +65,12 @@ export function ContactMain() {
     e.preventDefault()
     const { firstName, lastName, description } = formData
     const fullName = `${firstName.trim()} ${lastName.trim()}`.trim()
-    const services = selectedServices.length > 0 ? selectedServices.join(', ') : 'Belum dipilih'
+    const noService = lang === 'en' ? 'Not selected' : 'Belum dipilih'
+    const services = selectedServices.length > 0 ? selectedServices.join(', ') : noService
 
-    const textMessage = `Halo AriaLabs! 👋
-Saya ingin mendiskusikan kebutuhan digital bisnis saya.
-
-📦 Paket / Layanan: ${services}
-🏢 Nama / Perusahaan: ${fullName}
-📧 Email: ${formData.email}
-📝 Detail Kebutuhan: ${description}
-
-Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
+    const textMessage = lang === 'en'
+      ? `Hi AriaLabs! 👋\nI'd like to discuss my digital business needs.\n\n📦 Package / Service: ${services}\n🏢 Name / Company: ${fullName}\n📧 Email: ${formData.email}\n📝 Project Details: ${description}\n\nCan we talk more about the estimated cost and timeline?`
+      : `Halo AriaLabs! 👋\nSaya ingin mendiskusikan kebutuhan digital bisnis saya.\n\n📦 Paket / Layanan: ${services}\n🏢 Nama / Perusahaan: ${fullName}\n📧 Email: ${formData.email}\n📝 Detail Kebutuhan: ${description}\n\nApakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
 
     const encodedText = encodeURIComponent(textMessage)
     const waUrl = `${WA_DIRECT}?text=${encodedText}`
@@ -85,14 +82,11 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
       <div className={`container ${styles.grid}`}>
         <div className={styles.info}>
           <h2 className={styles.heading}>
-            Need more information?
+            {lang === 'en' ? 'Need more information?' : 'Butuh informasi lebih?'}
             <br />
-            Get in touch with us
+            {lang === 'en' ? 'Get in touch with us' : 'Hubungi kami'}
           </h2>
-          <p className={styles.sub}>
-            We&apos;re here to help. Reach out through any of the channels below, or fill out the
-            form, kami langsung reply via WhatsApp.
-          </p>
+          <p className={styles.sub}>{t.contact.infoSub}</p>
 
           <div className={styles.items}>
             {CONTACT_ITEMS.map(item => {
@@ -125,15 +119,13 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
         </div>
 
         <div className={styles.formWrap}>
-          <h2 className={styles.heading}>Start Your Legacy</h2>
-          <p className={styles.sub}>
-            Isi detail kamu dan pilih layanan yang dibutuhkan. Kami akan langsung hubungi via WhatsApp.
-          </p>
+          <h2 className={styles.heading}>{t.contact.formHeading}</h2>
+          <p className={styles.sub}>{t.contact.formSub}</p>
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
               <div className={styles.field}>
-                <label htmlFor="firstName">First name</label>
+                <label htmlFor="firstName">{t.contact.firstName}</label>
                 <input
                   id="firstName"
                   name="firstName"
@@ -145,35 +137,35 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
                 />
               </div>
               <div className={styles.field}>
-                <label htmlFor="lastName">Last name / Company</label>
+                <label htmlFor="lastName">{t.contact.lastName}</label>
                 <input
                   id="lastName"
                   name="lastName"
                   type="text"
                   value={formData.lastName}
                   onChange={handleChange}
-                  placeholder="Hudson / Brand Anda"
+                  placeholder={lang === 'en' ? 'Hudson / Your Brand' : 'Hudson / Brand Anda'}
                   required
                 />/
               </div>
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t.contact.email}</label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="email@kamu.com"
+                placeholder="email@you.com"
                 required
               />
             </div>
 
             {/* Multi-select service pills */}
             <div className={styles.field}>
-              <label>Paket / Layanan <span className={styles.labelHint}>(pilih satu atau lebih)</span></label>
+              <label>{t.contact.services} <span className={styles.labelHint}>{t.contact.servicesHint}</span></label>
               <div className={styles.servicePills}>
                 {SERVICES_OPTIONS.map(opt => {
                   const active = selectedServices.includes(opt)
@@ -197,21 +189,21 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="description">Detail Kebutuhan</label>
+              <label htmlFor="description">{t.contact.description}</label>
               <textarea
                 id="description"
                 name="description"
                 rows={5}
                 value={formData.description}
                 onChange={handleChange}
-                placeholder="Ceritakan kebutuhan website, desain, atau bisnis kamu..."
+                placeholder={t.contact.descPlaceholder}
                 required
               />
             </div>
 
             <div className={styles.submitWrap}>
               <button type="submit" className={styles.submitBtn}>
-                Send Message
+                {t.contact.sendBtn}
                 <svg width="16" height="16" viewBox="0 0 15 15" fill="none" aria-hidden="true">
                   <path d="M2 7.5H13M13 7.5L8.5 3M13 7.5L8.5 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

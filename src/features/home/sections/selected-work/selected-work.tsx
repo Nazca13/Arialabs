@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './selected-work.module.css'
 
 const PROJECTS = [
@@ -40,6 +41,7 @@ const PROJECTS = [
 export function SelectedWork() {
   const [offset, setOffset] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const { t } = useLanguage()
   const doubled = [...PROJECTS, ...PROJECTS]
   const animationRef = useRef<number>()
   const lastTimeRef = useRef<number>(0)
@@ -98,13 +100,10 @@ export function SelectedWork() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <Badge>Selected Work</Badge>
+        <Badge>{t.selectedWork.badge}</Badge>
         <div className={styles.header}>
-          <h2 className={styles.heading}>Crafted for <span className={styles.blue}>Ambitious Brands</span></h2>
-          <p className={styles.sub}>
-            Kami bekerja bersama bisnis, startup, dan organisasi yang ingin membangun
-            identitas digital yang kuat, modern, dan berkelanjutan di masa depan.
-          </p>
+          <h2 className={styles.heading}>Crafted for <span className={styles.blue}>{t.selectedWork.headingBlue}</span></h2>
+          <p className={styles.sub}>{t.selectedWork.sub}</p>
         </div>
       </div>
 

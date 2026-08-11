@@ -1,8 +1,13 @@
+'use client'
+
 import Image from 'next/image'
 import { Button } from '@/components/ui/button/button'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './hero-section.module.css'
 
 export function HeroSection() {
+  const { t } = useLanguage()
+
   return (
     <section className={styles.hero}>
       <div className={styles.bgWrap} aria-hidden="true">
@@ -20,17 +25,13 @@ export function HeroSection() {
 
       <div className={`container ${styles.content}`}>
         <div className={styles.top}>
-          <span className={styles.pillBadge}>Creative Digital Studio</span>
+          <span className={styles.pillBadge}>{t.hero.badge}</span>
           <h1 className={styles.headline}>
             Build Better Brands
             <br />
             Create Better Experiences
           </h1>
-          <p className={styles.sub}>
-            Kami membantu bisnis, startup, UMKM, dan organisasi membangun identitas visual,
-            pengalaman digital, serta website modern yang dirancang untuk mendukung
-            pertumbuhan bisnis.
-          </p>
+          <p className={styles.sub}>{t.hero.sub}</p>
         </div>
 
         <div className={styles.right}>

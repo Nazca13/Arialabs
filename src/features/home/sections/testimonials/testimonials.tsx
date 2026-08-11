@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './testimonials.module.css'
 
 const DATA = [
@@ -30,6 +31,7 @@ export function Testimonials() {
   const [offset, setOffset] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const sectionRef = useScrollReveal<HTMLElement>()
+  const { t } = useLanguage()
   const doubled = [...DATA, ...DATA]
   const animationRef = useRef<number>()
   const lastTimeRef = useRef<number>(0)
@@ -88,11 +90,11 @@ export function Testimonials() {
   return (
     <section ref={sectionRef} className={`reveal ${styles.section}`}>
       <div className="container">
-        <Badge>Testimonials</Badge>
+        <Badge>{t.testimonials.badge}</Badge>
         <h2 className={styles.heading}>
-          Why Clients
+          {t.testimonials.heading}
           <br />
-          <span className={styles.blue}>Choose Aria Labs</span>
+          <span className={styles.blue}>{t.testimonials.headingBlue}</span>
         </h2>
       </div>
 
