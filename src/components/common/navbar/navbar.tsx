@@ -5,15 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button/button'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './navbar.module.css'
-
-const NAV_ITEMS = [
-  { label: 'Beranda',   href: '/' },
-  { label: 'Tentang',   href: '/tentang' },
-  { label: 'Layanan',   href: '/layanan' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Kontak',    href: '/kontak' },
-]
 
 export function Navbar() {
   const [scrolled,   setScrolled]   = useState(false)
@@ -22,6 +15,15 @@ export function Navbar() {
   const isHome = pathname === '/'
   const isKontak = pathname === '/kontak'
   const onHeroBg = isHome && !scrolled
+  const { lang, setLang, t } = useLanguage()
+
+  const NAV_ITEMS = [
+    { label: t.nav.home,      href: '/' },
+    { label: t.nav.about,     href: '/tentang' },
+    { label: t.nav.services,  href: '/layanan' },
+    { label: t.nav.portfolio, href: '/portfolio' },
+    { label: t.nav.contact,   href: '/kontak' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -77,11 +79,28 @@ export function Navbar() {
           ))}
         </nav>
 
-        {!isKontak && (
-          <div className={styles.cta}>
-            <Button href="/kontak" size="sm" arrow>Book to Call</Button>
-          </div>
-        )}
+        <div className={styles.rightGroup}>
+          {/* Language toggle */}
+          <button
+            className={`${styles.langToggle} ${onHeroBg ? styles.langToggleLight : ''}`}
+            onClick={() => setLang(lang === 'id' ? 'en' : 'id')}
+            aria-label={lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}
+          >
+            <span className={lang === 'id' ? styles.langActive : styles.langInactive}>ID</span>
+            <span className={styles.langDivider}>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+            <span className={lang === 'en' ? styles.langActive : styles.langInactive}>EN</span>
+          </button>
+
+          {!isKontak && (
+            <div className={styles.cta}>
+              <Button href="/kontak" size="sm" arrow>{t.nav.bookToCall}</Button>
+            </div>
+          )}
+        </div>
 
         <button
           className={`${styles.burger} ${mobileOpen ? styles.burgerOpen : ''} ${onHeroBg && !mobileOpen ? styles.burgerLight : ''}`}
@@ -109,10 +128,24 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
+
+            {/* Language toggle in mobile drawer */}
+            <button
+              className={styles.drawerLangToggle}
+              onClick={() => setLang(lang === 'id' ? 'en' : 'id')}
+              aria-label={lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}
+            >
+              <span className={lang === 'id' ? styles.langActive : styles.langInactive}>ID</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ opacity: 0.5 }}>
+                <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className={lang === 'en' ? styles.langActive : styles.langInactive}>EN</span>
+            </button>
+
             {!isKontak && (
               <div className={styles.drawerCta}>
                 <Button href="/kontak" arrow onClick={() => setMobileOpen(false)}>
-                  Book to Call
+                  {t.nav.bookToCall}
                 </Button>
               </div>
             )}

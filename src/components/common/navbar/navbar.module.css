@@ -91,7 +91,64 @@
   opacity: 0.75;
 }
 
-.cta { flex-shrink: 0; grid-column: 3; justify-self: end; }
+.cta { flex-shrink: 0; }
+
+/* Right group: language toggle + CTA button */
+.rightGroup {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Language Toggle ── */
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: 999px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #333;
+  transition: border-color 0.18s ease, background 0.18s ease;
+  letter-spacing: 0.04em;
+}
+
+.langToggle:hover {
+  border-color: #2FA8FA;
+  background: rgba(47,168,250,0.06);
+}
+
+.langToggleLight {
+  border-color: rgba(255,255,255,0.4);
+  color: #fff;
+}
+
+.langToggleLight:hover {
+  border-color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.1);
+}
+
+.langActive {
+  color: #2FA8FA;
+}
+
+.langInactive {
+  opacity: 0.45;
+}
+
+.langDivider {
+  display: flex;
+  align-items: center;
+  opacity: 0.4;
+  color: #333;
+}
 
 .burger {
   display: none;
@@ -185,6 +242,26 @@
   justify-content: center;
 }
 
+.drawerLangToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F5F7FA;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #333;
+  transition: background 0.18s ease;
+}
+
+.drawerLangToggle:hover {
+  background: #EAF5FE;
+}
+
 .drawerCta a, .drawerCta button {
   width: 100%;
   justify-content: center;
@@ -202,5 +279,6 @@
 @media (max-width: 900px) {
   .pill { display: none; }
   .cta  { display: none; }
+  .langToggle { display: none; }
   .burger { display: flex; }
 }

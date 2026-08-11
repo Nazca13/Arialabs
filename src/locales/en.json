@@ -1,0 +1,178 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "bookToCall": "Book to Call"
+  },
+  "hero": {
+    "badge": "Creative Digital Studio",
+    "heading1": "Digital Solutions",
+    "heading2": "for the Brands",
+    "heading3": "of Tomorrow",
+    "sub": "We help businesses, startups, SMBs, and organizations build visual identities, digital experiences, and modern websites designed to drive business growth.",
+    "ctaPrimary": "Start a Project",
+    "ctaSecondary": "View Portfolio"
+  },
+  "services": {
+    "badge": "Services",
+    "heading": "What We Build",
+    "headingBlue": "We Build",
+    "sub": "We provide creative and digital services to help businesses build their identity, enhance user experience, and strengthen their digital presence with custom-tailored solutions.",
+    "open": "Open",
+    "close": "Close",
+    "viewMore": "View More",
+    "items": {
+      "webDev": {
+        "title": "Web Development",
+        "desc": "Fast, modern, and scalable websites built with the latest tech to support your digital business growth sustainably."
+      },
+      "brand": {
+        "title": "Brand Identity",
+        "desc": "Strong and consistent visual identities, from logos to brand guidelines, that reflect your business's unique values and character."
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "desc": "Intuitive, user-centered interface designs that create comfortable, engaging, and impactful digital experiences."
+      },
+      "graphic": {
+        "title": "Graphic Design",
+        "desc": "Stunning visual content, from posters and banners to ready-to-use social media kits designed to boost your brand engagement."
+      },
+      "sosmed": {
+        "title": "Social Media Management",
+        "desc": "Professional social media management, covering everything from content strategy, visual design, and copywriting to audience moderation."
+      }
+    }
+  },
+  "howWeWork": {
+    "badge": "How We Work",
+    "heading": "A Structured Process,",
+    "headingBlue": "Measurable Results",
+    "sub": "Every project is built through a structured, collaborative, and transparent process. We make sure every step has a clear goal, resulting in digital solutions that truly fit your business needs.",
+    "steps": {
+      "discover": {
+        "label": "Discover",
+        "title": "Research & Strategy",
+        "desc": "We take the time to understand your business, target audience, and challenges to build the right strategy."
+      },
+      "design": {
+        "label": "Design",
+        "title": "Concept & Design",
+        "desc": "We craft the strategy, visual concepts, and user experience to perfectly align with your business goals and needs."
+      },
+      "develop": {
+        "label": "Develop",
+        "title": "Development",
+        "desc": "We turn designs into ready-to-use digital products that look great, are responsive, and fully functional."
+      },
+      "deliver": {
+        "label": "Deliver",
+        "title": "Launch & Support",
+        "desc": "Even after the launch, we've got your back with ongoing optimization, maintenance, and further development as needed."
+      }
+    }
+  },
+  "selectedWork": {
+    "badge": "Selected Work",
+    "heading": "Crafted for",
+    "headingBlue": "Ambitious Brands",
+    "sub": "We work with businesses, startups, and organizations looking to build a strong, modern, and future-proof digital identity."
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "heading": "Why Clients",
+    "headingBlue": "Choose Aria Labs"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Frequently Asked",
+    "headingBlue": "Questions",
+    "sub": "Find answers to the most frequently asked questions about our services, workflow, and collaborating with Aria Labs. If you still have questions, our team is ready to help.",
+    "questions": {
+      "timeline": {
+        "q": "How long does a project usually take?",
+        "a": "It depends on the project scope. A standard website usually takes 2 to 4 weeks, while a full brand identity project can take 4 to 8 weeks. We'll give you a detailed timeline during the initial consultation."
+      },
+      "modular": {
+        "q": "Can I choose only specific services?",
+        "a": "Absolutely. Our services are modular, so you can just pick design, development, or the full end-to-end process depending on what you need."
+      },
+      "scale": {
+        "q": "Does Aria Labs work with small businesses?",
+        "a": "Sure thing. We work with businesses of all sizes, from startups and SMBs to established companies, with tailored approaches and pricing."
+      },
+      "start": {
+        "q": "How do I start a project with Aria Labs?",
+        "a": "Just reach out via our contact form or schedule a call. We'll discuss your needs, define the project scope together, and figure out the next steps before any commitment."
+      }
+    }
+  },
+  "ecosystem": {
+    "badge": "Ecosystem",
+    "heading": "Part of the",
+    "headingBlue": "AquaNime Ecosystem",
+    "desc": "Operating under the AquaNime ecosystem, Aria Labs brings professional quality standards and solid digital execution to every client project.",
+    "partnersTitle": "Strategic Collaboration",
+    "partnersDesc": "We strategically partner with Animae and Nexoria to expand our creative capabilities and deliver comprehensive digital solutions."
+  },
+  "cta": {
+    "heading": "Ready to build",
+    "headingBlue": "something remarkable?",
+    "sub": "Tell us your idea. We'll help you turn it into a digital experience worth remembering.",
+    "btn": "Start a Conversation"
+  },
+  "about": {
+    "badge": "About Us",
+    "heading": "Aria Labs",
+    "sub": "Creative Digital Studio",
+    "whoWeAre": "Who We Are",
+    "lead": "Aria Labs is a Creative Digital Studio that combines strategy, design, and technology to help businesses build visual identities, digital experiences, and modern websites.",
+    "desc": "We believe every design should have a clear purpose, deliver value, and support long-term growth. We don't just create beautiful designs; we also ensure your digital products are highly functional and scalable for a better future.",
+    "statement": "Bringing Creative and Innovative Solutions to Life for Your Brand"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's Talk",
+    "sub": "Have a project in mind? Tell us a bit about it and we'll help you turn it into a plan, and eventually, a launch.",
+    "infoHeading": "Need more information? Get in touch with us",
+    "infoSub": "We're here to help. Reach out through any of the channels below, or fill out the form — we'll reply via WhatsApp right away.",
+    "formHeading": "Start Your Legacy",
+    "formSub": "Fill in your details and select the services you need. We'll contact you via WhatsApp shortly.",
+    "firstName": "First Name",
+    "lastName": "Last Name / Company",
+    "email": "Email",
+    "services": "Package / Service",
+    "servicesHint": "(select one or more)",
+    "description": "Project Details",
+    "descPlaceholder": "Tell us about your website, design, or business needs...",
+    "sendBtn": "Send Message",
+    "waMessage": "Hi AriaLabs! 👋\nI'd like to discuss my digital business needs.\n\n📦 Package / Service: {services}\n🏢 Name / Company: {name}\n📧 Email: {email}\n📝 Project Details: {description}\n\nCan we talk more about the estimated cost and timeline?"
+  },
+  "footer": {
+    "tagline": "Unlock your business potential.",
+    "company": "Company",
+    "services": "Services",
+    "resources": "Resources",
+    "copyright": "© 2026 Aria Labs. All rights reserved.",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "pricing": "Pricing",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "pricing": {
+    "badge": "Pricing Plans",
+    "heading": "Choose the Way",
+    "headingBlue": "We Work Together",
+    "getStarted": "Get Started"
+  }
+}

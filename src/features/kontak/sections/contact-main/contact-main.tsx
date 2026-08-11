@@ -154,7 +154,7 @@ Apakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?`
                   onChange={handleChange}
                   placeholder="Hudson / Brand Anda"
                   required
-                />
+                />/
               </div>
             </div>
 

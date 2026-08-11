@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Outfit } from 'next/font/google'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { LanguageProvider } from '@/contexts/language-context'
 import '../styles/globals.css'
 
 /* ── Headlines & Navigation: Plus Jakarta Sans ── */
@@ -132,7 +133,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <LanguageProvider>
         {children}
+        </LanguageProvider>
 
         {/* ── Vercel Analytics ── */}
         <Analytics />
@@ -152,5 +155,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </body>
     </html>
-  )
+  ) //end
 }

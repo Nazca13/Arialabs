@@ -146,15 +146,27 @@
   white-space: nowrap;
 }
 
-.pill:hover {
-  border-color: #2FA8FA;
-  color: #2FA8FA;
+.pill:focus-visible {
+  outline: 2px solid #2FA8FA;
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pill:hover {
+    border-color: #2FA8FA;
+    color: #2FA8FA;
+  }
 }
 
 .pillActive {
   background: #2FA8FA;
   border-color: #2FA8FA;
   color: #fff;
+}
+
+.pillActive:focus-visible {
+  outline: 2px solid #1a7dc4;
+  outline-offset: 2px;
 }
 
 /* ── Submit button — full width centered ── */

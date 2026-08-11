@@ -1,0 +1,178 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "services": "Layanan",
+    "portfolio": "Portfolio",
+    "contact": "Kontak",
+    "bookToCall": "Book to Call"
+  },
+  "hero": {
+    "badge": "Creative Digital Studio",
+    "heading1": "Solusi Digital",
+    "heading2": "untuk Brand",
+    "heading3": "Masa Depan",
+    "sub": "Kami membantu bisnis, startup, UMKM, dan organisasi membangun identitas visual, pengalaman digital, serta website modern yang dirancang untuk mendukung pertumbuhan bisnis.",
+    "ctaPrimary": "Mulai Proyek",
+    "ctaSecondary": "Lihat Portfolio"
+  },
+  "services": {
+    "badge": "Services",
+    "heading": "What We Build",
+    "headingBlue": "We Build",
+    "sub": "Kami menghadirkan layanan kreatif dan digital yang membantu bisnis membangun identitas, meningkatkan pengalaman pengguna, dan memperkuat kehadiran digital melalui solusi yang dirancang sesuai kebutuhan.",
+    "open": "Buka",
+    "close": "Tutup",
+    "viewMore": "Selengkapnya",
+    "items": {
+      "webDev": {
+        "title": "Web Development",
+        "desc": "Website modern, cepat, dan scalable, dibangun dengan teknologi terkini untuk mendukung pertumbuhan bisnis digital Anda secara berkelanjutan."
+      },
+      "brand": {
+        "title": "Brand Identity",
+        "desc": "Identitas visual yang kuat dan konsisten, dari logo hingga brand guideline yang mencerminkan nilai dan karakter unik bisnis Anda."
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "desc": "Desain antarmuka yang intuitif dan berpusat pada pengguna, menciptakan pengalaman digital yang nyaman, menarik, dan berdampak."
+      },
+      "graphic": {
+        "title": "Graphic Design",
+        "desc": "Konten visual yang memukau, dari poster dan banner hingga social media kit yang siap pakai dan meningkatkan engagement brand Anda."
+      },
+      "sosmed": {
+        "title": "Social Media Management",
+        "desc": "Pengelolaan akun media sosial Anda secara profesional, mulai dari strategi konten, desain visual, copywriter, hingga moderasi audiens."
+      }
+    }
+  },
+  "howWeWork": {
+    "badge": "How We Work",
+    "heading": "Proses yang Terstruktur,",
+    "headingBlue": "Hasil yang Terukur",
+    "sub": "Setiap proyek dibangun melalui proses yang terstruktur, kolaboratif, dan transparan. Kami memastikan setiap tahap memiliki tujuan yang jelas sehingga menghasilkan solusi digital yang sesuai dengan kebutuhan bisnis Anda.",
+    "steps": {
+      "discover": {
+        "label": "Discover",
+        "title": "Riset & Strategi",
+        "desc": "Kami memahami bisnis, target audiens, dan tantangan yang dihadapi untuk membangun strategi yang tepat."
+      },
+      "design": {
+        "label": "Design",
+        "title": "Konsep & Desain",
+        "desc": "Kami menyusun konsep strategi, visual, serta pengalaman pengguna yang selaras dengan kebutuhan dan tujuan bisnis."
+      },
+      "develop": {
+        "label": "Develop",
+        "title": "Pengembangan",
+        "desc": "Kami mengembangkan desain menjadi produk digital yang siap pakai, dengan tampilan yang optimal, responsif, dan fungsional."
+      },
+      "deliver": {
+        "label": "Deliver",
+        "title": "Peluncuran & Dukungan",
+        "desc": "Setelah proyek diluncurkan, kami tetap mendukung melalui optimasi, pemeliharaan, dan pengembangan lanjutan sesuai kebutuhan."
+      }
+    }
+  },
+  "selectedWork": {
+    "badge": "Selected Work",
+    "heading": "Crafted for",
+    "headingBlue": "Ambitious Brands",
+    "sub": "Kami bekerja bersama bisnis, startup, dan organisasi yang ingin membangun identitas digital yang kuat, modern, dan berkelanjutan di masa depan."
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "heading": "Kenapa Klien",
+    "headingBlue": "Memilih Aria Labs"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Pertanyaan yang",
+    "headingBlue": "Sering Diajukan",
+    "sub": "Temukan jawaban atas pertanyaan yang paling sering diajukan mengenai layanan, proses kerja, dan kolaborasi bersama Aria Labs. Jika masih ada pertanyaan lainnya, tim kami siap membantu.",
+    "questions": {
+      "timeline": {
+        "q": "Berapa lama pengerjaan proyek biasanya?",
+        "a": "Tergantung skop pekerjaan. Website standar biasanya memakan waktu 2 sampai 4 minggu; proyek brand identity yang lebih lengkap bisa 4 sampai 8 minggu. Timeline detail akan diberikan saat konsultasi awal."
+      },
+      "modular": {
+        "q": "Apakah saya bisa memilih layanan tertentu saja?",
+        "a": "Bisa. Layanan kami modular, jadi Anda bisa pilih desain saja, development saja, atau proses lengkap dari awal sampai akhir, sesuai kebutuhan."
+      },
+      "scale": {
+        "q": "Apakah Aria Labs melayani bisnis skala kecil?",
+        "a": "Tentu. Kami bekerja sama dengan bisnis dari berbagai skala, mulai dari startup dan UMKM hingga perusahaan yang sudah mapan, dengan pendekatan dan harga yang disesuaikan."
+      },
+      "start": {
+        "q": "Bagaimana cara memulai proyek bersama Aria Labs?",
+        "a": "Hubungi kami lewat form kontak atau jadwalkan panggilan. Kami akan diskusikan kebutuhan Anda, tentukan skop proyek bersama, dan susun langkah berikutnya sebelum ada komitmen apa pun."
+      }
+    }
+  },
+  "ecosystem": {
+    "badge": "Ekosistem",
+    "heading": "Bagian dari",
+    "headingBlue": "AquaNime Ecosystem",
+    "desc": "Aria Labs beroperasi di bawah naungan ekosistem AquaNime, menghadirkan standar kualitas profesional dan eksekusi digital yang matang untuk setiap proyek klien.",
+    "partnersTitle": "Strategic Collaboration",
+    "partnersDesc": "Kami bekerja sama secara strategis dengan Animae dan Nexoria guna memperluas kapabilitas kreatif serta memberikan solusi digital yang komprehensif."
+  },
+  "cta": {
+    "heading": "Siap membangun",
+    "headingBlue": "sesuatu yang luar biasa?",
+    "sub": "Ceritakan ide Anda. Kami akan bantu wujudkan menjadi pengalaman digital yang berkesan.",
+    "btn": "Mulai Percakapan"
+  },
+  "about": {
+    "badge": "Tentang Kami",
+    "heading": "Aria Labs",
+    "sub": "Creative Digital Studio",
+    "whoWeAre": "Who We Are",
+    "lead": "Aria Labs adalah Creative Digital Studio yang menggabungkan strategi, desain, dan teknologi untuk membantu bisnis membangun identitas visual, pengalaman digital, dan website modern.",
+    "desc": "Kami percaya bahwa setiap desain harus memiliki tujuan yang jelas, memberikan nilai, serta mendukung pertumbuhan jangka panjang. Kami tidak hanya membuat desain yang indah, tetapi juga memastikan fungsionalitas dan skalabilitas produk digital Anda untuk masa depan yang lebih baik.",
+    "statement": "Mewujudkan Solusi Kreatif dan Inovatif bagi Brand Anda"
+  },
+  "contact": {
+    "badge": "Kontak",
+    "title": "Let's Talk",
+    "sub": "Have a project in mind? Tell us a bit about it and we'll help you turn it into a plan, and eventually, a launch.",
+    "infoHeading": "Need more information? Get in touch with us",
+    "infoSub": "We're here to help. Reach out through any of the channels below, or fill out the form, kami langsung reply via WhatsApp.",
+    "formHeading": "Start Your Legacy",
+    "formSub": "Isi detail kamu dan pilih layanan yang dibutuhkan. Kami akan langsung hubungi via WhatsApp.",
+    "firstName": "Nama Depan",
+    "lastName": "Nama Belakang / Perusahaan",
+    "email": "Email",
+    "services": "Paket / Layanan",
+    "servicesHint": "(pilih satu atau lebih)",
+    "description": "Detail Kebutuhan",
+    "descPlaceholder": "Ceritakan kebutuhan website, desain, atau bisnis kamu...",
+    "sendBtn": "Kirim Pesan",
+    "waMessage": "Halo AriaLabs! 👋\nSaya ingin mendiskusikan kebutuhan digital bisnis saya.\n\n📦 Paket / Layanan: {services}\n🏢 Nama / Perusahaan: {name}\n📧 Email: {email}\n📝 Detail Kebutuhan: {description}\n\nApakah kita bisa berdiskusi lebih lanjut mengenai estimasi biaya dan waktunya?"
+  },
+  "footer": {
+    "tagline": "Unlock your business potential.",
+    "company": "Company",
+    "services": "Services",
+    "resources": "Resources",
+    "copyright": "© 2026 Aria Labs. All rights reserved.",
+    "links": {
+      "home": "Beranda",
+      "about": "Tentang",
+      "services": "Layanan",
+      "portfolio": "Portfolio",
+      "contact": "Kontak",
+      "faq": "FAQ",
+      "pricing": "Pricing",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "pricing": {
+    "badge": "Pricing Plans",
+    "heading": "Choose the Way",
+    "headingBlue": "We Work Together",
+    "getStarted": "Get Started"
+  }
+}
