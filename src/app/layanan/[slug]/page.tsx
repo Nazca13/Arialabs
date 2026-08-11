@@ -25,7 +25,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     badge: 'Core Solution',
     tagline: 'Website Modern, Cepat & Scalable untuk Eskalasi Bisnis Anda',
     description: 'Kami merancang dan membangun website kustom berkinerja tinggi yang responsif di semua perangkat, cepat dimuat, aman, dan dioptimalkan untuk konversi serta pertumbuhan mesin pencari (SEO).',
-    mascot: '/assets/images/characters/aria-service/aria-web.svg',
+    mascot: '/assets/images/characters/aria-service/aria-web.webp',
     categoryName: 'Web Development',
     benefits: [
       {
@@ -59,7 +59,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     badge: 'Visual Strategy',
     tagline: 'Identitas Visual Otentik yang Memikat & Berdampak Panjang',
     description: 'Kami membangun fondasi merek yang kuat melalui desain logo otentik, palet warna berkarakter, tipografi terpilih, serta panduan brand komprehensif yang membedakan bisnis Anda dari kompetitor.',
-    mascot: '/assets/images/characters/aria-service/aria-brand.svg',
+    mascot: '/assets/images/characters/aria-service/aria-brand.webp',
     categoryName: 'Brand Identity',
     benefits: [
       {
@@ -93,7 +93,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     badge: 'Product Experience',
     tagline: 'Pengalaman Digital Intuitif yang Nyaman & Meningkatkan Konversi',
     description: 'Kami melakukan riset pengguna, wireframing, dan penyusunan prototipe interaktif untuk menghasilkan aplikasi atau platform web dengan navigasi alami, tampilan estetis, dan pengalaman pengguna yang luar biasa.',
-    mascot: '/assets/images/characters/aria-service/aria-uiux.svg',
+    mascot: '/assets/images/characters/aria-service/aria-uiux.webp',
     categoryName: 'UI/UX Design',
     benefits: [
       {
@@ -127,7 +127,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     badge: 'Creative Visuals',
     tagline: 'Desain Visual Memukau untuk Memperkuat Kampanye Promosi Anda',
     description: 'Solusi visual kreatif untuk seluruh media pemasaran Anda, mulai dari materi promosi cetak, baliho, brosur, banner digital, hingga materi presentasi bisnis yang estetik dan komunikatif.',
-    mascot: '/assets/images/characters/aria-service/aria-graphic.svg',
+    mascot: '/assets/images/characters/aria-service/aria-graphic.webp',
     categoryName: 'Graphic Design',
     benefits: [
       {
@@ -161,7 +161,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     badge: 'Audience Growth',
     tagline: 'Strategi & Pengelolaan Media Sosial Profesional untuk Pertumbuhan Merek',
     description: 'Kami mengelola akun media sosial bisnis Anda secara konsisten, mulai dari riset konten, pembuatan visual feed/reels, penulisan caption persuasif, hingga analisis performa bulanan.',
-    mascot: '/assets/images/characters/aria-service/aria-sosmed.svg',
+    mascot: '/assets/images/characters/aria-service/aria-sosmed.webp',
     categoryName: 'Social Media Management',
     benefits: [
       {

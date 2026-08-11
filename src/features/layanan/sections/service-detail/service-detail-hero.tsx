@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge/badge'
 import { Button } from '@/components/ui/button/button'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './service-detail-hero.module.css'
 
 type Props = {
@@ -12,6 +15,8 @@ type Props = {
 }
 
 export function ServiceDetailHero({ title, badge, tagline, description, mascot }: Props) {
+  const { lang } = useLanguage()
+
   return (
     <section className={styles.hero}>
       <div className={`container ${styles.container}`}>
@@ -24,10 +29,10 @@ export function ServiceDetailHero({ title, badge, tagline, description, mascot }
           <p className={styles.description}>{description}</p>
           <div className={styles.actions}>
             <Button href="/kontak" size="md" arrow>
-              Konsultasi Gratis
+              {lang === 'en' ? 'Free Consultation' : 'Konsultasi Gratis'}
             </Button>
             <Button href="#benefits" size="md" variant="outline">
-              Pelajari Fitur
+              {lang === 'en' ? 'Explore Features' : 'Pelajari Fitur'}
             </Button>
           </div>
         </div>

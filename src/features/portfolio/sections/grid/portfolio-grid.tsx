@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './portfolio-grid.module.css'
 
 const FILTERS = [
@@ -47,6 +48,7 @@ const PROJECTS = [
 
 export function PortfolioGrid() {
   const [active, setActive] = useState('All')
+  const { lang } = useLanguage()
 
   const filtered = active === 'All'
     ? PROJECTS
@@ -106,7 +108,11 @@ export function PortfolioGrid() {
 
           {filtered.length === 0 && (
             <div className={styles.empty}>
-              <p>Belum ada project dalam kategori ini.</p>
+              <p>
+                {lang === 'en'
+                  ? 'No projects in this category yet.'
+                  : 'Belum ada project dalam kategori ini.'}
+              </p>
             </div>
           )}
         </div>

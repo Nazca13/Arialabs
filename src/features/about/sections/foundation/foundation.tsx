@@ -3,28 +3,36 @@
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './foundation.module.css'
-
-const FOUNDATIONS = [
-  {
-    icon: '/assets/icons/utility/our-mission.svg',
-    title: 'Our Mission',
-    description: 'Membantu bisnis berkembang melalui solusi digital yang strategis, terukur, dan berdampak nyata bagi pertumbuhan jangka panjang.',
-  },
-  {
-    icon: '/assets/icons/utility/development.svg',
-    title: 'Development',
-    description: 'Membangun produk digital berkualitas tinggi dengan standar kode yang bersih, performa optimal, dan pengalaman pengguna yang luar biasa.',
-  },
-  {
-    icon: '/assets/icons/utility/culture.svg',
-    title: 'Culture',
-    description: 'Membangun tim yang kolaboratif, kreatif, dan saling mendukung untuk menghasilkan karya terbaik bagi setiap klien kami.',
-  },
-]
 
 export function AboutFoundation() {
   const ref = useScrollReveal<HTMLElement>()
+  const { lang } = useLanguage()
+
+  const FOUNDATIONS = [
+    {
+      icon: '/assets/icons/utility/our-mission.svg',
+      title: 'Our Mission',
+      description: lang === 'en'
+        ? 'Helping businesses grow through strategic, measurable digital solutions with real impact for long-term growth.'
+        : 'Membantu bisnis berkembang melalui solusi digital yang strategis, terukur, dan berdampak nyata bagi pertumbuhan jangka panjang.',
+    },
+    {
+      icon: '/assets/icons/utility/development.svg',
+      title: 'Development',
+      description: lang === 'en'
+        ? 'Building high-quality digital products with clean code standards, optimal performance, and exceptional user experiences.'
+        : 'Membangun produk digital berkualitas tinggi dengan standar kode yang bersih, performa optimal, dan pengalaman pengguna yang luar biasa.',
+    },
+    {
+      icon: '/assets/icons/utility/culture.svg',
+      title: 'Culture',
+      description: lang === 'en'
+        ? 'Building a collaborative, creative, and supportive team to produce the best work for every client.'
+        : 'Membangun tim yang kolaboratif, kreatif, dan saling mendukung untuk menghasilkan karya terbaik bagi setiap klien kami.',
+    },
+  ]
 
   return (
     <section ref={ref} className={`reveal ${styles.section}`}>
@@ -55,6 +63,9 @@ export function AboutFoundation() {
                   <Image src={item.icon} alt="" width={22} height={22} aria-hidden="true" />
                   <span className={styles.title}>{item.title}</span>
                 </div>
+                <p className={styles.desc} style={{ fontSize: '13px', color: '#666', marginTop: '6px', lineHeight: '1.6' }}>
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>

@@ -1,7 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
 import { Button } from '@/components/ui/button/button'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './service-portfolio.module.css'
 
 export type ProjectItem = {
@@ -17,6 +20,8 @@ type Props = {
 }
 
 export function ServicePortfolio({ serviceTitle, projects }: Props) {
+  const { lang } = useLanguage()
+
   return (
     <section className={styles.section}>
       <div className="container">
@@ -26,7 +31,9 @@ export function ServicePortfolio({ serviceTitle, projects }: Props) {
             Featured <span className={styles.blue}>{serviceTitle}</span>
           </h2>
           <p className={styles.sub}>
-            Lihat bagaimana kami membantu bisnis mencapai hasil terbaik melalui solusi digital terukur.
+            {lang === 'en'
+              ? 'See how we help businesses achieve outstanding results through measurable digital solutions.'
+              : 'Lihat bagaimana kami membantu bisnis mencapai hasil terbaik melalui solusi digital terukur.'}
           </p>
         </div>
 
@@ -43,7 +50,7 @@ export function ServicePortfolio({ serviceTitle, projects }: Props) {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className={styles.cardOverlay}>
-                    <span>Lihat Case Study →</span>
+                    <span>{lang === 'en' ? 'View Case Study →' : 'Lihat Case Study →'}</span>
                   </div>
                 </div>
                 <div className={styles.cardInfo}>
@@ -62,12 +69,16 @@ export function ServicePortfolio({ serviceTitle, projects }: Props) {
                 <line x1="12" y1="17" x2="12" y2="21"/>
               </svg>
             </div>
-            <h3 className={styles.emptyTitle}>Portfolio Sedang Diperbarui</h3>
+            <h3 className={styles.emptyTitle}>
+              {lang === 'en' ? 'Portfolio Being Updated' : 'Portfolio Sedang Diperbarui'}
+            </h3>
             <p className={styles.emptyDesc}>
-              Dokumentasi studi kasus terbaru untuk kategori <strong>{serviceTitle}</strong> sedang disiapkan. Hubungi tim kami untuk konsultasi dan melihat sampel pengerjaan langsung.
+              {lang === 'en'
+                ? `Latest case studies for ${serviceTitle} are currently being prepared. Contact our team to consult and see direct work samples.`
+                : `Dokumentasi studi kasus terbaru untuk kategori ${serviceTitle} sedang disiapkan. Hubungi tim kami untuk konsultasi dan melihat sampel pengerjaan langsung.`}
             </p>
             <Button href="/kontak" size="sm" arrow>
-              Konsultasi Proyek
+              {lang === 'en' ? 'Consult Project' : 'Konsultasi Proyek'}
             </Button>
           </div>
         )}

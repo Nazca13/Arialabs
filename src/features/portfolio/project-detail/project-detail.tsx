@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './project-detail.module.css'
 
 type ProjectData = {
@@ -36,6 +37,7 @@ type Props = {
 
 export function ProjectDetail({ project, otherProjects = [] }: Props) {
   const ref = useScrollReveal<HTMLElement>()
+  const { lang } = useLanguage()
 
   return (
     <article className={styles.article}>
@@ -56,7 +58,7 @@ export function ProjectDetail({ project, otherProjects = [] }: Props) {
                 <span className={styles.metaItem}>
                   <span className={styles.metaLabel}>Timeline</span>
                   <span className={styles.metaDot}>/</span>
-                  4–6 minggu
+                  {lang === 'en' ? '4–6 weeks' : '4–6 minggu'}
                 </span>
               </div>
             </div>

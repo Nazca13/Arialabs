@@ -1,4 +1,7 @@
+'use client'
+
 import { Badge } from '@/components/ui/badge/badge'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './service-benefits.module.css'
 
 export type BenefitItem = {
@@ -58,16 +61,20 @@ function renderIcon(index: number) {
 }
 
 export function ServiceBenefits({ benefits }: Props) {
+  const { lang } = useLanguage()
+
   return (
     <section className={styles.section} id="benefits">
       <div className="container">
         <div className={styles.header}>
-          <Badge>Features & Benefits</Badge>
+          <Badge>Features &amp; Benefits</Badge>
           <h2 className={styles.heading}>
             What You <span className={styles.blue}>Get</span>
           </h2>
           <p className={styles.sub}>
-            Setiap proyek kami dilengkapi dengan standar kualitas tertinggi untuk memaksimalkan hasil dan pertumbuhan bisnis Anda.
+            {lang === 'en'
+              ? 'Every project of ours is built to the highest quality standards to maximize your business growth and results.'
+              : 'Setiap proyek kami dilengkapi dengan standar kualitas tertinggi untuk memaksimalkan hasil dan pertumbuhan bisnis Anda.'}
           </p>
         </div>
 

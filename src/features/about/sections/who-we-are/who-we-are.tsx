@@ -3,10 +3,12 @@
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge/badge'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
+import { useLanguage } from '@/contexts/language-context'
 import styles from './who-we-are.module.css'
 
 export function AboutWhoWeAre() {
   const ref = useScrollReveal<HTMLElement>()
+  const { t } = useLanguage()
 
   return (
     <section ref={ref} className={`reveal ${styles.section}`}>
@@ -14,17 +16,14 @@ export function AboutWhoWeAre() {
         {/* Top split block */}
         <div className={styles.topSplit}>
           <div className={styles.left}>
-            <Badge>Who We Are</Badge>
+            <Badge>{t.about.whoWeAre}</Badge>
           </div>
           <div className={styles.right}>
             <p className={styles.lead}>
-              Aria Labs adalah Creative Digital Studio yang menggabungkan strategi, desain, dan teknologi 
-              untuk membantu bisnis membangun identitas visual, pengalaman digital, dan website modern.
+              {t.about.lead}
             </p>
             <p className={styles.desc}>
-              Kami percaya bahwa setiap desain harus memiliki tujuan yang jelas, memberikan nilai, dan 
-              mendukung pertumbuhan jangka panjang. Kami tidak hanya membuat desain yang indah, tetapi juga 
-              memastikan fungsionalitas dan skalabilitas produk digital Anda untuk masa depan yang lebih baik.
+              {t.about.desc}
             </p>
           </div>
         </div>
@@ -32,7 +31,7 @@ export function AboutWhoWeAre() {
         {/* Center illustration & statement */}
         <div className={styles.centerBlock}>
           <h2 className={styles.statement}>
-            Mewujudkan Solusi Kreatif dan Inovatif bagi Brand Anda
+            {t.about.statement}
           </h2>
           <div className={styles.cardIllustration}>
             <Image
