@@ -146,7 +146,7 @@ export function ContactMain() {
                   onChange={handleChange}
                   placeholder={lang === 'en' ? 'Hudson / Your Brand' : 'Hudson / Brand Anda'}
                   required
-                />/
+                />
               </div>
             </div>
 
