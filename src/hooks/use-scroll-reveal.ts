@@ -13,20 +13,19 @@ export function useScrollReveal<T extends HTMLElement>() {
       el.classList.add('is-visible', 'visible')
     }
 
-    // Hard timeout fallback: force reveal after 1.5s
-    // Covers: old browsers, warnet PCs, slow GPU where IO never fires
-    const fallbackTimer = setTimeout(reveal, 1500)
+    // Fast timeout fallback: force reveal after 300ms
+    const fallbackTimer = setTimeout(reveal, 300)
 
-    // Fallback if IntersectionObserver not available (IE11, old Chrome)
+    // Fallback if IntersectionObserver not available
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
       reveal()
       clearTimeout(fallbackTimer)
       return
     }
 
-    // If element already in viewport on mount (above-the-fold sections)
+    // Immediately reveal if element is within or near viewport (+400px margin)
     const rect = el.getBoundingClientRect()
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
+    if (rect.top < window.innerHeight + 400 && rect.bottom > -400) {
       reveal()
       clearTimeout(fallbackTimer)
       return
@@ -41,9 +40,8 @@ export function useScrollReveal<T extends HTMLElement>() {
         }
       },
       {
-        // threshold: 0 = fires as soon as 1px is visible
         threshold: 0,
-        rootMargin: '0px 0px 50px 0px',
+        rootMargin: '400px 0px 400px 0px', // Trigger 400px before scrolling into view
       }
     )
 
