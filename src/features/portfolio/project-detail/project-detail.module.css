@@ -63,7 +63,70 @@
   object-fit: contain;
 }
 
-/* ── Browser Frame ── */
+/* ── Hero Banner (project screenshot) ── */
+.heroBanner {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F5F7FA;
+  margin-top: 16px;
+}
+
+.heroBannerImg {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ── Details Grid ── */
+.details {
+  padding: 60px 0;
+  border-top: 1.5px solid #E8E8E8;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 60px;
+}
+
+.detailBlock {}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2FA8FA;
+  margin-bottom: 12px;
+}
+
+.clientName {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+.servicesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.servicePill {
+  display: inline-block;
+  padding: 5px 14px;
+  background: #F2F6FD;
+  border: 1.5px solid #E0EEFF;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2FA8FA;
+}
+
+
 .browserFrame {
   border: 2px solid #2FA8FA;
   border-radius: 14px;
@@ -283,6 +346,8 @@
 @media (max-width: 900px) {
   .labelRow { grid-template-columns: 1fr; gap: 16px; }
   .othersGrid { grid-template-columns: repeat(2, 1fr); }
+  .detailsGrid { grid-template-columns: 1fr; gap: 32px; }
+  .heroBanner { height: 340px; }
 }
 
 @media (max-width: 640px) {
@@ -294,6 +359,8 @@
     max-width: 120px !important;
     max-height: 44px !important;
   }
+  .heroBanner { height: 220px; border-radius: 12px; }
+  .details { padding: 40px 0; }
   .browserScroll { height: 320px; }
   .textSection { padding: 48px 0; }
   .testimonial { padding: 60px 0; }
