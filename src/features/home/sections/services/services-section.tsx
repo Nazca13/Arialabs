@@ -115,8 +115,9 @@ export function ServicesSection() {
                     src={s.image}
                     alt={s.title}
                     fill
+                    quality={90}
                     className={styles.rowImg}
-                    sizes="220px"
+                    sizes="(max-width: 480px) 44vw, (max-width: 768px) 46vw, 350px"
                   />
                 </div>
 

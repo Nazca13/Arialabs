@@ -74,15 +74,26 @@ export function ProjectDetail({ project, otherProjects = [] }: Props) {
             </div>
           </div>
 
-          <div className={styles.heroBanner}>
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              fill
-              priority
-              className={styles.heroBannerImg}
-              sizes="100vw"
-            />
+          {/* Browser mockup – avoids squished/gepeng look for tall screenshots */}
+          <div className={styles.browserFrame}>
+            <div className={styles.browserBar}>
+              <span className={`${styles.dot} ${styles.dotRed}`} />
+              <span className={`${styles.dot} ${styles.dotYellow}`} />
+              <span className={`${styles.dot} ${styles.dotGreen}`} />
+              <span className={styles.browserUrl}>{project.title.toLowerCase().replace(/\s+/g, '-')}.com</span>
+            </div>
+            <div className={styles.browserScroll}>
+              <Image
+                src={project.heroImage}
+                alt={project.title}
+                width={1400}
+                height={900}
+                priority
+                quality={90}
+                className={styles.browserImg}
+                sizes="(max-width: 768px) 100vw, 90vw"
+              />
+            </div>
           </div>
         </div>
       </section>

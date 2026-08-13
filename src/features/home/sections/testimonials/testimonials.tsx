@@ -8,22 +8,22 @@ import styles from './testimonials.module.css'
 
 const DATA = [
   {
-    name: 'Angelica Michaela',
+    name: 'Angelica Phurada',
     role: 'CEO',
     company: 'PHASE Fragrance',
-    quote: 'Working with AriaLabs felt personal. The process was smooth, the design was stunning, and everything had meaning.',
+    quote: 'Working with Aria Labs felt personal. The process was smooth, the design was stunning, and everything had meaning.',
   },
   {
-    name: 'Reza Firmansyah',
-    role: 'Founder',
-    company: 'Aquanime Studio',
-    quote: 'They understood our vision from day one. The brand identity they created perfectly captured our creative spirit.',
+    name: 'Abdul Majid',
+    role: 'Direktur Utama',
+    company: 'PT Bumi Eka Sukses Tridaya',
+    quote: 'Aria Labs bener-bener ngerti kebutuhan kami. Hasilnya jauh melampaui ekspektasi dan proses kerjasamanya nyaman banget dari awal sampai selesai.',
   },
   {
-    name: 'Dian Pratama',
-    role: 'Marketing Director',
-    company: 'Bumi Eka Sukses Tridaya',
-    quote: 'The website AriaLabs delivered exceeded all expectations. Conversion rate increased significantly within the first month.',
+    name: 'Aditya Syahbana',
+    role: 'Direktur Operasional',
+    company: 'PT Eldaya Mentari Alfikurnia',
+    quote: 'Timnya responsif, kreatif, dan paham banget arah brand kami. Output yang mereka kasih langsung on point tanpa banyak revisi yang muter-muter.',
   },
 ]
 
