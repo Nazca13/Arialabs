@@ -277,8 +277,9 @@
 }
 
 @media (max-width: 900px) {
-  .pill { display: none; }
-  .cta  { display: none; }
+  .pill       { display: none; }
+  .cta        { display: none; }
   .langToggle { display: none; }
-  .burger { display: flex; }
+  .rightGroup { display: none; }
+  .burger     { display: flex; }
 }
