@@ -18,3 +18,5 @@ SKILLS
 SKILLS/
 SKILLS.md
 .SKILLS
+.csv
+docs/*.csv

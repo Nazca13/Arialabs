@@ -12,6 +12,8 @@ type Category = typeof CATEGORIES[number]
 
 type PlanItem = {
   name: string
+  priceLabelId?: string
+  priceLabelEn?: string
   price: string
   periodId: string
   periodEn: string
@@ -26,7 +28,9 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
   'Web Development': [
     {
       name: 'Starter',
-      price: 'Rp 5jt',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp1.000.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Ideal untuk bisnis kecil yang baru memulai kehadiran digital.',
@@ -36,7 +40,9 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
     },
     {
       name: 'Professional',
-      price: 'Rp 15jt',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp5.000.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Untuk bisnis yang berkembang dan butuh solusi digital lengkap.',
@@ -59,7 +65,9 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
   'Brand Identity': [
     {
       name: 'Starter',
-      price: 'Rp 4jt',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp750.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Fondasi identitas visual untuk brand yang baru mulai.',
@@ -69,7 +77,9 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
     },
     {
       name: 'Professional',
-      price: 'Rp 10jt',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp5.000.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Identitas brand lengkap untuk kehadiran yang lebih matang.',
@@ -92,7 +102,9 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
   'UI/UX Design': [
     {
       name: 'Starter',
-      price: 'Rp 6jt',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp500.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Desain antarmuka untuk produk digital skala kecil.',
@@ -102,7 +114,9 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
     },
     {
       name: 'Professional',
-      price: 'Rp 18jt',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp7.000.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Riset dan desain pengalaman pengguna secara menyeluruh.',
@@ -125,9 +139,11 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
   'Graphic Design': [
     {
       name: 'Starter',
-      price: 'Rp 2jt',
-      periodId: '/ proyek',
-      periodEn: '/ project',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp75.000',
+      periodId: '/ paket',
+      periodEn: '/ package',
       descriptionId: 'Materi visual untuk kebutuhan promosi sederhana.',
       descriptionEn: 'Visual materials for simple promotional needs.',
       featuresId: ['Social media assets (5 desain)', 'Basic banner/poster', '1x revisi', 'Delivery 3 hari'],
@@ -135,9 +151,11 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
     },
     {
       name: 'Professional',
-      price: 'Rp 7jt',
-      periodId: '/ proyek',
-      periodEn: '/ project',
+      priceLabelId: 'Mulai Dari',
+      priceLabelEn: 'Starting From',
+      price: 'Rp2.500.000',
+      periodId: '/ paket',
+      periodEn: '/ package',
       descriptionId: 'Paket materi visual untuk kampanye yang lebih luas.',
       descriptionEn: 'Visual material package for broader marketing campaigns.',
       featuresId: ['Social media assets (20 desain)', 'Marketing collateral', 'Presentation deck', 'Print-ready files', '3x revisi'],
@@ -189,6 +207,7 @@ export function PricingSection() {
             const desc = lang === 'en' ? plan.descriptionEn : plan.descriptionId
             const period = lang === 'en' ? plan.periodEn : plan.periodId
             const features = lang === 'en' ? plan.featuresEn : plan.featuresId
+            const priceLabel = lang === 'en' ? plan.priceLabelEn : plan.priceLabelId
 
             return (
               <div
@@ -196,6 +215,7 @@ export function PricingSection() {
                 className={`${styles.card} ${plan.featured ? styles.featured : ''}`}
               >
                 <p className={styles.planName}>{plan.name}</p>
+                {priceLabel && <p className={styles.priceLabel}>{priceLabel}</p>}
                 <div className={styles.priceRow}>
                   <span className={styles.price}>{plan.price}</span>
                   {period && <span className={styles.period}>{period}</span>}
