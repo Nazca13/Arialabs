@@ -14,6 +14,7 @@ type PlanItem = {
   name: string
   priceLabelId?: string
   priceLabelEn?: string
+  oldPrice?: string
   price: string
   periodId: string
   periodEn: string
@@ -30,7 +31,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Starter',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp1.000.000',
+      oldPrice: 'Rp2.699.000',
+      price: 'Rp998.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Ideal untuk bisnis kecil yang baru memulai kehadiran digital.',
@@ -42,7 +44,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Professional',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp5.000.000',
+      oldPrice: 'Rp9.899.000',
+      price: 'Rp5.098.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Untuk bisnis yang berkembang dan butuh solusi digital lengkap.',
@@ -67,7 +70,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Starter',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp750.000',
+      oldPrice: 'Rp1.198.000',
+      price: 'Rp698.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Fondasi identitas visual untuk brand yang baru mulai.',
@@ -79,7 +83,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Professional',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp5.000.000',
+      oldPrice: 'Rp9.989.000',
+      price: 'Rp5.098.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Identitas brand lengkap untuk kehadiran yang lebih matang.',
@@ -104,7 +109,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Starter',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp500.000',
+      oldPrice: 'Rp1.298.000',
+      price: 'Rp498.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Desain antarmuka untuk produk digital skala kecil.',
@@ -116,7 +122,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Professional',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp7.000.000',
+      oldPrice: 'Rp12.898.000',
+      price: 'Rp7.198.000',
       periodId: '/ proyek',
       periodEn: '/ project',
       descriptionId: 'Riset dan desain pengalaman pengguna secara menyeluruh.',
@@ -141,7 +148,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Starter',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp75.000',
+      oldPrice: 'Rp119.000',
+      price: 'Rp69.000',
       periodId: '/ paket',
       periodEn: '/ package',
       descriptionId: 'Materi visual untuk kebutuhan promosi sederhana.',
@@ -153,7 +161,8 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       name: 'Professional',
       priceLabelId: 'Mulai Dari',
       priceLabelEn: 'Starting From',
-      price: 'Rp2.500.000',
+      oldPrice: 'Rp3.188.000',
+      price: 'Rp2.689.000',
       periodId: '/ paket',
       periodEn: '/ package',
       descriptionId: 'Paket materi visual untuk kampanye yang lebih luas.',
@@ -217,6 +226,7 @@ export function PricingSection() {
                 <p className={styles.planName}>{plan.name}</p>
                 {priceLabel && <p className={styles.priceLabel}>{priceLabel}</p>}
                 <div className={styles.priceRow}>
+                  {plan.oldPrice && <span className={styles.oldPrice}>{plan.oldPrice}</span>}
                   <span className={styles.price}>{plan.price}</span>
                   {period && <span className={styles.period}>{period}</span>}
                 </div>
