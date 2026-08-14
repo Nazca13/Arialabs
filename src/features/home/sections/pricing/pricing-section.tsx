@@ -225,8 +225,8 @@ export function PricingSection() {
               >
                 <p className={styles.planName}>{plan.name}</p>
                 {priceLabel && <p className={styles.priceLabel}>{priceLabel}</p>}
+                {plan.oldPrice && <p className={styles.oldPrice}>{plan.oldPrice}</p>}
                 <div className={styles.priceRow}>
-                  {plan.oldPrice && <span className={styles.oldPrice}>{plan.oldPrice}</span>}
                   <span className={styles.price}>{plan.price}</span>
                   {period && <span className={styles.period}>{period}</span>}
                 </div>
