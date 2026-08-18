@@ -36,6 +36,7 @@ const SERVICES_OPTIONS = [
   'UI/UX Design',
   'Graphic Design',
   'Social Media Management',
+  'Photo & Video',
   'Consultation / Other',
 ]
 

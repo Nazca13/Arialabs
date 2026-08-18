@@ -7,7 +7,7 @@ import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import { useLanguage } from '@/contexts/language-context'
 import styles from './pricing-section.module.css'
 
-const CATEGORIES = ['Web Development', 'Brand Identity', 'UI/UX Design', 'Graphic Design'] as const
+const CATEGORIES = ['Web Development', 'Brand Identity', 'UI/UX Design', 'Graphic Design', 'Social Media', 'Photo & Video'] as const
 type Category = typeof CATEGORIES[number]
 
 type PlanItem = {
@@ -153,6 +153,72 @@ const PLANS_BY_CATEGORY: Record<Category, PlanItem[]> = {
       descriptionEn: 'Ongoing design support for large-scale requirements.',
       featuresId: ['Monthly design retainer', 'Multi-channel campaign assets', 'Dedicated designer', 'Priority turnaround', 'Unlimited revisi'],
       featuresEn: ['Monthly design retainer', 'Multi-channel campaign assets', 'Dedicated designer', 'Priority turnaround', 'Unlimited revisions'],
+    },
+  ],
+  'Social Media': [
+    {
+      name: 'Starter',
+      price: 'Rp 3jt',
+      periodId: '/ bulan',
+      periodEn: '/ month',
+      descriptionId: 'Cocok untuk brand yang baru merintis kehadiran di media sosial.',
+      descriptionEn: 'Great for brands just starting their social media presence.',
+      featuresId: ['12 konten feed per bulan', 'Copywriting caption', 'Riset tagar dasar', 'Laporan performa bulanan', '1x revisi per konten'],
+      featuresEn: ['12 feed posts per month', 'Caption copywriting', 'Basic hashtag research', 'Monthly performance report', '1x revision per post'],
+    },
+    {
+      name: 'Professional',
+      price: 'Rp 8jt',
+      periodId: '/ bulan',
+      periodEn: '/ month',
+      descriptionId: 'Untuk brand yang ingin serius bertumbuh dan aktif di media sosial.',
+      descriptionEn: 'For brands ready to grow seriously and stay active on social.',
+      featuresId: ['24 konten feed per bulan', '8 reels atau story motion', 'Kalender konten bulanan', 'Community management', 'Laporan analytics lengkap'],
+      featuresEn: ['24 feed posts per month', '8 reels or motion stories', 'Monthly content calendar', 'Community management', 'Full analytics report'],
+      featured: true,
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom',
+      periodId: '',
+      periodEn: '',
+      descriptionId: 'Strategi menyeluruh multi platform dengan tim media sosial khusus.',
+      descriptionEn: 'End to end multi platform strategy with a dedicated social team.',
+      featuresId: ['Konten tanpa batas', 'Strategi multi platform', 'Ads campaign management', 'Tim social media dedicated', 'Priority support 24 jam'],
+      featuresEn: ['Unlimited content output', 'Multi platform strategy', 'Ads campaign management', 'Dedicated social media team', '24 hour priority support'],
+    },
+  ],
+  'Photo & Video': [
+    {
+      name: 'Starter',
+      price: 'Rp 3jt',
+      periodId: '/ sesi',
+      periodEn: '/ session',
+      descriptionId: 'Sesi ringkas untuk kebutuhan foto produk atau konten sederhana.',
+      descriptionEn: 'Compact session for product photography or simple content needs.',
+      featuresId: ['Sesi foto 2 jam', '20 foto hasil editing', '1 video pendek 30 detik', 'Basic color grading', 'Delivery 5 hari'],
+      featuresEn: ['2 hour photo session', '20 edited photos', 'One 30 second short video', 'Basic color grading', '5 day delivery'],
+    },
+    {
+      name: 'Professional',
+      price: 'Rp 9jt',
+      periodId: '/ proyek',
+      periodEn: '/ project',
+      descriptionId: 'Paket produksi lengkap untuk brand campaign dan konten sosial media.',
+      descriptionEn: 'Complete production package for brand campaigns and social content.',
+      featuresId: ['Sesi produksi 1 hari', '50 foto hasil editing', '3 video reels sinematik', 'Konsep dan storyboard', 'Color grading premium'],
+      featuresEn: ['One day production session', '50 edited photos', '3 cinematic reel videos', 'Concept and storyboard', 'Premium color grading'],
+      featured: true,
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom',
+      periodId: '',
+      periodEn: '',
+      descriptionId: 'Produksi berskala besar untuk campaign, event, atau company profile.',
+      descriptionEn: 'Large scale production for campaigns, events, or company profiles.',
+      featuresId: ['Multi day production', 'Tim kreatif dedicated', 'Video sinematik full frame', 'Behind the scenes coverage', 'Retainer bulanan opsional'],
+      featuresEn: ['Multi day production', 'Dedicated creative team', 'Full frame cinematic video', 'Behind the scenes coverage', 'Optional monthly retainer'],
     },
   ],
 }

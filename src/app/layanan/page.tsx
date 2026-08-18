@@ -10,7 +10,7 @@ import { CtaSection } from '@/features/home/sections/cta/cta-section'
 
 export const metadata: Metadata = {
   title: 'Layanan | Aria Labs',
-  description: 'Layanan kreatif dan digital dari Aria Labs, Web Development, Brand Identity, UI/UX Design, Graphic Design, dan Social Media Management.',
+  description: 'Layanan kreatif dan digital dari Aria Labs, Web Development, Brand Identity, UI/UX Design, Graphic Design, Social Media Management, dan Photo & Video.',
 }
 
 export default function LayananPage() {

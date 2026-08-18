@@ -44,6 +44,10 @@
       "sosmed": {
         "title": "Social Media Management",
         "desc": "Professional social media management, covering everything from content strategy, visual design, and copywriting to audience moderation."
+      },
+      "photoVideo": {
+        "title": "Photo & Video",
+        "desc": "Professional photography and videography production for products, brands, events, and social media content with cinematic, high quality visuals."
       }
     }
   },
