@@ -162,7 +162,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     tagline: 'Strategi & Pengelolaan Media Sosial Profesional untuk Pertumbuhan Merek',
     description: 'Kami mengelola akun media sosial bisnis Anda secara konsisten, mulai dari riset konten, pembuatan visual feed/reels, penulisan caption persuasif, hingga analisis performa bulanan.',
     mascot: '/assets/images/characters/aria-service/aria-sosmed.webp',
-    categoryName: 'Social Media Management',
+    categoryName: 'Social Media',
     benefits: [
       {
         title: 'Kalender Konten Bulanan',
@@ -190,6 +190,41 @@ const SERVICES_DATA: Record<string, ServiceData> = {
       },
     ],
   },
+}
+
+SERVICES_DATA['photo-video'] = {
+  title: 'Photo & Video',
+  badge: 'Visual Production',
+  tagline: 'Produksi Foto & Video Sinematik untuk Menghidupkan Cerita Brand Anda',
+  description: 'Kami memproduksi konten fotografi dan videografi berkualitas tinggi untuk kebutuhan produk, brand campaign, event, hingga konten media sosial dengan pendekatan sinematik yang memikat.',
+  mascot: '/assets/images/characters/aria-service/aria-photovideo.webp',
+  categoryName: 'Photo & Video',
+  benefits: [
+    {
+      title: 'Konsep Sinematik',
+      desc: 'Storyboard dan mood board yang disusun matang agar setiap frame terasa memiliki cerita yang kuat.',
+    },
+    {
+      title: 'Peralatan Profesional',
+      desc: 'Kamera mirrorless full frame, gimbal stabilizer, dan lighting studio untuk kualitas visual premium.',
+    },
+    {
+      title: 'Fotografi Produk & Brand',
+      desc: 'Pemotretan produk, katalog, dan branding lifestyle yang mengangkat karakter merek Anda.',
+    },
+    {
+      title: 'Videografi Sosial Media',
+      desc: 'Produksi video reels, shorts, dan konten vertikal yang siap tayang di seluruh platform digital.',
+    },
+    {
+      title: 'Editing & Color Grading',
+      desc: 'Proses editing rapi dan color grading sinematik untuk menghasilkan look visual yang konsisten.',
+    },
+    {
+      title: 'Dokumentasi Event',
+      desc: 'Liputan dokumentasi acara, launching, dan behind the scenes dengan pendekatan storytelling.',
+    },
+  ],
 }
 
 // Map alias slugs
@@ -230,6 +265,7 @@ export function generateStaticParams() {
     { slug: 'graphic-design' },
     { slug: 'social-media-management' },
     { slug: 'social-media' },
+    { slug: 'photo-video' },
   ]
 }
 

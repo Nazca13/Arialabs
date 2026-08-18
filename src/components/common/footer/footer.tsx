@@ -11,6 +11,7 @@ const SERVICE_LINKS = [
   { label: 'UI/UX Design',            href: '/layanan/uiux-design' },
   { label: 'Graphic Design',          href: '/layanan/graphic-design' },
   { label: 'Social Media Management', href: '/layanan/social-media-management' },
+  { label: 'Photo & Video',           href: '/layanan/photo-video' },
 ]
 
 /* ── Inline social icons (no external files needed, always sharp) ── */
